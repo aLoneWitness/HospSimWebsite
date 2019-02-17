@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\sanva\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.-1662918964.00" t="ExcludeRecursive" />
-    <e p="D:\Documents\HospSimWebsite" t="IncludeFlat">
+    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.-1681391623.00" t="ExcludeRecursive" />
+    <e p="D:\Documents\HospSimulatorWebsite" t="IncludeFlat">
       <e p="HospSimWebsite" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -33,6 +33,8 @@
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
+            <e p="Submit.cshtml" t="Include" />
+            <e p="Submit.cshtml.cs" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
@@ -52,7 +54,6 @@
             <e p="style.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
-          <e p="index.html" t="Include" />
           <e p="js" t="Include">
             <e p="bootstrap.bundle.js" t="Include" />
             <e p="bootstrap.bundle.min.js" t="Include" />

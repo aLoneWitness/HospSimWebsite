@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "D:\\Documents\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
+    "projectUniqueName": "D:\\Documents\\HospSimulatorWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
     "projectName": "HospSimWebsite",
-    "projectPath": "D:\\Documents\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
-    "outputPath": "D:\\Documents\\HospSimWebsite\\HospSimWebsite\\obj\\",
+    "projectPath": "D:\\Documents\\HospSimulatorWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
+    "outputPath": "D:\\Documents\\HospSimulatorWebsite\\HospSimWebsite\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

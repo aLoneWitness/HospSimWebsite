@@ -18,3 +18,17 @@
     padding-right: 20%;
     padding-top: 5%;
 }
+
+#adressdiv {
+    width: 70%;
+    float: left;
+}
+
+#housenumdiv {
+    width: 25%;
+    float: right;
+}
+
+#adressform {
+    height: 70px;
+}
