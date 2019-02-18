@@ -86,4 +86,4 @@ C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\H
 C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.dll
 C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.pdb
 C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.csproj.CopyComplete
-C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Form\Index.g.cshtml.cs
+C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Form\Submit.g.cshtml.cs

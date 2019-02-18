@@ -12,9 +12,9 @@ namespace HospSimWebsite.Controllers
     public class FormController : Controller
     {
         [HttpPost]
-        public string Submit(FormModel model)
+        public IActionResult Submit(FormModel model)
         {
-            return model.InputName;
+            return View(model);
         }
     }
 }
