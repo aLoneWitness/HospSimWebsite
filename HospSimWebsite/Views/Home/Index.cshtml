@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    
 }
+@model HospSimWebsite.Models.FormModel
 
 <html lang="en">
 <head>
@@ -15,24 +17,34 @@
 </div>
 
 <div class="formmain">
-    <form>
+    <form asp-controller="Form" asp-action="Submit" method="post">
         <div class="form-group">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" placeholder="Jack Something">
+            <label>Name</label>
+            <input asp-for="InputName" type="text" class="form-control" placeholder="Jack Something">
         </div>
-        <label for="inputAdress">Adress</label>
+        <label>Adress</label>
 
         <div class="form-group" id="adressform">
             <div id="adressdiv">
-                <input type="text" class="form-control">
+                <input asp-for="InputAdressText" type="text" class="form-control">
             </div>
             <div id="housenumdiv">
-                <input type="number" class="form-control">
+                <input asp-for="InputAdressNum" type="number" class="form-control">
             </div>
         </div>
         
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Login</button>
+            <label asp-for="InputDisease">Diagnosis (Doctor approval only)</label>
+            <select asp-for="InputDisease" class="form-control" id="inputDisease">
+                <option>Owo</option>
+                <option>Bwb</option>
+                <option>Cwc</option>
+                <option>Dwd</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 </div>
