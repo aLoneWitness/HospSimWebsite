@@ -13,6 +13,7 @@
           <e p="HomeController.cs" t="Include" />
         </e>
         <e p="Database.cs" t="Include" />
+        <e p="Disease.cs" t="Include" />
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />
@@ -64,6 +65,7 @@
             <e p="bootstrap.bundle.min.js" t="Include" />
             <e p="bootstrap.js" t="Include" />
             <e p="bootstrap.min.js" t="Include" />
+            <e p="site.js" t="Include" />
           </e>
           <e p="lib" t="Include">
             <e p="bootstrap" t="Include">

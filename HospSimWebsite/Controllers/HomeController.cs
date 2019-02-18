@@ -11,9 +11,17 @@ namespace HospSimWebsite.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(FormModel model)
         {
-            return View();
+            Database.Instance.SetConnection("studmysql01.fhict.local" ,"dbi407041","wonderworld", "dbi407041");
+            var userQuery = Database.Instance.Query("SELECT * FROM disease", new string[]{});
+            model.Diseases = new List<Disease>();
+            for (int i = 0; userQuery.Count > i; i++)
+            {
+                model.Diseases.Add(new Disease(userQuery[i]["name"].ToString()));
+            }
+
+            return View(model);
         }
 
         public IActionResult Privacy()

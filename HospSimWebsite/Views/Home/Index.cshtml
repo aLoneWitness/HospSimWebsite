@@ -36,10 +36,10 @@
         <div class="form-group">
             <label>Diagnosis (Doctor approval only)</label>
             <select asp-for="Disease" class="form-control" id="inputDisease">
-                <option>Owo</option>
-                <option>Bwb</option>
-                <option>Cwc</option>
-                <option>Dwd</option>
+                @foreach (var disease in Model.Diseases)
+                {
+                    <option>@disease.ToString()</option>
+                }
             </select>
         </div>
         
