@@ -14,6 +14,11 @@ namespace HospSimWebsite.Controllers
         [HttpPost]
         public IActionResult Submit(FormModel model)
         {
+            if (model.Name != String.Empty)
+            {
+                Database.Instance.Query("INSERT INTO patient (name, disease) VALUES (?, ?)",
+                    new string[] {model.Name, model.Disease});
+            }
             return View(model);
         }
     }

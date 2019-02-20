@@ -58,3 +58,44 @@ body {
 #layoutTitle {
   color: purple;
 }
+
+#hospitalname {
+  color: rebeccapurple;
+}
+
+.title {
+  align-content: center;
+  text-align: center;
+  color: grey;
+  font-family: Calibri, "Times New Roman", serif;
+
+}
+
+.submitmaintext {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.formmain {
+  height: 300px;
+  align-content: center;
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 5%;
+}
+
+#adressdiv {
+  width: 70%;
+  float: left;
+}
+
+#housenumdiv {
+  width: 25%;
+  float: right;
+}
+
+#adressform {
+  height: 70px;
+}
+
