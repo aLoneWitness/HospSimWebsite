@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\sanva\.Rider2018.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\sanva\.Rider2018.3\config\extensions" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.-1681391623.00" t="ExcludeRecursive" />
-    <e p="D:\Documents\HospSimulatorWebsite" t="IncludeFlat">
+    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.1241528200.00" t="ExcludeRecursive" />
+    <e p="C:\Users\sanva\Documents\HospSimWebsite" t="IncludeFlat">
       <e p="HospSimWebsite" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />

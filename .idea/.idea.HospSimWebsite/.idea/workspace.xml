@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e95261-6ecc-441c-a4e5-0faf69b775c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HospSimWebsite/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HospSimWebsite/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HospSimWebsite/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HospSimWebsite/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HospSimWebsite/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HospSimWebsite/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HospSimWebsite/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospSimWebsite/Controllers/FormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/Controllers/FormController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospSimWebsite/Views/Form/Submit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/Views/Form/Submit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospSimWebsite/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/bin/Debug/netcoreapp2.2/HospSimWebsite.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/bin/Debug/netcoreapp2.2/HospSimWebsite.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/bin/Debug/netcoreapp2.2/HospSimWebsite.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/bin/Debug/netcoreapp2.2/HospSimWebsite.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/bin/Debug/netcoreapp2.2/HospSimWebsite.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/bin/Debug/netcoreapp2.2/HospSimWebsite.deps.json" afterDir="false" />
@@ -19,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/Debug/netcoreapp2.2/HospSimWebsite.pdb" afterDir="false" />
@@ -36,8 +31,6 @@
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospSimWebsite/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/wwwroot/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospSimWebsite/wwwroot/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospSimWebsite/wwwroot/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/HospSimWebsite/wwwroot/js/site.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,14 +73,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HospSimWebsite/Controllers/FormController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="192">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding>
-                <marker date="1550672471196" expanded="false" signature="6:216" ph="..." />
-                <marker date="1550672471196" expanded="true" signature="254:667" ph="{...}" />
-                <marker date="1550672471196" expanded="true" signature="301:665" ph="{...}" />
-                <marker date="1550672471196" expanded="true" signature="379:659" ph="{...}" />
-                <marker date="1550672471196" expanded="true" signature="433:617" ph="{...}" />
+                <marker date="1550837384849" expanded="false" signature="6:216" ph="..." />
+                <marker date="1550837384849" expanded="true" signature="254:667" ph="{...}" />
+                <marker date="1550837384849" expanded="true" signature="301:665" ph="{...}" />
+                <marker date="1550837384849" expanded="true" signature="379:659" ph="{...}" />
+                <marker date="1550837384849" expanded="true" signature="433:617" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HospSimWebsite/QueryResult.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+              <folding>
+                <marker date="1550837424758" expanded="false" signature="6:96" ph="..." />
+                <marker date="1550837424758" expanded="true" signature="122:868" ph="{...}" />
+                <marker date="1550837424758" expanded="true" signature="153:866" ph="{...}" />
+                <marker date="1550837424758" expanded="true" signature="331:416" ph="{...}" />
+                <marker date="1550837424758" expanded="true" signature="472:860" ph="{...}" />
+                <marker date="1550837424758" expanded="true" signature="542:850" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -96,51 +106,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HospSimWebsite/Database.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
+            <state>
               <folding>
-                <marker date="1550516711803" expanded="false" signature="6:115" ph="..." />
-                <marker date="1550516711803" expanded="true" signature="141:2270" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="176:2267" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="440:473" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="572:742" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="781:1088" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="807:895" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="934:1078" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="1128:1426" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="1154:1227" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="1267:1416" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="1501:2261" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="1730:1949" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="1808:1935" ph="{...}" />
-                <marker date="1550516711803" expanded="true" signature="2061:2192" ph="{...}" />
+                <marker date="1550837424765" expanded="false" signature="6:115" ph="..." />
+                <marker date="1550837424765" expanded="true" signature="141:2270" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="176:2267" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="440:473" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="572:742" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="781:1088" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="807:895" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="934:1078" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="1128:1426" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="1154:1227" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="1267:1416" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="1501:2261" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="1730:1949" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="1808:1935" ph="{...}" />
+                <marker date="1550837424765" expanded="true" signature="2061:2192" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="26" />
+            <state relative-caret-position="48">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
               <folding>
-                <marker date="1550657582125" expanded="true" signature="0:46" ph="@..." />
-                <marker date="1550657582125" expanded="true" signature="87:1693" ph="&lt;html.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="104:379" ph="&lt;head.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="380:1685" ph="&lt;body.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="387:511" ph="&lt;div.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="513:1677" ph="&lt;div.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="540:1670" ph="&lt;form.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="611:794" ph="&lt;div.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="834:1152" ph="&lt;div.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="887:1004" ph="&lt;div.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="1017:1137" ph="&lt;div.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="1170:1519" ph="&lt;div.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="1267:1504" ph="&lt;select.../&gt;" />
-                <marker date="1550657582125" expanded="true" signature="1349:1482" ph="@..." />
-                <marker date="1550657582125" expanded="true" signature="1389:1482" ph="{...}" />
-                <marker date="1550657582125" expanded="true" signature="1537:1658" ph="&lt;div.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="0:46" ph="@..." />
+                <marker date="1550840777038" expanded="true" signature="87:1708" ph="&lt;html.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="104:379" ph="&lt;head.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="380:1700" ph="&lt;body.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="387:511" ph="&lt;div.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="513:1692" ph="&lt;div.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="540:1685" ph="&lt;form.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="611:809" ph="&lt;div.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="849:1167" ph="&lt;div.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="902:1019" ph="&lt;div.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="1032:1152" ph="&lt;div.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="1185:1534" ph="&lt;div.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="1282:1519" ph="&lt;select.../&gt;" />
+                <marker date="1550840777038" expanded="true" signature="1364:1497" ph="@..." />
+                <marker date="1550840777038" expanded="true" signature="1404:1497" ph="{...}" />
+                <marker date="1550840777038" expanded="true" signature="1552:1673" ph="&lt;div.../&gt;" />
               </folding>
             </state>
           </provider>
@@ -152,7 +161,7 @@
             <state relative-caret-position="16">
               <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
               <folding>
-                <marker date="1550336481728" expanded="true" signature="0:28" ph="@..." />
+                <marker date="1550476208535" expanded="true" signature="0:28" ph="@..." />
               </folding>
             </state>
           </provider>
@@ -163,7 +172,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
-                <marker date="1550336481729" expanded="false" signature="7:50" ph="..." />
+                <marker date="1550476208535" expanded="false" signature="7:50" ph="..." />
               </folding>
             </state>
           </provider>
@@ -174,12 +183,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
-                <marker date="1550336481719" expanded="true" signature="22:59" ph="@..." />
-                <marker date="1550336481719" expanded="true" signature="176:289" ph="@..." />
-                <marker date="1550336481719" expanded="true" signature="201:289" ph="{...}" />
-                <marker date="1550336481719" expanded="true" signature="208:287" ph="&lt;p.../&gt;" />
-                <marker date="1550336481719" expanded="true" signature="317:452" ph="&lt;p.../&gt;" />
-                <marker date="1550336481719" expanded="true" signature="453:855" ph="&lt;p.../&gt;" />
+                <marker date="1550476208534" expanded="true" signature="22:59" ph="@..." />
+                <marker date="1550476208534" expanded="true" signature="176:289" ph="@..." />
+                <marker date="1550476208534" expanded="true" signature="201:289" ph="{...}" />
+                <marker date="1550476208534" expanded="true" signature="208:287" ph="&lt;p.../&gt;" />
+                <marker date="1550476208534" expanded="true" signature="317:452" ph="&lt;p.../&gt;" />
+                <marker date="1550476208534" expanded="true" signature="453:855" ph="&lt;p.../&gt;" />
               </folding>
             </state>
           </provider>
@@ -191,21 +200,21 @@
             <state relative-caret-position="256">
               <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
-                <marker date="1550676472487" expanded="true" signature="0:59" ph="@..." />
-                <marker date="1550676472487" expanded="true" signature="78:354" ph="&lt;html.../&gt;" />
-                <marker date="1550676472487" expanded="true" signature="85:224" ph="&lt;head.../&gt;" />
-                <marker date="1550676472487" expanded="true" signature="225:346" ph="&lt;body.../&gt;" />
-                <marker date="1550676472487" expanded="true" signature="232:338" ph="&lt;div.../&gt;" />
+                <marker date="1550826364377" expanded="true" signature="0:59" ph="@..." />
+                <marker date="1550826364377" expanded="true" signature="78:354" ph="&lt;html.../&gt;" />
+                <marker date="1550826364377" expanded="true" signature="85:224" ph="&lt;head.../&gt;" />
+                <marker date="1550826364377" expanded="true" signature="225:346" ph="&lt;body.../&gt;" />
+                <marker date="1550826364377" expanded="true" signature="232:338" ph="&lt;div.../&gt;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HospSimWebsite/wwwroot/css/site.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+            <state relative-caret-position="1248">
+              <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -230,22 +239,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Home/Privacy.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HospSimWebsite/Controllers/FormController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Home/Privacy.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Shared/Error.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Disease.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Form/Submit.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Disease.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HospSimWebsite/Database.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HospSimWebsite/QueryResult.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Models/FormModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HospSimWebsite/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Models/FormModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Form/Submit.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -255,7 +264,6 @@
         <option value="$PROJECT_DIR$/HospSimWebsite/wwwroot/index.html" />
         <option value="$PROJECT_DIR$/HospSimWebsite/Controllers/PatientFormController.cs" />
         <option value="$PROJECT_DIR$/HospSimWebsite/Views/Home/Submit.cshtml.cs" />
-        <option value="$PROJECT_DIR$/HospSimWebsite/QueryResult.cs" />
         <option value="$PROJECT_DIR$/HospSimWebsite/Database.cs" />
         <option value="$PROJECT_DIR$/HospSimWebsite/Models/SubmitModel.cs" />
         <option value="$PROJECT_DIR$/HospSimWebsite/Controllers/SubmitController.cs" />
@@ -272,26 +280,28 @@
         <option value="$PROJECT_DIR$/HospSimWebsite/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/HospSimWebsite/Models/FormModel.cs" />
         <option value="$PROJECT_DIR$/HospSimWebsite/Views/Shared/_Layout.cshtml" />
-        <option value="$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml" />
         <option value="$PROJECT_DIR$/HospSimWebsite/wwwroot/js/site.js" />
-        <option value="$PROJECT_DIR$/HospSimWebsite/Controllers/FormController.cs" />
         <option value="$PROJECT_DIR$/HospSimWebsite/wwwroot/css/style.css" />
         <option value="$PROJECT_DIR$/HospSimWebsite/Views/Form/Submit.cshtml" />
         <option value="$PROJECT_DIR$/HospSimWebsite/wwwroot/css/site.css" />
+        <option value="$PROJECT_DIR$/HospSimWebsite/Controllers/FormController.cs" />
+        <option value="$PROJECT_DIR$/HospSimWebsite/QueryResult.cs" />
+        <option value="$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-2031" />
-    <option name="y" value="186" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -299,58 +309,11 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Form" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Home" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="wwwroot" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HospSimWebsite" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="wwwroot" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="css" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -358,6 +321,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../catan-now" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -374,7 +338,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Launch Settings Profile.HospSimWebsite">
     <configuration name="HospSimWebsite" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/HospSimWebsite/HospSimWebsite.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
@@ -405,11 +369,17 @@
       <workItem from="1550654386201" duration="2120000" />
       <workItem from="1550657327285" duration="3631000" />
       <workItem from="1550671516096" duration="3679000" />
+      <workItem from="1550832437830" duration="363000" />
+      <workItem from="1550835185018" duration="171000" />
+      <workItem from="1550837363494" duration="883000" />
+      <workItem from="1550840590640" duration="256000" />
+      <workItem from="1551172890274" duration="207000" />
+      <workItem from="1551261224558" duration="3357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37290000" />
+    <option name="totallyTimeSpent" value="42527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,17 +391,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2031" y="186" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13059701" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.141258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3336945" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33152762" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -445,18 +415,38 @@
       <window_info anchor="bottom" id="REST Client" order="13" weight="0.32932165" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.50053304" side_tool="true" weight="0.3261105" />
-      <window_info anchor="bottom" id="Build" order="16" weight="0.32394367" />
+      <window_info anchor="bottom" id="Build" order="16" weight="0.32286024" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="right" id="Errors In Solution" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
-      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" weight="0.32995737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="234" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="1" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="1" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="2" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
@@ -489,7 +479,6 @@
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/Submit/Submit.cshtml" />
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/Controllers/SubmitController.cs" />
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/Models/FormViewModel.cs" />
-    <entry file="file://$PROJECT_DIR$/HospSimWebsite/QueryResult.cs" />
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/Form/Index.cs" />
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/Form/Index.cshtml.cs" />
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/Form/Index.cshtml" />
@@ -532,9 +521,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0966ec0a-d967-49ef-b138-33249569885f/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0966ec0a-d967-49ef-b138-33249569885f/console.sql" />
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/Models/ErrorViewModel.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -602,63 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Controllers/FormController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <marker date="1550672471196" expanded="false" signature="6:216" ph="..." />
-            <marker date="1550672471196" expanded="true" signature="254:667" ph="{...}" />
-            <marker date="1550672471196" expanded="true" signature="301:665" ph="{...}" />
-            <marker date="1550672471196" expanded="true" signature="379:659" ph="{...}" />
-            <marker date="1550672471196" expanded="true" signature="433:617" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Database.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
-          <folding>
-            <marker date="1550516711803" expanded="false" signature="6:115" ph="..." />
-            <marker date="1550516711803" expanded="true" signature="141:2270" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="176:2267" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="440:473" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="572:742" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="781:1088" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="807:895" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="934:1078" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="1128:1426" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="1154:1227" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="1267:1416" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="1501:2261" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="1730:1949" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="1808:1935" ph="{...}" />
-            <marker date="1550516711803" expanded="true" signature="2061:2192" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/_ViewStart.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-          <folding>
-            <marker date="1550336481728" expanded="true" signature="0:28" ph="@..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/_ViewImports.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1550336481729" expanded="false" signature="7:50" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/Shared/_Layout.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -701,35 +631,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml">
+    <entry file="file://$PROJECT_DIR$/HospSimWebsite/wwwroot/css/style.css" />
+    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Controllers/FormController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="26" />
+        <state relative-caret-position="192">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
-            <marker date="1550657582125" expanded="true" signature="0:46" ph="@..." />
-            <marker date="1550657582125" expanded="true" signature="87:1693" ph="&lt;html.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="104:379" ph="&lt;head.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="380:1685" ph="&lt;body.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="387:511" ph="&lt;div.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="513:1677" ph="&lt;div.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="540:1670" ph="&lt;form.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="611:794" ph="&lt;div.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="834:1152" ph="&lt;div.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="887:1004" ph="&lt;div.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="1017:1137" ph="&lt;div.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="1170:1519" ph="&lt;div.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="1267:1504" ph="&lt;select.../&gt;" />
-            <marker date="1550657582125" expanded="true" signature="1349:1482" ph="@..." />
-            <marker date="1550657582125" expanded="true" signature="1389:1482" ph="{...}" />
-            <marker date="1550657582125" expanded="true" signature="1537:1658" ph="&lt;div.../&gt;" />
+            <marker date="1550837384849" expanded="false" signature="6:216" ph="..." />
+            <marker date="1550837384849" expanded="true" signature="254:667" ph="{...}" />
+            <marker date="1550837384849" expanded="true" signature="301:665" ph="{...}" />
+            <marker date="1550837384849" expanded="true" signature="379:659" ph="{...}" />
+            <marker date="1550837384849" expanded="true" signature="433:617" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HospSimWebsite/wwwroot/css/style.css">
+    <entry file="file://$PROJECT_DIR$/HospSimWebsite/QueryResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <marker date="1550837424758" expanded="false" signature="6:96" ph="..." />
+            <marker date="1550837424758" expanded="true" signature="122:868" ph="{...}" />
+            <marker date="1550837424758" expanded="true" signature="153:866" ph="{...}" />
+            <marker date="1550837424758" expanded="true" signature="331:416" ph="{...}" />
+            <marker date="1550837424758" expanded="true" signature="472:860" ph="{...}" />
+            <marker date="1550837424758" expanded="true" signature="542:850" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Database.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-line="40" />
+          <folding>
+            <marker date="1550837424765" expanded="false" signature="6:115" ph="..." />
+            <marker date="1550837424765" expanded="true" signature="141:2270" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="176:2267" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="440:473" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="572:742" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="781:1088" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="807:895" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="934:1078" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="1128:1426" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="1154:1227" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="1267:1416" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="1501:2261" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="1730:1949" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="1808:1935" ph="{...}" />
+            <marker date="1550837424765" expanded="true" signature="2061:2192" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/_ViewStart.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding>
+            <marker date="1550476208535" expanded="true" signature="0:28" ph="@..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/_ViewImports.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1550476208535" expanded="false" signature="7:50" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -737,12 +707,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <marker date="1550336481719" expanded="true" signature="22:59" ph="@..." />
-            <marker date="1550336481719" expanded="true" signature="176:289" ph="@..." />
-            <marker date="1550336481719" expanded="true" signature="201:289" ph="{...}" />
-            <marker date="1550336481719" expanded="true" signature="208:287" ph="&lt;p.../&gt;" />
-            <marker date="1550336481719" expanded="true" signature="317:452" ph="&lt;p.../&gt;" />
-            <marker date="1550336481719" expanded="true" signature="453:855" ph="&lt;p.../&gt;" />
+            <marker date="1550476208534" expanded="true" signature="22:59" ph="@..." />
+            <marker date="1550476208534" expanded="true" signature="176:289" ph="@..." />
+            <marker date="1550476208534" expanded="true" signature="201:289" ph="{...}" />
+            <marker date="1550476208534" expanded="true" signature="208:287" ph="&lt;p.../&gt;" />
+            <marker date="1550476208534" expanded="true" signature="317:452" ph="&lt;p.../&gt;" />
+            <marker date="1550476208534" expanded="true" signature="453:855" ph="&lt;p.../&gt;" />
           </folding>
         </state>
       </provider>
@@ -752,19 +722,44 @@
         <state relative-caret-position="256">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding>
-            <marker date="1550676472487" expanded="true" signature="0:59" ph="@..." />
-            <marker date="1550676472487" expanded="true" signature="78:354" ph="&lt;html.../&gt;" />
-            <marker date="1550676472487" expanded="true" signature="85:224" ph="&lt;head.../&gt;" />
-            <marker date="1550676472487" expanded="true" signature="225:346" ph="&lt;body.../&gt;" />
-            <marker date="1550676472487" expanded="true" signature="232:338" ph="&lt;div.../&gt;" />
+            <marker date="1550826364377" expanded="true" signature="0:59" ph="@..." />
+            <marker date="1550826364377" expanded="true" signature="78:354" ph="&lt;html.../&gt;" />
+            <marker date="1550826364377" expanded="true" signature="85:224" ph="&lt;head.../&gt;" />
+            <marker date="1550826364377" expanded="true" signature="225:346" ph="&lt;body.../&gt;" />
+            <marker date="1550826364377" expanded="true" signature="232:338" ph="&lt;div.../&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HospSimWebsite/wwwroot/css/site.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+        <state relative-caret-position="1248">
+          <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HospSimWebsite/Views/Home/Index.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding>
+            <marker date="1550840777038" expanded="true" signature="0:46" ph="@..." />
+            <marker date="1550840777038" expanded="true" signature="87:1708" ph="&lt;html.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="104:379" ph="&lt;head.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="380:1700" ph="&lt;body.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="387:511" ph="&lt;div.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="513:1692" ph="&lt;div.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="540:1685" ph="&lt;form.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="611:809" ph="&lt;div.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="849:1167" ph="&lt;div.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="902:1019" ph="&lt;div.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="1032:1152" ph="&lt;div.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="1185:1534" ph="&lt;div.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="1282:1519" ph="&lt;select.../&gt;" />
+            <marker date="1550840777038" expanded="true" signature="1364:1497" ph="@..." />
+            <marker date="1550840777038" expanded="true" signature="1404:1497" ph="{...}" />
+            <marker date="1550840777038" expanded="true" signature="1552:1673" ph="&lt;div.../&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
