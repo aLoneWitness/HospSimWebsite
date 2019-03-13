@@ -16,7 +16,11 @@
           <e p="PatientsController.cs" t="Include" />
         </e>
         <e p="Disease.cs" t="Include" />
+        <e p="Doctor.cs" t="Include" />
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
+        <e p="Interfaces" t="Include">
+          <e p="IHuman.cs" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="FormModel.cs" t="Include" />
@@ -38,8 +42,8 @@
           <e p="DiseaseRepo.cs" t="Include" />
           <e p="DoctorRepo.cs" t="Include" />
           <e p="Interfaces" t="Include">
+            <e p="ICharRepo.cs" t="Include" />
             <e p="IRepo.cs" t="Include" />
-            <e p="IUserRepo.cs" t="Include" />
           </e>
           <e p="PatientRepo.cs" t="Include" />
           <e p="Repo.cs" t="Include" />

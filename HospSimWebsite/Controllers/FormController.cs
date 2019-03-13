@@ -1,25 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HospSimWebsite.Models;
-using System.Text.Encodings.Web;
-using LightningORM;
+using HospSimWebsite.Repositories;
 
 namespace HospSimWebsite.Controllers
 {
     public class FormController : Controller
     {
+        private PatientRepo _patientRepo;
+        
         [HttpPost]
         public IActionResult Submit(FormModel model)
         {
+            _patientRepo = new PatientRepo();
             if (model.Name != String.Empty)
             {
-                Database.Instance.Query("INSERT INTO patient (name, disease) VALUES (?, ?)",
-                    new string[] {model.Name, model.Disease});
+                _patientRepo.Insert(new Patient(model.Name, Convert.ToInt16(model.AdressNum)));
             }
+            
             return View(model);
         }
     }

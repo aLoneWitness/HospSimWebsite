@@ -1,14 +1,13 @@
 using HospSimWebsite.Interfaces;
-using Microsoft.IdentityModel.Xml;
 
 namespace HospSimWebsite
 {
-    public class Patient : IHuman
+    public class Doctor : IHuman
     {
         private string name;
         private int age;
 
-        public Patient(string name, int age)
+        public Doctor(string name, int age)
         {
             this.name = name;
             this.age = age;
@@ -23,7 +22,5 @@ namespace HospSimWebsite
         {
             get => age;
         }
-
-        public Disease Disease { get; }
     }
 }

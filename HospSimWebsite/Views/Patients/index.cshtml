@@ -23,7 +23,7 @@
         @foreach (Patient patient in Model.Patients)
         {
             <tr>
-                <th scope="row">@patient.Id</th>
+                <th scope="row">@Model.Patients.IndexOf(patient)</th>
                 <td>@patient.Name</td>
                 <td>@patient.Age</td>
             </tr>

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using HospSimWebsite.Repositories.Interfaces;
 using LightningORM;
 using MySql.Data.MySqlClient;
@@ -23,6 +24,16 @@ namespace HospSimWebsite.Repositories
         private void SetConnectionString()
         {
             Database.Instance.SetConnection("studmysql01.fhict.local", "dbi407041", "wonderworld", "dbi407041");
-        } 
+        }
+
+        protected List<QueryResult> Query(string query, String[] strings)
+        {
+            return Database.Instance.Query(query, strings);
+        }
+
+        protected List<QueryResult> Query(string query)
+        {
+            return Database.Instance.Query(query, new String[] { });
+        }
     }
 }

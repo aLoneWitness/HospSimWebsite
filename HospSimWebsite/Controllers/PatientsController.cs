@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using HospSimWebsite.Models;
+using HospSimWebsite.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers
 {
     public class PatientsController : Controller
     {
+        private PatientRepo _patientRepo;
         // GET
         public IActionResult Index(PatientsModel model)
         {
+            _patientRepo = new PatientRepo();
             model.Patients = new List<Patient>();
-            for (int i = 0; i < 10; i++)
-            {
-                model.Patients.Add(new Patient(i, "harry", i * i));
-            }
+            model.Patients = _patientRepo.GetAll();
 
             return View(model);
         }
