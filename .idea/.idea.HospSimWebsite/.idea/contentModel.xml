@@ -13,13 +13,14 @@
         <e p="Controllers" t="Include">
           <e p="FormController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="PatientsController.cs" t="Include" />
         </e>
-        <e p="Database.cs" t="Include" />
         <e p="Disease.cs" t="Include" />
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="FormModel.cs" t="Include" />
+          <e p="PatientsModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -28,11 +29,21 @@
             </e>
           </e>
         </e>
+        <e p="Patient.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
-        <e p="QueryResult.cs" t="Include" />
+        <e p="Repositories" t="Include">
+          <e p="DiseaseRepo.cs" t="Include" />
+          <e p="DoctorRepo.cs" t="Include" />
+          <e p="Interfaces" t="Include">
+            <e p="IRepo.cs" t="Include" />
+            <e p="IUserRepo.cs" t="Include" />
+          </e>
+          <e p="PatientRepo.cs" t="Include" />
+          <e p="Repo.cs" t="Include" />
+        </e>
         <e p="Startup.cs" t="Include" />
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
@@ -43,6 +54,10 @@
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Patients" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="index.cshtml.cs" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />

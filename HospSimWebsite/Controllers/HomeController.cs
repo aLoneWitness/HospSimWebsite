@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HospSimWebsite.Models;
 using System.Text.Encodings.Web;
+using LightningORM;
 
 namespace HospSimWebsite.Controllers
 {
@@ -29,10 +30,14 @@ namespace HospSimWebsite.Controllers
             return View();
         }
         
+        
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
+
+        
     }
 }

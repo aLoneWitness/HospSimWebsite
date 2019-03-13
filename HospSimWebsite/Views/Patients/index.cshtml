@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Details";
+}
+
+@model HospSimWebsite.Models.PatientsModel
+
+
+<html lang="en">
+    <head>
+        <title>Patient lookup</title>
+    </head>
+    <body>
+    <div>
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (Patient patient in Model.Patients)
+        {
+            <tr>
+                <th scope="row">@patient.Id</th>
+                <td>@patient.Name</td>
+                <td>@patient.Age</td>
+            </tr>
+        }
+        </tbody>
+        </table>
+
+    </div>
+    </body>
+</html>
