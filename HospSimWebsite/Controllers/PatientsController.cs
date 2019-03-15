@@ -12,6 +12,7 @@ namespace HospSimWebsite.Controllers
         public IActionResult Index(PatientsModel model)
         {
             _patientRepo = new PatientRepo();
+            
             model.Patients = new List<Patient>();
             model.Patients = _patientRepo.GetAll();
 

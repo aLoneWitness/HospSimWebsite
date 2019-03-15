@@ -5,12 +5,11 @@ namespace HospSimWebsite
     public class Doctor : IHuman
     {
         private string name;
-        private int age;
-
+        private int score;
+        
         public Doctor(string name, int age)
         {
             this.name = name;
-            this.age = age;
         }
 
         public string Name
@@ -18,9 +17,10 @@ namespace HospSimWebsite
             get => name;
         }
 
-        public int Age
+        public int Score
         {
-            get => age;
+            get => score;
         }
+
     }
 }

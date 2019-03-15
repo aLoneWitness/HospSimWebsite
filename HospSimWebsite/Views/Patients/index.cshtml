@@ -17,6 +17,7 @@
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Age</th>
+            <th scope="col">Disease</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <th scope="row">@Model.Patients.IndexOf(patient)</th>
                 <td>@patient.Name</td>
                 <td>@patient.Age</td>
+                <td>@patient.Disease.ToString()</td>
             </tr>
         }
         </tbody>

@@ -6,21 +6,32 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HospSimWebsite.Models;
 using System.Text.Encodings.Web;
+using HospSimWebsite.Repositories;
 using LightningORM;
+using Microsoft.AspNetCore.Mvc.Abstractions;
+using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.Controllers
 {
     public class HomeController : Controller
     {
+        private DiseaseRepo _diseaseRepo;
         public IActionResult Index(FormModel model)
         {
-            Database.Instance.SetConnection("studmysql01.fhict.local" ,"dbi407041","wonderworld", "dbi407041");
-            var userQuery = Database.Instance.Query("SELECT * FROM disease", new string[]{});
-            model.Diseases = new List<Disease>();
-            for (int i = 0; userQuery.Count > i; i++)
+            try
             {
-                model.Diseases.Add(new Disease(userQuery[i]["name"].ToString()));
+                _diseaseRepo = new DiseaseRepo();
+            
+                model.Diseases = new List<Disease>();
+                model.Diseases = _diseaseRepo.GetAll();
             }
+            catch(Exception e)
+            {
+                var errorViewModel = new ErrorViewModel("A database error occured. Please visit later.");
+                return View("Error", errorViewModel);
+            }
+            
+            
 
             return View(model);
         }
@@ -35,7 +46,7 @@ namespace HospSimWebsite.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
+            return View(new ErrorViewModel("The response time of the server took too long, a processing error occured.") {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
 
         

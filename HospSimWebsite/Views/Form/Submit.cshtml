@@ -2,6 +2,10 @@
     ViewBag.Title = "Account";
     Layout = "_Layout";
 }
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/submit.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+
 
 <!DOCTYPE html>
 
@@ -9,12 +13,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Fairbanks | Form Submitted</title>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"/>
 </head>
 <body>
 <div>
-    <h2>Welcome, @Model.Name.</h2>
-    <h5 class="submitmaintext" >Welcome to my domain.</h5>
+    <h2>Welcome @Model.Name,</h2>
+    <h5 id="submitFadeIn" class="welcomeMsgFadeIn">Welcome to <span id="layoutTitle">Fairbanks</span> Hospital</h5>
 </div>
 </body>
 </html>

@@ -71,11 +71,6 @@ body {
 
 }
 
-.submitmaintext {
-  font-size: 200px;
-  font-family: sans-serif;
-}
-
 .formmain {
   height: 300px;
   align-content: center;
@@ -83,6 +78,10 @@ body {
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 5%;
+}
+
+.welcomeMsgFadeIn {
+  size: 50px;
 }
 
 #adressdiv {

@@ -22,15 +22,14 @@ namespace HospSimWebsite.Repositories
             }
         }
 
-        public void Insert(IHuman person)
+        public void Insert(string username, string password, Doctor doctor)
         {
-            throw new NotImplementedException();
+            Query("INSERT INTO user (name, password, doctorname, highscore) VALUES (?, ?, ?)",new string[] {username, password, doctor.Name, doctor.Score.ToString()});
         }
 
-        // not don
-        public void Insert(Doctor doctor)
+        public void UpdateHighscore(Doctor doctor)
         {
-            Query("INSERT INTO doctor (name, disease) VALUES (?, ?)",new string[] {doctor.Name, "gay"});
+            Query("UPDATE user SET highscore = ?", new[] {doctor.Score.ToString()});
         }
     }
 }

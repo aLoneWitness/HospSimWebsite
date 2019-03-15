@@ -12,7 +12,7 @@ namespace HospSimWebsite.Models
         public string Name { get; set; }
         public string AdressText { get; set; }
         public string AdressNum { get; set; }
-        public string Disease { get; set; }
+        public int Disease { get; set; }
         public List<Disease> Diseases { get; set; }
 
         public bool HasEmpty()
@@ -28,10 +28,6 @@ namespace HospSimWebsite.Models
                 hasEmpty = true;
             }
             else if(string.IsNullOrWhiteSpace(AdressNum))
-            {
-                hasEmpty = true;
-            }
-            else if (string.IsNullOrWhiteSpace(Disease))
             {
                 hasEmpty = true;
             }

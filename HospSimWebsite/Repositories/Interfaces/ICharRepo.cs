@@ -5,7 +5,5 @@ namespace HospSimWebsite.Repositories.Interfaces
     public interface IUserRepo
     {
         IHuman GetByName(string name);
-        
-        void Insert(IHuman person);
     }
 }

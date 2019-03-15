@@ -14,8 +14,9 @@ namespace HospSimWebsite.Repositories
             var queryResult = Query("SELECT name FROM patient WHERE name = ?",new string[]{ name });
             try
             {
-                return new Patient(queryResult[0]["name"].ToString(),
-                    Convert.ToInt16(queryResult[0]["age"]));
+                var disease = new DiseaseRepo().GetByID(Convert.ToInt16(queryResult[0]["disease"]));
+                var patient = new Patient(queryResult[0]["name"].ToString(), Convert.ToInt16(queryResult[0]["age"]), disease);
+                return patient;
             }
             catch (MySqlException e)
             {
@@ -31,17 +32,20 @@ namespace HospSimWebsite.Repositories
 
         public void Insert(Patient patient)
         {
-            Query("INSERT INTO patient (name, age) VALUES (?, ?)",new string[] {patient.Name, patient.Age.ToString()});
+            Query("INSERT INTO patient (name, age, disease) VALUES (?, ?, ?)",new string[] {patient.Name, patient.Age.ToString(), patient.Disease.Id.ToString()});
         }
 
         public List<Patient> GetAll()
         {
             var userQuery = Query("SELECT * FROM patient");
             List<Patient> patients = new List<Patient>();
-                
+            
             for (int i = 0; i < userQuery.Count; i++)
             {
-                patients.Add(new Patient(userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"])));
+                var disease = new DiseaseRepo().GetByID(Convert.ToInt16(userQuery[i]["disease"]));
+                var patient = new Patient(userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
+                    disease);
+                patients.Add(patient);
             }
 
             return patients;

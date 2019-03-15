@@ -86,6 +86,7 @@
             <e p="bootstrap.js" t="Include" />
             <e p="bootstrap.min.js" t="Include" />
             <e p="site.js" t="Include" />
+            <e p="submit.js" t="Include" />
           </e>
           <e p="lib" t="Include">
             <e p="bootstrap" t="Include">
