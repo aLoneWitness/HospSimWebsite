@@ -10,7 +10,7 @@ namespace HospSimWebsite.Repositories
             Query("INSERT INTO disease (name, duration, severity ) VALUES (?, ?, ?)",new[] {disease.Name, disease.Duration.ToString(), disease.Severity.ToString()});
         }
 
-        public Disease GetByID(int id)
+        public Disease GetById(int id)
         {
             var userQuery = Query("SELECT * FROM disease WHERE id = ?", new[] { id.ToString() });
             

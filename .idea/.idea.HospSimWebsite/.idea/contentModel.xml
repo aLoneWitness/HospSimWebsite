@@ -4,11 +4,10 @@
     <e p="C:\Users\sanva\.Rider2018.3\config\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2018.3\config\extensions" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.1241528200.00" t="ExcludeRecursive" />
-    <e p="C:\Users\sanva\Documents\HospSimWebsite" t="IncludeFlat">
+    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.-1662918964.00" t="ExcludeRecursive" />
+    <e p="D:\Documents\HospSimWebsite" t="IncludeFlat">
       <e p="HospSimWebsite" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
-        <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="FormController.cs" t="Include" />
@@ -16,7 +15,6 @@
           <e p="PatientsController.cs" t="Include" />
         </e>
         <e p="Disease.cs" t="Include" />
-        <e p="Doctor.cs" t="Include" />
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
         <e p="Interfaces" t="Include">
           <e p="IHuman.cs" t="Include" />
@@ -34,19 +32,20 @@
           </e>
         </e>
         <e p="Patient.cs" t="Include" />
+        <e p="Player.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Repositories" t="Include">
           <e p="DiseaseRepo.cs" t="Include" />
-          <e p="DoctorRepo.cs" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="ICharRepo.cs" t="Include" />
             <e p="IRepo.cs" t="Include" />
           </e>
           <e p="PatientRepo.cs" t="Include" />
           <e p="Repo.cs" t="Include" />
+          <e p="UserRepo.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="Views" t="Include">
@@ -77,6 +76,7 @@
             <e p="bootstrap-reboot.min.css" t="Include" />
             <e p="bootstrap.css" t="Include" />
             <e p="bootstrap.min.css" t="Include" />
+            <e p="download.jpg" t="Include" />
             <e p="site.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />

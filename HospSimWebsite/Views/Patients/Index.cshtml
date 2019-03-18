@@ -27,7 +27,7 @@
                 <th scope="row">@Model.Patients.IndexOf(patient)</th>
                 <td>@patient.Name</td>
                 <td>@patient.Age</td>
-                <td>@patient.Disease.ToString()</td>
+                <td><a asp-controller="Home" asp-action="Index">@patient.Disease.ToString()</a></td>
             </tr>
         }
         </tbody>

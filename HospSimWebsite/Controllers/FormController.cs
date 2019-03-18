@@ -18,7 +18,7 @@ namespace HospSimWebsite.Controllers
             _diseaseRepo = new DiseaseRepo();
             if (model.Name != String.Empty)
             {
-                var patient = new Patient(model.Name, Convert.ToInt16(model.AdressNum), _diseaseRepo.GetByID(model.Disease));
+                var patient = new Patient(model.Name, Convert.ToInt16(model.AdressNum), _diseaseRepo.GetById(model.Disease));
 
 
                 _patientRepo.Insert(patient);
