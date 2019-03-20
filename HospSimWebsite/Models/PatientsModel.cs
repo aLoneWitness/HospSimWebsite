@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using HospSimWebsite.Repositories;
 
 
 namespace HospSimWebsite.Models
 {
     public class PatientsModel
     {
-        public List<Patient> Patients { get; set; }
+        [Required] 
+        public List<Patient> Patients;
     }
 }

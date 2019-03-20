@@ -15,7 +15,7 @@ namespace HospSimWebsite.Repositories
             try
             {
                 var disease = new DiseaseRepo().GetById(Convert.ToInt16(queryResult[0]["disease"]));
-                var patient = new Patient(queryResult[0]["name"].ToString(), Convert.ToInt16(queryResult[0]["age"]), disease);
+                var patient = new Patient(Convert.ToInt16(queryResult[0]["id"]), queryResult[0]["name"].ToString(), Convert.ToInt16(queryResult[0]["age"]), disease);
                 return patient;
             }
             catch (MySqlException e)
@@ -37,23 +37,45 @@ namespace HospSimWebsite.Repositories
 
         public List<Patient> GetAll()
         {
-            var userQuery = Query("SELECT * FROM patient");
-            List<Patient> patients = new List<Patient>();
-            
-            for (int i = 0; i < userQuery.Count; i++)
+            try
             {
-                var disease = new DiseaseRepo().GetById(Convert.ToInt16(userQuery[i]["disease"]));
-                var patient = new Patient(userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
-                    disease);
-                patients.Add(patient);
-            }
+                var userQuery = Query("SELECT * FROM patient");
+                List<Patient> patients = new List<Patient>();
+            
+                for (int i = 0; i < userQuery.Count; i++)
+                {
+                    var disease = new DiseaseRepo().GetById(Convert.ToInt16(userQuery[i]["disease"]));
+                    var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
+                        disease);
+                    patients.Add(patient);
+                }
 
-            return patients;
+                return patients;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
         
         public IHuman GetById(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public void Remove(int index)
+        {
+            try
+            {
+                Query("DELETE FROM patient WHERE id=?", new string[ ] { index.ToString() } );
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }

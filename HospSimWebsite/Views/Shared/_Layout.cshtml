@@ -15,12 +15,13 @@
               crossorigin="anonymous"
               integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE="/>
     </environment>
-    <link rel="stylesheet" href="~/css/site.css" />
 
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <nav class="navbar navbar-expand-sm navbar-light navbar-theme">
         <div class="container">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span id="layoutTitle">Fairbanks</span> Hospital</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -42,6 +43,10 @@
             </div>
         </div>
     </nav>
+    <div>
+        <div class="undernavbarline"></div>
+        <div class="undernavbar"></div>
+    </div>
 </header>
     <div class="container">
         <main role="main" class="pb-3">

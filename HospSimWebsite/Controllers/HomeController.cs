@@ -27,7 +27,7 @@ namespace HospSimWebsite.Controllers
             }
             catch(Exception e)
             {
-                var errorViewModel = new ErrorViewModel("A database error occured. Please visit later.");
+                var errorViewModel = new ErrorViewModel($"A database error occured. Please visit later, {e.ToString()}");
                 return View("Error", errorViewModel);
             }
             

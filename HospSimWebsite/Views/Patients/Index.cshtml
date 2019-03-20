@@ -1,13 +1,13 @@
 @{
     ViewData["Title"] = "Details";
 }
-
 @model HospSimWebsite.Models.PatientsModel
 
 
 <html lang="en">
     <head>
         <title>Patient lookup</title>
+        <script src="js/site.js"></script>
     </head>
     <body>
     <div>
@@ -18,19 +18,21 @@
             <th scope="col">Name</th>
             <th scope="col">Age</th>
             <th scope="col">Disease</th>
+            <th scope="col"></th>
         </tr>
         </thead>
-        <tbody>
+        <body>
         @foreach (Patient patient in Model.Patients)
         {
             <tr>
-                <th scope="row">@Model.Patients.IndexOf(patient)</th>
+                <th scope="row">@patient.Id</th>
                 <td>@patient.Name</td>
                 <td>@patient.Age</td>
                 <td><a asp-controller="Home" asp-action="Index">@patient.Disease.ToString()</a></td>
+                <td><a href="/patients/removepatient?index=@patient.Id"><button type="submit" value="@patient.Id" onclick="notifyDeletion(@patient.Name)">Delete</button></a></td>
             </tr>
         }
-        </tbody>
+        </body>
         </table>
 
     </div>

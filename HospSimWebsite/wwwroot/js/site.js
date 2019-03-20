@@ -9,3 +9,8 @@ function checkFormInput(){
     }
 }
 
+function notifyDeletion(name){
+    alert(`${name} has been removed from all patient records.`);
+    //swal("Deleted", name + "has been deleted from all patient records.", "success");
+}
+
