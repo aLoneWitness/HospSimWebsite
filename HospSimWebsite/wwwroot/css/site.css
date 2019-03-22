@@ -88,6 +88,25 @@ body {
   background-color: lightgrey;
 }
 
+.patientSearchBar {
+  width: 100%;
+  height: 50px;
+}
+
+.patientSearchBar input {
+  width: 70%;
+  display: inline-block;
+  float: left;
+  height: 40px;
+}
+
+.patientSearchBar button {
+  width: 25%;
+  display: inline-block;
+  float: right;
+  height: 40px;
+}
+
 .undernavbarline {
   background-color: purple;
   width: 100%;

@@ -11,9 +11,15 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="DiseaseController.cs" t="Include" />
           <e p="FormController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="LoginController.cs" t="Include" />
           <e p="PatientsController.cs" t="Include" />
+        </e>
+        <e p="Databases" t="Include">
+          <e p="Database.cs" t="Include" />
+          <e p="QueryResult.cs" t="Include" />
         </e>
         <e p="Disease.cs" t="Include" />
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
@@ -21,8 +27,10 @@
           <e p="IHuman.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
+          <e p="DiseaseViewModel.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="FormModel.cs" t="Include" />
+          <e p="LoginModel.cs" t="Include" />
           <e p="PatientsModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -52,12 +60,18 @@
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Disease" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
           <e p="Form" t="Include">
             <e p="Submit.cshtml" t="Include" />
           </e>
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Login" t="Include">
+            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Patients" t="Include">
             <e p="Index.cshtml" t="Include" />

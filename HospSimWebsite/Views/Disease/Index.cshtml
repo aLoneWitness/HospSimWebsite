@@ -1,0 +1,13 @@
+@model HospSimWebsite.Models.DiseaseViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>@Model.Name</h2>
+
+@foreach (var desc in Model.Descriptions)
+{
+    <h3>@desc</h3>
+}
