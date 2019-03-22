@@ -13,8 +13,13 @@ namespace HospSimWebsite.Repositories
         public Disease GetById(int id)
         {
             var userQuery = Query("SELECT * FROM disease WHERE id = ?", new[] { id.ToString() });
+            List<String> descriptions = new List<string>();
+            foreach (var description in Query("SELECT * FROM diseasedescription WHERE disease = ?", new []{ Convert.ToInt16(userQuery[0]["id"]).ToString() }))
+            {
+                descriptions.Add(description["description"].ToString());
+            }
             
-            return new Disease(Convert.ToInt16(userQuery[0]["id"]), userQuery[0]["name"].ToString(), Convert.ToInt16(userQuery[0]["duration"]), Convert.ToInt16(userQuery[0]["severity"]));
+            return new Disease(Convert.ToInt16(userQuery[0]["id"]), userQuery[0]["name"].ToString(), Convert.ToInt16(userQuery[0]["duration"]), Convert.ToInt16(userQuery[0]["severity"]), descriptions);
         }
         
         public List<Disease> GetAll()
@@ -24,7 +29,12 @@ namespace HospSimWebsite.Repositories
                 
             for (int i = 0; i < userQuery.Count; i++)
             {
-                diseases.Add(new Disease(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["duration"]), Convert.ToInt16(userQuery[i]["severity"])));
+                List<String> descriptions = new List<string>();
+                foreach (var description in Query("SELECT * FROM diseasedescription WHERE disease = ?", new []{ Convert.ToInt16(userQuery[0]["id"]).ToString() }))
+                {
+                    descriptions.Add(description["description"].ToString());
+                }
+                diseases.Add(new Disease(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["duration"]), Convert.ToInt16(userQuery[i]["severity"]), descriptions));
             }
 
             return diseases;

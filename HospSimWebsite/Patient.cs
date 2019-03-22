@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using HospSimWebsite.Interfaces;
 using Microsoft.IdentityModel.Xml;
 
@@ -9,6 +11,7 @@ namespace HospSimWebsite
         private string name;
         private int age;
         private Disease disease;
+        private List<String> descriptions;
 
         public Patient(int id, string name, int age, Disease disease)
         {
@@ -16,6 +19,7 @@ namespace HospSimWebsite
             this.name = name;
             this.age = age;
             this.disease = disease;
+            this.descriptions = descriptions;
         }
         
         public Patient(string name, int age, Disease disease)
@@ -23,6 +27,7 @@ namespace HospSimWebsite
             this.name = name;
             this.age = age;
             this.disease = disease;
+            this.descriptions = descriptions;
         }
 
         public string Name
