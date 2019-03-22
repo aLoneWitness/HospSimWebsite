@@ -11,12 +11,21 @@ namespace HospSimWebsite.Controllers
 
         private PatientsModel _patientsModel;
         // GET
-        public IActionResult Index()
+        public IActionResult Index(string searchParams = null)
         {
             _patientRepo = new PatientRepo();
             _patientsModel = new PatientsModel();
-            _patientsModel.Patients = _patientRepo.GetAll();
-               
+            
+            if (searchParams == null)
+            {
+                _patientsModel.Patients = _patientRepo.GetAll();
+            }
+            else
+            {
+                _patientsModel.Patients = _patientRepo.GetByName(searchParams, false);
+            }
+            
+            
             return View(_patientsModel);
         }
         

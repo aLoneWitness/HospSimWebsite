@@ -14,18 +14,6 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {}
         }
       },
-      "LightningORM/1.0.1.1": {
-        "type": "package",
-        "dependencies": {
-          "MySql.Data": "8.0.15"
-        },
-        "compile": {
-          "lib/netcoreapp2.1/LightningORM.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/LightningORM.dll": {}
-        }
-      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4521,18 +4509,6 @@
         "lib/net45/Google.Protobuf.xml",
         "lib/netstandard1.0/Google.Protobuf.dll",
         "lib/netstandard1.0/Google.Protobuf.xml"
-      ]
-    },
-    "LightningORM/1.0.1.1": {
-      "sha512": "OHajIbqKP7Lu9nKLwZNpaWUhZ0h9DhPsHGSy1l6zVDBGSwNDyDHtPJqZqo54S/hH32aRDJSnZFMZBOPBfY5WtQ==",
-      "type": "package",
-      "path": "lightningorm/1.0.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netcoreapp2.1/LightningORM.dll",
-        "lightningorm.1.0.1.1.nupkg.sha512",
-        "lightningorm.nuspec"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -12240,7 +12216,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "LightningORM >= 1.0.1.1",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -12288,10 +12263,6 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
-          "LightningORM": {
-            "target": "Package",
-            "version": "[1.0.1.1, )"
-          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",

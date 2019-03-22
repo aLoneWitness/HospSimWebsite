@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using HospSimWebsite.Databases.HospSimWebsite;
 using HospSimWebsite.Interfaces;
 using HospSimWebsite.Repositories.Interfaces;
 using MySql.Data.MySqlClient;
@@ -9,14 +9,32 @@ namespace HospSimWebsite.Repositories
 {
     public class PatientRepo : Repo, IUserRepo
     {
-        public IHuman GetByName(string name)
+        public List<Patient> GetByName(string name, bool shouldBeExact = true)
         {
-            var queryResult = Query("SELECT name FROM patient WHERE name = ?",new string[]{ name });
             try
             {
-                var disease = new DiseaseRepo().GetById(Convert.ToInt16(queryResult[0]["disease"]));
-                var patient = new Patient(Convert.ToInt16(queryResult[0]["id"]), queryResult[0]["name"].ToString(), Convert.ToInt16(queryResult[0]["age"]), disease);
-                return patient;
+                List<Patient> patients = new List<Patient>();
+
+                List<QueryResult> userQuery = new List<QueryResult>();
+                
+                if (shouldBeExact)
+                {
+                    userQuery = Query("SELECT * FROM patient WHERE name = ?", new[] {name});
+                }
+                else
+                {
+                    userQuery = Query("SELECT * FROM patient WHERE name LIKE ?", new[] {$"%{name}%"});
+                }
+
+                for (int i = 0; i < userQuery.Count; i++)
+                {
+                    var disease = new DiseaseRepo().GetById(Convert.ToInt16(userQuery[i]["disease"]));
+                    var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
+                        disease);
+                    patients.Add(patient);
+                }
+
+                return patients;
             }
             catch (MySqlException e)
             {

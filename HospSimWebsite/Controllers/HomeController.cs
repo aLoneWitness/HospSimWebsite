@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HospSimWebsite.Models;
-using System.Text.Encodings.Web;
 using HospSimWebsite.Repositories;
-using LightningORM;
-using Microsoft.AspNetCore.Mvc.Abstractions;
-using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.Controllers
 {

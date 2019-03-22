@@ -90,3 +90,4 @@ D:\Documents\HospSimulatorWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\V
 C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Patients\index.g.cshtml.cs
 D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Form\Submit.g.cshtml.cs
 D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Patients\index.g.cshtml.cs
+C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs

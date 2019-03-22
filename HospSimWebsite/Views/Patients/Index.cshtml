@@ -7,7 +7,6 @@
 <html lang="en">
     <head>
         <title>Patient lookup</title>
-        <script src="js/site.js"></script>
     </head>
     <body>
     <div>
@@ -22,14 +21,19 @@
         </tr>
         </thead>
         <body>
+        <div class="patientSearchBar">
+            <input class="form-control" id="patientSearchInput" type="text" placeholder="Search.."/>
+            <button class="btn btn-dark" onclick="searchPatient()" type="button">Search</button>
+        </div>
+        
         @foreach (Patient patient in Model.Patients)
         {
             <tr>
                 <th scope="row">@patient.Id</th>
-                <td>@patient.Name</td>
+                <td class="patientName" >@patient.Name</td>
                 <td>@patient.Age</td>
                 <td><a asp-controller="Home" asp-action="Index">@patient.Disease.ToString()</a></td>
-                <td><a href="/patients/removepatient?index=@patient.Id"><button type="submit" value="@patient.Id" onclick="notifyDeletion(@patient.Name)">Delete</button></a></td>
+                <td><a onclick="deletePatient('@patient.Name', '@patient.Id');"><button class="btn btn-sm">Delete</button></a></td>
             </tr>
         }
         </body>

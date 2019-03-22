@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using HospSimWebsite.Databases;
+using HospSimWebsite.Databases.HospSimWebsite;
 using HospSimWebsite.Interfaces;
 using HospSimWebsite.Repositories.Interfaces;
-using LightningORM;
 using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.Repositories
