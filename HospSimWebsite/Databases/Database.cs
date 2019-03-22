@@ -12,9 +12,9 @@ namespace HospSimWebsite.Databases
 
         public static Database Instance => database.Value;
 
-        public void SetConnection(string host, string username, string password, string database)
+        public void SetConnection(string conString)
         {
-            DatabaseConnection = new MySqlConnection("server=" + host + ";user id=" + username + ";password=" + password + ";database=" + database);
+            DatabaseConnection = new MySqlConnection(conString);
         }
 
         private void OpenConnection()
