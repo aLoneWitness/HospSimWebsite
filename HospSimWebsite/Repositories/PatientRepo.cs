@@ -86,7 +86,7 @@ namespace HospSimWebsite.Repositories
 
                 List<QueryResult> userQuery;
                 
-                userQuery = Query("SELECT * FROM patient WHERE disease = ?", new[] {id.ToString()});
+                userQuery = Query("SELECT * FROM patient WHERE patient.disease = ?", new[] {id.ToString()});
 
                 for (int i = 0; i < userQuery.Count; i++)
                 {

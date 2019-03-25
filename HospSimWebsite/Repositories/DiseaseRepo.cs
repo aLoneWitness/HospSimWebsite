@@ -39,5 +39,6 @@ namespace HospSimWebsite.Repositories
 
             return diseases;
         }
+
     }
 }
