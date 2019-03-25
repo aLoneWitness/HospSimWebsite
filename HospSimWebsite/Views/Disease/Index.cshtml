@@ -4,10 +4,33 @@
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
-
+<head>
+    <link rel="stylesheet" href="css/site.css"/>
+</head>
 <h2>@Model.Name</h2>
 
 @foreach (var desc in Model.Descriptions)
 {
     <h3>@desc</h3>
 }
+
+<div class="diseasePatientList">
+    <table class="table diseasetable">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Patients</th>
+        </tr>
+        </thead>
+        <body>
+        
+        @foreach (Patient patient in Model.Patients)
+        {
+            <tr>
+                <th scope="row">@patient.Id</th>
+                <td class="patientName" >@patient.Name</td>
+            </tr>
+        }
+        </body>
+    </table>
+</div>

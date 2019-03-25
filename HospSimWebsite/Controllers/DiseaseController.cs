@@ -11,6 +11,8 @@ namespace HospSimWebsite.Controllers
         private DiseaseViewModel _model;
 
         private DiseaseRepo _diseaseRepo;
+        private PatientRepo _patientRepo;
+        
         // GET
         public IActionResult Index(int id)
         {
@@ -18,10 +20,14 @@ namespace HospSimWebsite.Controllers
             {
                 _model = new DiseaseViewModel();
                 _diseaseRepo = new DiseaseRepo();
+                _patientRepo = new PatientRepo();
+                
                 var disease = _diseaseRepo.GetById(id);
 
                 _model.Name = disease.Name;
                 _model.Descriptions = disease.Descriptions;
+    
+                _model.Patients = _patientRepo.GetByDisease(id);
             }
             
             catch(Exception e)

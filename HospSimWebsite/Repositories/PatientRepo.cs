@@ -77,6 +77,33 @@ namespace HospSimWebsite.Repositories
             }
             
         }
+
+        public List<Patient> GetByDisease(int id)
+        {
+            try
+            {
+                List<Patient> patients = new List<Patient>();
+
+                List<QueryResult> userQuery;
+                
+                userQuery = Query("SELECT * FROM patient WHERE disease = ?", new[] {id.ToString()});
+
+                for (int i = 0; i < userQuery.Count; i++)
+                {
+                    var disease = new DiseaseRepo().GetById(Convert.ToInt16(userQuery[i]["disease"]));
+                    var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
+                        disease);
+                    patients.Add(patient);
+                }
+
+                return patients;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
         
         public IHuman GetById(int id)
         {

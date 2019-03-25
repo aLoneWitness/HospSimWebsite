@@ -32,7 +32,7 @@
                 <th scope="row">@patient.Id</th>
                 <td class="patientName" >@patient.Name</td>
                 <td>@patient.Age</td>
-                <td><a asp-controller="Disease" asp-action="Index">@patient.Disease.ToString()</a></td>
+                <td><a href="/disease/index?id=@patient.Disease.Id">@patient.Disease.ToString()</a></td>
                 <td><a onclick="deletePatient('@patient.Name', '@patient.Id');"><button class="btn btn-sm">Delete</button></a></td>
             </tr>
         }

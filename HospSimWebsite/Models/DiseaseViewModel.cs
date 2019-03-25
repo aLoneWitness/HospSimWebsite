@@ -11,5 +11,7 @@ namespace HospSimWebsite.Models
         
         [Required]
         public List<String> Descriptions;
+
+        public List<Patient> Patients;
     }
 }

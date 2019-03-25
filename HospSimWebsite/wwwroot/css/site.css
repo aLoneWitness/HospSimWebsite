@@ -132,4 +132,14 @@ body {
   height: 70px;
 }
 
+.diseasetable {
+  width: 20%;
+  float: right;
+  display: inline-block;
+}
+
+.diseasePatientList {
+  
+}
+
 
