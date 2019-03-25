@@ -12229,11 +12229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sanva\\Documents\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
+      "projectUniqueName": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
       "projectName": "HospSimWebsite",
-      "projectPath": "C:\\Users\\sanva\\Documents\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
+      "projectPath": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
       "packagesPath": "C:\\Users\\sanva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sanva\\Documents\\HospSimWebsite\\HospSimWebsite\\obj\\",
+      "outputPath": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -92,3 +92,36 @@ D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\F
 D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Patients\index.g.cshtml.cs
 C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
 C:\Users\sanva\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Disease\Index.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.deps.json
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.runtimeconfig.json
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.runtimeconfig.dev.json
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.dll
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.pdb
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Views.dll
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Views.pdb
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.csprojAssemblyReference.cache
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.csproj.CoreCompileInputs.cache
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.RazorAssemblyInfo.cache
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.RazorAssemblyInfo.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.AssemblyInfoInputs.cache
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.AssemblyInfo.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.TagHelpers.input.cache
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.TagHelpers.output.cache
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.RazorCoreGenerate.cache
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Disease\Index.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Form\Submit.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Patients\Index.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.RazorTargetAssemblyInfo.cache
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.RazorTargetAssemblyInfo.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.Views.pdb
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.dll
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.pdb
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\HospSimWebsite.csproj.CopyComplete
