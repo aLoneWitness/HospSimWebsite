@@ -18,6 +18,7 @@ namespace HospSimWebsite.Controllers
         {
             try
             {
+                
                 _model = new DiseaseViewModel();
                 _diseaseRepo = new DiseaseRepo();
                 _patientRepo = new PatientRepo();
@@ -25,7 +26,7 @@ namespace HospSimWebsite.Controllers
                 var disease = _diseaseRepo.GetById(id);
 
                 _model.Name = disease.Name;
-                _model.Descriptions = disease.Descriptions;
+                _model.Description = disease.Description;
     
                 _model.Patients = _patientRepo.GetByDisease(id);
             }

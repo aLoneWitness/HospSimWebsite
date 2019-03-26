@@ -133,13 +133,23 @@ body {
 }
 
 .diseasetable {
-  width: 20%;
   float: right;
   display: inline-block;
 }
 
-.diseasePatientList {
-  
+.diseaseCard {
+  height: 35em;
+  width: 55em;
 }
+
+#diseaseCardText {
+  padding: 2%;
+}
+
+.patientCard {
+  height: 35em;
+}
+
+
 
 
