@@ -57,7 +57,7 @@ namespace HospSimWebsite.Repositories
         {
             try
             {
-                var userQuery = Query("SELECT * FROM patient");
+                var userQuery = Query("SELECT * FROM patient GROUP BY name LIMIT ?, ?", 0, 10);
                 List<Patient> patients = new List<Patient>();
             
                 for (int i = 0; i < userQuery.Count; i++)

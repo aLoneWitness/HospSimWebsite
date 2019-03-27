@@ -12,14 +12,14 @@ namespace HospSimWebsite.Repositories
 {
     public abstract class Repo : IRepo
     {
-        protected List<QueryResult> Query(string query, String[] strings)
+        protected List<QueryResult> Query(string query, params Object[] parameters)
         {
-            return Database.Instance.Query(query, strings);
+            return Database.Instance.Query(query, parameters);
         }
 
         protected List<QueryResult> Query(string query)
         {
-            return Database.Instance.Query(query, new String[] { });
+            return Database.Instance.Query(query);
         }
     }
 }

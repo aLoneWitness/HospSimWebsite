@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Fairbanks | Patient Registration</title>
 </head>
@@ -25,15 +25,10 @@
             <label>Name</label>
             <input id="inputName" asp-for="Name" type="text" class="form-control" maxlength="28" placeholder="Jack Something">
         </div>
-        <label>Address</label>
-
-        <div class="form-group" id="adressform">
-            <div id="adressdiv">
-                <input asp-for="AdressText" type="text" class="form-control">
-            </div>
-            <div id="housenumdiv">
-                <input asp-for="AdressNum" type="number" class="form-control">
-            </div>
+        
+        <label>Date of Birth</label>
+        <div class="form-group">
+            <input asp-for="Birthday" type='date' class="form-control" />
         </div>
         
         <div class="form-group">

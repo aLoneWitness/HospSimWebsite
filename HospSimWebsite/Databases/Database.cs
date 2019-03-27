@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using HospSimWebsite.Databases.HospSimWebsite;
+using Microsoft.EntityFrameworkCore.Internal;
 using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.Databases
@@ -43,15 +44,34 @@ namespace HospSimWebsite.Databases
             }
         }
 
-        public List<QueryResult> Query(string query, string[] parameters)
+        public List<QueryResult> Query(string query, params object[] parameters)
         {
             List<QueryResult> queryResultList = new List<QueryResult>();
             OpenConnection();
             MySqlCommand mySqlCommand = new MySqlCommand(query, DatabaseConnection);
             if (parameters != null)
             {
-                for (int index = 1; index < parameters.Length + 1; ++index)
-                    mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1]);
+                foreach (var param in parameters)
+                {
+                    mySqlCommand.Parameters.AddWithValue("param" + parameters.IndexOf(param), param);
+
+                   /* var type = param.GetType().FullName;
+                    switch (type)
+                    {
+                        case "System.String":
+                            mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1], );
+                            
+
+                            break;
+                        case "System.Integer":
+                            mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1]);
+
+                            break;
+                        default:
+                            break;
+                    }*/
+                }
+                
             }
             MySqlDataReader DataReader = mySqlCommand.ExecuteReader();
             while (DataReader.Read())
