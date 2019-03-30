@@ -12,20 +12,20 @@ namespace HospSimWebsite
 
         public int Severity => severity;
 
-        public List<string> Descriptions => _descriptions;
-
+        public string Description => description;
+        
         private int id;
         private string name;
         private int duration;
         private int severity;
-        private List<String> _descriptions;
-        public Disease(int id, string name, int duration, int severity, List<String> descriptions)
+        private string description;
+        public Disease(int id, string name, int duration, int severity, string description)
         {
             this.id = id;
             this.name = name;
             this.duration = duration;
             this.severity = severity;
-            this._descriptions = descriptions;
+            this.description = description;
         }
 
         public override string ToString()

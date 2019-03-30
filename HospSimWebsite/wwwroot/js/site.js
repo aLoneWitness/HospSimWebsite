@@ -32,3 +32,8 @@ function searchPatient(){
 }
 
 
+function GotoDisease(id){
+    window.location.href = ``;
+}
+
+

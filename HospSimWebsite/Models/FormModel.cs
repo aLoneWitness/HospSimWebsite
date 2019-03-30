@@ -10,8 +10,8 @@ namespace HospSimWebsite.Models
     public class FormModel
     {
         public string Name { get; set; }
-        public string AdressText { get; set; }
-        public string AdressNum { get; set; }
+
+        public DateTime Birthday { get; set; }
         public int Disease { get; set; }
         public List<Disease> Diseases { get; set; }
 
@@ -23,11 +23,7 @@ namespace HospSimWebsite.Models
             {
                 hasEmpty = true;
             }
-            else if(string.IsNullOrWhiteSpace(AdressText))
-            {
-                hasEmpty = true;
-            }
-            else if(string.IsNullOrWhiteSpace(AdressNum))
+            else if(Birthday == null)
             {
                 hasEmpty = true;
             }

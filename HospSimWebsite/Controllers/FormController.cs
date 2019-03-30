@@ -16,11 +16,12 @@ namespace HospSimWebsite.Controllers
         {
             _patientRepo = new PatientRepo();
             _diseaseRepo = new DiseaseRepo();
-            if (model.Name != String.Empty)
-            {
-                var patient = new Patient(model.Name, Convert.ToInt16(model.AdressNum), _diseaseRepo.GetById(model.Disease));
-                _patientRepo.Insert(patient);
-            }
+            var age = DateTime.Now.Year - model.Birthday.Year;
+            if (DateTime.Now.DayOfYear < model.Birthday.DayOfYear)  
+                age = age - 1;  
+            
+            var patient = new Patient(model.Name, age , _diseaseRepo.GetById(model.Disease));
+            _patientRepo.Insert(patient);
             
             return View(model);
         }

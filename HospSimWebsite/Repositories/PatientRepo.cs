@@ -57,7 +57,7 @@ namespace HospSimWebsite.Repositories
         {
             try
             {
-                var userQuery = Query("SELECT * FROM patient");
+                var userQuery = Query("SELECT * FROM patient GROUP BY name LIMIT ?, ?", 0, 10);
                 List<Patient> patients = new List<Patient>();
             
                 for (int i = 0; i < userQuery.Count; i++)
@@ -76,6 +76,31 @@ namespace HospSimWebsite.Repositories
                 throw;
             }
             
+        }
+
+        public List<Patient> GetByDisease(int id)
+        {
+            try
+            {
+                List<Patient> patients = new List<Patient>();
+
+                var userQuery = Query("SELECT * FROM patient WHERE patient.disease = ?", new[] {id.ToString()});
+
+                for (int i = 0; i < userQuery.Count; i++)
+                {
+                    var disease = new DiseaseRepo().GetById(Convert.ToInt16(userQuery[i]["disease"]));
+                    var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
+                        disease);
+                    patients.Add(patient);
+                }
+
+                return patients;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
         
         public IHuman GetById(int id)
