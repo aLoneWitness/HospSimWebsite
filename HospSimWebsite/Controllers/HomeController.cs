@@ -4,6 +4,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using HospSimWebsite.Models;
 using HospSimWebsite.Repositories;
+using HospSimWebsite.Repositories.Contexts;
 
 namespace HospSimWebsite.Controllers
 {
@@ -14,7 +15,7 @@ namespace HospSimWebsite.Controllers
         {
             try
             {
-                _diseaseRepo = new DiseaseRepo();
+                _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
             
                 model.Diseases = new List<Disease>();
                 model.Diseases = _diseaseRepo.GetAll();

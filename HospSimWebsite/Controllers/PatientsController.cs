@@ -3,6 +3,7 @@ using System.Text.Encodings.Web;
 using HospSimWebsite.Databases;
 using HospSimWebsite.Models;
 using HospSimWebsite.Repositories;
+using HospSimWebsite.Repositories.Contexts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers
@@ -15,7 +16,7 @@ namespace HospSimWebsite.Controllers
         // GET
         public IActionResult Index(string searchParams = null)
         {
-            _patientRepo = new PatientRepo();
+            _patientRepo = new PatientRepo(new MySqlPatientContext());
             _patientsModel = new PatientsModel();
             
             if (searchParams == null)
@@ -33,7 +34,7 @@ namespace HospSimWebsite.Controllers
         
         public IActionResult RemovePatient()
         {
-            _patientRepo = new PatientRepo();
+            _patientRepo = new PatientRepo(new MySqlPatientContext());
             
             //_patientRepo.Remove(index);
             
@@ -42,7 +43,7 @@ namespace HospSimWebsite.Controllers
         [HttpGet]
         public IActionResult RemovePatient(int index)
         {
-            _patientRepo = new PatientRepo();
+            _patientRepo = new PatientRepo(new MySqlPatientContext());
             
             _patientRepo.Remove(index);
 

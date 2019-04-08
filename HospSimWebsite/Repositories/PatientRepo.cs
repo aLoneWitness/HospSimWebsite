@@ -1,46 +1,21 @@
 using System;
 using System.Collections.Generic;
-using HospSimWebsite.Databases.HospSimWebsite;
 using HospSimWebsite.Interfaces;
-using HospSimWebsite.Repositories.Interfaces;
-using MySql.Data.MySqlClient;
+using HospSimWebsite.Repositories.Contexts;
 
 namespace HospSimWebsite.Repositories
 {
-    public class PatientRepo : Repo, IUserRepo
+    public class PatientRepo
     {
+        private IPatientContext _context;
+
+        public PatientRepo(IPatientContext patientContext)
+        {
+            _context = patientContext;
+        }
         public List<Patient> GetByName(string name, bool shouldBeExact = true)
         {
-            try
-            {
-                List<Patient> patients = new List<Patient>();
-
-                List<QueryResult> userQuery = new List<QueryResult>();
-                
-                if (shouldBeExact)
-                {
-                    userQuery = Query("SELECT * FROM patient WHERE name = ?", new[] {name});
-                }
-                else
-                {
-                    userQuery = Query("SELECT * FROM patient WHERE name LIKE ?", new[] {$"%{name}%"});
-                }
-
-                for (int i = 0; i < userQuery.Count; i++)
-                {
-                    var disease = new DiseaseRepo().GetById(Convert.ToInt16(userQuery[i]["disease"]));
-                    var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
-                        disease);
-                    patients.Add(patient);
-                }
-
-                return patients;
-            }
-            catch (MySqlException e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            return _context.GetByName(name, shouldBeExact);
         }
 
         public void Insert(IHuman person)
@@ -50,59 +25,19 @@ namespace HospSimWebsite.Repositories
 
         public void Insert(Patient patient)
         {
-            Query("INSERT INTO patient (name, age, disease) VALUES (?, ?, ?)",new string[] {patient.Name, patient.Age.ToString(), patient.Disease.Id.ToString()});
+            _context.Insert(patient);
         }
 
         public List<Patient> GetAll()
         {
-            try
-            {
-                var userQuery = Query("SELECT * FROM patient GROUP BY name LIMIT ?, ?", 0, 10);
-                List<Patient> patients = new List<Patient>();
-            
-                for (int i = 0; i < userQuery.Count; i++)
-                {
-                    var disease = new DiseaseRepo().GetById(Convert.ToInt16(userQuery[i]["disease"]));
-                    var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
-                        disease);
-                    patients.Add(patient);
-                }
-
-                return patients;
-            }
-            catch (MySqlException e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-            
+            return _context.GetAll();
         }
 
         public List<Patient> GetByDisease(int id)
         {
-            try
-            {
-                List<Patient> patients = new List<Patient>();
-
-                var userQuery = Query("SELECT * FROM patient WHERE patient.disease = ?", new[] {id.ToString()});
-
-                for (int i = 0; i < userQuery.Count; i++)
-                {
-                    var disease = new DiseaseRepo().GetById(Convert.ToInt16(userQuery[i]["disease"]));
-                    var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["age"]),
-                        disease);
-                    patients.Add(patient);
-                }
-
-                return patients;
-            }
-            catch (MySqlException e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            return _context.GetByDisease(id);
         }
-        
+
         public IHuman GetById(int id)
         {
             throw new NotImplementedException();
@@ -110,15 +45,7 @@ namespace HospSimWebsite.Repositories
 
         public void Remove(int index)
         {
-            try
-            {
-                Query("DELETE FROM patient WHERE id=?", new string[ ] { index.ToString() } );
-            }
-            catch (MySqlException e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            _context.Remove(index);
         }
     }
 }

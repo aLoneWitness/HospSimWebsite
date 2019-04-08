@@ -1,34 +1,30 @@
 using System;
 using System.Collections.Generic;
+using HospSimWebsite.Repositories.Contexts;
 
 namespace HospSimWebsite.Repositories
 {
-    public class DiseaseRepo : Repo
+    public class DiseaseRepo
     {
+        private IDiseaseContext _context;
+
+        public DiseaseRepo(IDiseaseContext diseaseContext)
+        {
+            _context = diseaseContext;
+        }
         public void Insert(Disease disease)
         {
-            Query("INSERT INTO disease (name, duration, severity, description ) VALUES (?, ?, ?, ?)",new[] {disease.Name, disease.Duration.ToString(), disease.Severity.ToString(), disease.Description});
+            _context.Insert(disease);
         }
 
         public Disease GetById(int id)
         {
-            var userQuery = Query("SELECT * FROM disease WHERE id = ?", new[] { id.ToString() });
-            
-            return new Disease(Convert.ToInt16(userQuery[0]["id"]), userQuery[0]["name"].ToString(), Convert.ToInt16(userQuery[0]["duration"]), Convert.ToInt16(userQuery[0]["severity"]), userQuery[0]["description"].ToString());
+           return  _context.GetById(id);
         }
-        
+
         public List<Disease> GetAll()
         {
-            var userQuery = Query("SELECT * FROM disease");
-            List<Disease> diseases = new List<Disease>();
-                
-            for (int i = 0; i < userQuery.Count; i++)
-            {
-                diseases.Add(new Disease(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(), Convert.ToInt16(userQuery[i]["duration"]), Convert.ToInt16(userQuery[i]["severity"]), userQuery[i]["description"].ToString()));
-            }
-
-            return diseases;
+            return _context.GetAll();
         }
-
     }
 }

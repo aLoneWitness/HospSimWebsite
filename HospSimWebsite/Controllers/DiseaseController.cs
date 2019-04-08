@@ -1,6 +1,7 @@
 using System;
 using HospSimWebsite.Models;
 using HospSimWebsite.Repositories;
+using HospSimWebsite.Repositories.Contexts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers
@@ -18,8 +19,8 @@ namespace HospSimWebsite.Controllers
             try
             {
                 _model = new DiseaseViewModel();
-                _diseaseRepo = new DiseaseRepo();
-                _patientRepo = new PatientRepo();
+                _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
+                _patientRepo = new PatientRepo(new MySqlPatientContext());
                 
                 var disease = _diseaseRepo.GetById(id);
 
