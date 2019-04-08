@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using HospSimWebsite.Databases.HospSimWebsite;
 using Microsoft.EntityFrameworkCore.Internal;
 using MySql.Data.MySqlClient;
@@ -9,20 +10,20 @@ namespace HospSimWebsite.Databases
     public sealed class Database
     {
         private static readonly Lazy<Database> database = new Lazy<Database>(() => new Database());
-        private MySqlConnection DatabaseConnection;
+        private MySqlConnection _databaseConnection;
 
         public static Database Instance => database.Value;
 
         public void SetConnection(string conString)
         {
-            DatabaseConnection = new MySqlConnection(conString);
+            _databaseConnection = new MySqlConnection(conString);
         }
 
         private void OpenConnection()
         {
             try
             {
-                DatabaseConnection.Open();
+                _databaseConnection.Open();
             }
             catch (Exception ex)
             {
@@ -35,7 +36,7 @@ namespace HospSimWebsite.Databases
         {
             try
             {
-                DatabaseConnection.Close();
+                _databaseConnection.Close();
             }
             catch (Exception ex)
             {
@@ -48,7 +49,7 @@ namespace HospSimWebsite.Databases
         {
             List<QueryResult> queryResultList = new List<QueryResult>();
             OpenConnection();
-            MySqlCommand mySqlCommand = new MySqlCommand(query, DatabaseConnection);
+            MySqlCommand mySqlCommand = new MySqlCommand(query, _databaseConnection);
             if (parameters != null)
             {
                 foreach (var param in parameters)
@@ -73,14 +74,50 @@ namespace HospSimWebsite.Databases
                 }
                 
             }
-            MySqlDataReader DataReader = mySqlCommand.ExecuteReader();
-            while (DataReader.Read())
+            MySqlDataReader dataReader = mySqlCommand.ExecuteReader();
+            while (dataReader.Read())
             {
-                QueryResult queryResult = new QueryResult(DataReader);
+                QueryResult queryResult = new QueryResult(dataReader);
                 queryResultList.Add(queryResult);
             }
             CloseConnection();
             return queryResultList;
+        }
+        
+        public List<QueryResult> Procedure(string procedure, params object[] parameters)
+        {
+            var results = new List<QueryResult>();
+            var databaseQuery = new MySqlCommand(procedure, _databaseConnection);
+            databaseQuery.CommandType = CommandType.StoredProcedure;
+
+            foreach (var parameter in parameters)
+            {  
+                databaseQuery.Parameters.AddWithValue($"param{(Array.IndexOf(parameters, parameter) + 1).ToString()}", parameter);
+            }
+            
+            
+            OpenConnection();
+
+            try
+            {
+                var dataReader = databaseQuery.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    var result = new QueryResult(dataReader);
+                    results.Add(result);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            
+            return results;
         }
     }
 }
