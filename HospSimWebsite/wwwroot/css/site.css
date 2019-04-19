@@ -138,8 +138,10 @@ body {
 }
 
 .diseaseCard {
-  height: 35em;
-  width: 55em;
+  width: 20rem; 
+  height: 12rem;
+  float: right;
+  margin-left: 10px;
 }
 
 #diseaseCardText {
@@ -147,9 +149,13 @@ body {
 }
 
 .patientCard {
-  height: 35em;
+  width: 20rem;
+  height: 12rem;
+  float: left;
+  margin-right: 10px;
 }
 
-
-
-
+.infoCards {
+  height: 200px;
+  width: 70%;
+}

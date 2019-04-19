@@ -10,24 +10,28 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/site.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Fairbanks | Patient Registration</title>
-    <div class="card" style="display: inline-block; width: 18rem;">
-        <div class="text-body" >
-            <h5 class="card-title">Patients</h5>
-            <p class="card-text">We currently have @Model.PatientCount registered.</p>
-        </div>
-    </div>
-    <div class="card" style="display: inline-block; width: 18rem;">
-        <div class="text-body">
-            <h5 class="card-title">Disease Database</h5>
-            <p class="card-text">We currently have @Model.DiseaseCount diseases registered, and counting.</p>
-        </div>
-    </div>
-    
 </head>
 <body>
-<div>
-    <h3>Welcome to Fairbanks | Hospital.</h3>
+<div align="center">
+    <div class="row" style="display: inline-block;">
+        <div class="card patientCard">
+            <div class="card-body">
+                <h5 class="card-title">Patients</h5>
+                <p class="card-text">Our current amount of patients.</p>
+                <p class="card-text"><b>@Model.PatientCount</b></p>
+                <a style="float: bottom" href="#" class="btn btn-primary">Learn more</a>
+            </div>
+        </div>
+        <div class="card diseaseCard">
+            <div class="card-body">
+                <h5 class="card-title">Diseases</h5>
+                <p class="card-text">The current amount of diseases.</p>
+                <p class="card-text"><b>@Model.DiseaseCount</b></p>
+                <a style="float: bottom" href="#" class="btn btn-primary">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <h3 style="margin-top: 20px">Welcome to Fairbanks | Hospital.</h3>
     <a asp-controller="Form" asp-action="Index">Register patient.</a>
 </div>
 </body>
