@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HospSimWebsite.Databases;
 using HospSimWebsite.Databases.HospSimWebsite;
 using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.Repositories.Contexts
+namespace HospSimWebsite.Repositories.Contexts.MySQL
 {
     public class MySqlPatientContext : IPatientContext
     {
@@ -14,7 +15,7 @@ namespace HospSimWebsite.Repositories.Contexts
             {
                 var patients = new List<Patient>();
 
-                var userQuery = new List<QueryResult>();
+                List<QueryResult> userQuery;
 
                 if (isExact)
                     userQuery = Database.Instance.Query("SELECT * FROM patient WHERE name = ?", name);
@@ -89,6 +90,13 @@ namespace HospSimWebsite.Repositories.Contexts
         public void Remove(int id)
         {
             Database.Instance.Query("DELETE FROM patient WHERE id=?", id.ToString());
+        }
+
+        public int GetAmount()
+        {
+            var userQuery = Database.Instance.Query("SELECT COUNT(*) FROM patient");
+            var count = Convert.ToInt16(userQuery[0]["COUNT(*)"]);
+            return count;
         }
     }
 }

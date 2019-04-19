@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using HospSimWebsite.Interfaces;
 using HospSimWebsite.Repositories.Contexts;
 
 namespace HospSimWebsite.Repositories
@@ -18,11 +16,6 @@ namespace HospSimWebsite.Repositories
             return _context.GetByName(name, shouldBeExact);
         }
 
-        public void Insert(IHuman person)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Insert(Patient patient)
         {
             _context.Insert(patient);
@@ -38,9 +31,9 @@ namespace HospSimWebsite.Repositories
             return _context.GetByDisease(id);
         }
 
-        public IHuman GetById(int id)
+        public int GetAmount()
         {
-            throw new NotImplementedException();
+            return _context.GetAmount();
         }
 
         public void Remove(int index)

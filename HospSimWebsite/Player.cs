@@ -1,5 +1,3 @@
-using HospSimWebsite.Interfaces;
-
 namespace HospSimWebsite
 {
     public class Player : IHuman

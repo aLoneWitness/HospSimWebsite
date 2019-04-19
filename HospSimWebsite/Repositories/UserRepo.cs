@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using HospSimWebsite.Interfaces;
-using MySql.Data.MySqlClient;
-
 namespace HospSimWebsite.Repositories
 {
     /*

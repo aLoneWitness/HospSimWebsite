@@ -5,29 +5,23 @@ using Microsoft.AspNetCore.Mvc;
 using HospSimWebsite.Models;
 using HospSimWebsite.Repositories;
 using HospSimWebsite.Repositories.Contexts;
+using HospSimWebsite.Repositories.Contexts.MySQL;
 
 namespace HospSimWebsite.Controllers
 {
     public class HomeController : Controller
     {
+        private PatientRepo _patientRepo;
         private DiseaseRepo _diseaseRepo;
-        public IActionResult Index(FormModel model)
+        public IActionResult Index()
         {
-            try
-            {
-                _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
-            
-                model.Diseases = new List<Disease>();
-                model.Diseases = _diseaseRepo.GetAll();
-            }
-            catch(Exception e)
-            {
-                var errorViewModel = new ErrorViewModel($"A database error occured. Please visit later, {e.ToString()}");
-                return View("Error", errorViewModel);
-            }
-            
-            
+            var model = new HomeViewModel();
+            _patientRepo = new PatientRepo(new MySqlPatientContext());
+            _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
 
+            model.PatientCount = _patientRepo.GetAmount();
+            model.DiseaseCount = _diseaseRepo.GetAmount();
+            
             return View(model);
         }
 

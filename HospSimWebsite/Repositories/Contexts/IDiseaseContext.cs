@@ -7,5 +7,6 @@ namespace HospSimWebsite.Repositories.Contexts
         List<Disease> GetAll();
         Disease GetById(int id);
         void Insert(Disease disease);
+        int GetAmount();
     }
 }

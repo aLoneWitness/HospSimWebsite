@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
     
 }
-@model HospSimWebsite.Models.FormModel
+@model HomeViewModel
 
 <html lang="en">
 <head>
@@ -11,40 +11,24 @@
     <link rel="stylesheet" href="css/site.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Fairbanks | Patient Registration</title>
+    <div class="card" style="display: inline-block; width: 18rem;">
+        <div class="text-body" >
+            <h5 class="card-title">Patients</h5>
+            <p class="card-text">We currently have @Model.PatientCount registered.</p>
+        </div>
+    </div>
+    <div class="card" style="display: inline-block; width: 18rem;">
+        <div class="text-body">
+            <h5 class="card-title">Disease Database</h5>
+            <p class="card-text">We currently have @Model.DiseaseCount diseases registered, and counting.</p>
+        </div>
+    </div>
+    
 </head>
 <body>
-<div class="card-header">
-    <h2 class="title"><span id="hospitalname">Fairbanks</span> | Patient Registration </h2>
-</div>
-
-
-
-<div class="formmain">
-    <form asp-controller="Form" asp-action="Submit" method="post">
-        <div class="form-group">
-            <label>Name</label>
-            <input id="inputName" asp-for="Name" type="text" class="form-control" maxlength="28" placeholder="Jack Something">
-        </div>
-        
-        <label>Date of Birth</label>
-        <div class="form-group">
-            <input asp-for="Birthday" type='date' class="form-control" />
-        </div>
-        
-        <div class="form-group">
-            <label>Diagnosis (Doctor approval only)</label>
-            <select asp-for="Disease" class="form-control" id="inputDisease">
-                @foreach (var disease in Model.Diseases)
-                {
-                    <option value="@disease.Id">@disease.ToString()</option>
-                }
-            </select>
-        </div>
-        
-        <div>
-            <button type="button" onclick="checkFormInput()" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
+<div>
+    <h3>Welcome to Fairbanks | Hospital.</h3>
+    <a asp-controller="Form" asp-action="Index">Register patient.</a>
 </div>
 </body>
 </html>

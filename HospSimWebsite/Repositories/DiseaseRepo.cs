@@ -26,5 +26,10 @@ namespace HospSimWebsite.Repositories
         {
             return _context.GetAll();
         }
+
+        public int GetAmount()
+        {
+            return _context.GetAmount();
+        }
     }
 }

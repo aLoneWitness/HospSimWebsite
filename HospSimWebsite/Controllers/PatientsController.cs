@@ -4,6 +4,7 @@ using HospSimWebsite.Databases;
 using HospSimWebsite.Models;
 using HospSimWebsite.Repositories;
 using HospSimWebsite.Repositories.Contexts;
+using HospSimWebsite.Repositories.Contexts.MySQL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers

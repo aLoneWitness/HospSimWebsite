@@ -1,6 +1,7 @@
-namespace HospSimWebsite.Interfaces
+namespace HospSimWebsite
 {
     public interface IHuman
     {
+        
     }
 }

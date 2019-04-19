@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using HospSimWebsite.Databases;
 
-namespace HospSimWebsite.Repositories.Contexts
+namespace HospSimWebsite.Repositories.Contexts.MySQL
 {
     public class MySqlDiseaseContext : IDiseaseContext
     {
@@ -10,6 +10,11 @@ namespace HospSimWebsite.Repositories.Contexts
         {
             Database.Instance.Query("INSERT INTO disease (name, duration, severity, description ) VALUES (?, ?, ?, ?)", disease.Name,
                 disease.Duration.ToString(), disease.Severity.ToString(), disease.Description);
+        }
+
+        public int GetAmount()
+        {
+            return 2;
         }
 
         public Disease GetById(int id)

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using HospSimWebsite.Interfaces;
 
 namespace HospSimWebsite.Repositories.Contexts
 {
@@ -11,5 +10,6 @@ namespace HospSimWebsite.Repositories.Contexts
         List<Patient> GetByDisease(int id);
         Patient GetById(int id);
         void Remove(int index);
+        int GetAmount();
     }
 }

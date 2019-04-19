@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using HospSimWebsite.Models;
+using HospSimWebsite.Models.Interfaces;
 using HospSimWebsite.Repositories;
 using HospSimWebsite.Repositories.Contexts;
+using HospSimWebsite.Repositories.Contexts.MySQL;
 
 namespace HospSimWebsite.Controllers
 {
@@ -11,9 +13,28 @@ namespace HospSimWebsite.Controllers
     {
         private PatientRepo _patientRepo;
         private DiseaseRepo _diseaseRepo;
+    
+        public IActionResult Index(PatientFormModel model)
+        {
+            try
+            {
+                _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
+            
+                model.Diseases = new List<Disease>();
+                model.Diseases = _diseaseRepo.GetAll();
+            }
+            catch(Exception e)
+            {
+                var errorViewModel = new ErrorViewModel($"A database error occured. Please visit later, {e.ToString()}");
+                return View("Error", errorViewModel);
+            }
+            
+            
+
+            return View(model);
+        }
         
-        [HttpPost]
-        public IActionResult Submit(FormModel model)
+        public IActionResult Submit(PatientFormModel model)
         {
             _patientRepo = new PatientRepo(new MySqlPatientContext());
             _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
@@ -21,7 +42,7 @@ namespace HospSimWebsite.Controllers
             if (DateTime.Now.DayOfYear < model.Birthday.DayOfYear)  
                 age = age - 1;  
             
-            var patient = new Patient(model.Name, age , _diseaseRepo.GetById(model.Disease));
+            var patient = new Patient(0, model.Name, age , _diseaseRepo.GetById(model.Disease));
             _patientRepo.Insert(patient);
             
             return View(model);

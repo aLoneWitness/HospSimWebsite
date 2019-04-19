@@ -23,14 +23,16 @@
         </e>
         <e p="Disease.cs" t="Include" />
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
-        <e p="Interfaces" t="Include">
-          <e p="IHuman.cs" t="Include" />
-        </e>
+        <e p="IHuman.cs" t="Include" />
         <e p="Models" t="Include">
           <e p="DiseaseViewModel.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
-          <e p="FormModel.cs" t="Include" />
+          <e p="HomeViewModel.cs" t="Include" />
+          <e p="Interfaces" t="Include">
+            <e p="IFormModel.cs" t="Include" />
+          </e>
           <e p="LoginModel.cs" t="Include" />
+          <e p="PatientFormModel.cs" t="Include" />
           <e p="PatientsModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -50,8 +52,14 @@
           <e p="Contexts" t="Include">
             <e p="IDiseaseContext.cs" t="Include" />
             <e p="IPatientContext.cs" t="Include" />
-            <e p="MySqlDiseaseContext.cs" t="Include" />
-            <e p="MySqlPatientContext.cs" t="Include" />
+            <e p="Memory" t="Include">
+              <e p="MemoryDiseaseContext.cs" t="Include" />
+              <e p="MemoryPatientContext.cs" t="Include" />
+            </e>
+            <e p="MySQL" t="Include">
+              <e p="MySqlDiseaseContext.cs" t="Include" />
+              <e p="MySqlPatientContext.cs" t="Include" />
+            </e>
           </e>
           <e p="DiseaseRepo.cs" t="Include" />
           <e p="PatientRepo.cs" t="Include" />
@@ -65,6 +73,7 @@
             <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Form" t="Include">
+            <e p="Index.cshtml" t="Include" />
             <e p="Submit.cshtml" t="Include" />
           </e>
           <e p="Home" t="Include">

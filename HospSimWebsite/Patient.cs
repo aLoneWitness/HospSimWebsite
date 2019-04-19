@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using HospSimWebsite.Interfaces;
-using Microsoft.IdentityModel.Xml;
 
 namespace HospSimWebsite
 {
@@ -19,15 +17,12 @@ namespace HospSimWebsite
             this.name = name;
             this.age = age;
             this.disease = disease;
-            this.descriptions = descriptions;
         }
         
-        public Patient(string name, int age, Disease disease)
+        public Patient(int id, string name, int age)
         {
             this.name = name;
             this.age = age;
-            this.disease = disease;
-            this.descriptions = descriptions;
         }
 
         public string Name
