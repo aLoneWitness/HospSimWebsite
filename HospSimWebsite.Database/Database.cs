@@ -5,7 +5,7 @@ using HospSimWebsite.Databases.HospSimWebsite;
 using Microsoft.EntityFrameworkCore.Internal;
 using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.Databases
+namespace HospSimWebsite.Database
 {
     public sealed class Database
     {

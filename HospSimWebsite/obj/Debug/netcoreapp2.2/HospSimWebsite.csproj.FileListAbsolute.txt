@@ -112,7 +112,6 @@ D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcorea
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Form\Submit.g.cshtml.cs
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Patients\Index.g.cshtml.cs
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -129,3 +128,9 @@ D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcorea
 D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Disease\Index.g.cshtml.cs
 D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Form\Index.g.cshtml.cs
 D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Database.dll
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Model.dll
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Repository.dll
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Repository.pdb
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Database.pdb
+D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Model.pdb

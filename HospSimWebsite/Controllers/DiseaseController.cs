@@ -1,43 +1,31 @@
-using System;
 using HospSimWebsite.Models;
-using HospSimWebsite.Repositories;
-using HospSimWebsite.Repositories.Contexts;
-using HospSimWebsite.Repositories.Contexts.MySQL;
+using HospSimWebsite.Repository;
+using HospSimWebsite.Repository.Contexts.MySQL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers
 {
     public class DiseaseController : Controller
     {
-        private DiseaseViewModel _model;
+        private readonly DiseaseRepo _diseaseRepo;
+        private readonly PatientRepo _patientRepo;
 
-        private DiseaseRepo _diseaseRepo;
-        private PatientRepo _patientRepo;
-        
+        public DiseaseController()
+        {
+            _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
+            _patientRepo = new PatientRepo(new MySqlPatientContext());
+        }
         // GET
         public IActionResult Index(int id)
         {
-            try
-            {
-                _model = new DiseaseViewModel();
-                _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
-                _patientRepo = new PatientRepo(new MySqlPatientContext());
-                
-                var disease = _diseaseRepo.GetById(id);
-
-                _model.Name = disease.Name;
-                _model.Description = disease.Description;
-                _model.Patients = _patientRepo.GetByDisease(id);
-            }
+            var model = new DiseaseViewModel();
             
-            catch(Exception e)
-            {
-                var errorViewModel = new ErrorViewModel($"A database error occured. Please visit later, {e.ToString()}");
-                return View("Error", errorViewModel);
-            }
+            var disease = _diseaseRepo.GetById(id);
+            model.Name = disease.Name;
+            model.Description = disease.Description;
+            model.Patients = _patientRepo.GetByDisease(id);
             
-            
-            return View(_model);
+            return View(model);
         }
     }
 }

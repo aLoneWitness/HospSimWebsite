@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "D:\\Documents\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
+    "projectUniqueName": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
     "projectName": "HospSimWebsite",
-    "projectPath": "D:\\Documents\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
-    "outputPath": "D:\\Documents\\HospSimWebsite\\HospSimWebsite\\obj\\",
+    "projectPath": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite\\HospSimWebsite.csproj",
+    "outputPath": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14,7 +14,11 @@
     ],
     "frameworks": {
       "netcoreapp2.2": {
-        "projectReferences": {}
+        "projectReferences": {
+          "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite.Repository\\HospSimWebsite.Repository.csproj": {
+            "projectPath": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite.Repository\\HospSimWebsite.Repository.csproj"
+          }
+        }
       }
     },
     "warningProperties": {

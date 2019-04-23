@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HospSimWebsite.Repositories.Contexts.Memory
+namespace HospSimWebsite.Repository.Contexts.Memory
 {
     public class MemoryPatientContext
     {

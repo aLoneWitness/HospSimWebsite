@@ -1,53 +1,44 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using HospSimWebsite.Databases;
 using HospSimWebsite.Databases.HospSimWebsite;
-using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.Repositories.Contexts.MySQL
+namespace HospSimWebsite.Repository.Contexts.MySQL
 {
     public class MySqlPatientContext : IPatientContext
     {
         public List<Patient> GetByName(string name, bool isExact = true)
         {
-            try
+            var patients = new List<Patient>();
+
+            List<QueryResult> userQuery;
+
+            if (isExact)
+                userQuery = Database.Database.Instance.Query("SELECT * FROM patient WHERE name = ?", name);
+            else
+                userQuery = Database.Database.Instance.Query("SELECT * FROM patient WHERE name LIKE ?", $"%{name}%");
+
+            for (var i = 0; i < userQuery.Count; i++)
             {
-                var patients = new List<Patient>();
-
-                List<QueryResult> userQuery;
-
-                if (isExact)
-                    userQuery = Database.Instance.Query("SELECT * FROM patient WHERE name = ?", name);
-                else
-                    userQuery = Database.Instance.Query("SELECT * FROM patient WHERE name LIKE ?", $"%{name}%");
-
-                for (var i = 0; i < userQuery.Count; i++)
-                {
-                    var disease = new DiseaseRepo(new MySqlDiseaseContext()).GetById(Convert.ToInt16(userQuery[i]["disease"]));
-                    var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(),
-                        Convert.ToInt16(userQuery[i]["age"]),
-                        disease);
-                    patients.Add(patient);
-                }
-
-                return patients;
+                var disease =
+                    new DiseaseRepo(new MySqlDiseaseContext()).GetById(Convert.ToInt16(userQuery[i]["disease"]));
+                var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(),
+                    Convert.ToInt16(userQuery[i]["age"]),
+                    disease);
+                patients.Add(patient);
             }
-            catch (MySqlException e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+
+            return patients;
         }
 
         public void Insert(Patient patient)
         {
-            Database.Instance.Procedure("AddPatient", patient.Name, patient.Age, patient.Disease.Id);
+            Database.Database.Instance.Procedure("AddPatient", patient.Name, patient.Age, patient.Disease.Id);
         }
 
         public List<Patient> GetAll()
         {
-            var userQuery = Database.Instance.Procedure("GetAllPatients");
+            var userQuery = Database.Database.Instance.Procedure("GetAllPatients");
             var patients = new List<Patient>();
 
             for (var i = 0; i < userQuery.Count; i++)
@@ -67,7 +58,7 @@ namespace HospSimWebsite.Repositories.Contexts.MySQL
         {
             var patients = new List<Patient>();
 
-            var userQuery = Database.Instance.Query("SELECT * FROM patient WHERE patient.disease = ?", id.ToString());
+            var userQuery = Database.Database.Instance.Query("SELECT * FROM patient WHERE patient.disease = ?", id.ToString());
 
             for (var i = 0; i < userQuery.Count; i++)
             {
@@ -89,12 +80,12 @@ namespace HospSimWebsite.Repositories.Contexts.MySQL
 
         public void Remove(int id)
         {
-            Database.Instance.Query("DELETE FROM patient WHERE id=?", id.ToString());
+            Database.Database.Instance.Query("DELETE FROM patient WHERE id=?", id.ToString());
         }
 
         public int GetAmount()
         {
-            var userQuery = Database.Instance.Query("SELECT COUNT(*) FROM patient");
+            var userQuery = Database.Database.Instance.Query("SELECT COUNT(*) FROM patient");
             var count = Convert.ToInt16(userQuery[0]["COUNT(*)"]);
             return count;
         }

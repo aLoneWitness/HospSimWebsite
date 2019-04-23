@@ -12,4 +12,14 @@
         <PackageReference Include="MySql.Data" Version="8.0.15" />
     </ItemGroup>
 
+
+    <ItemGroup>
+      <ProjectReference Include="..\HospSimWebsite.Repository\HospSimWebsite.Repository.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Folder Include="ViewModels" />
+    </ItemGroup>
+
 </Project>

@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-
 namespace HospSimWebsite.Models.Interfaces
 {
-    public interface IFormModel
+    public interface IFormViewModel
     {
         bool HasEmpty();
     }

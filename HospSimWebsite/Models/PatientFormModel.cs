@@ -1,15 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Reflection;
 using HospSimWebsite.Models.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Abstractions;
 
 namespace HospSimWebsite.Models
 {
-    public class PatientFormModel : IFormModel
+    public class PatientFormViewModel : IFormViewModel
     {
         public string Name { get; set; }
         public DateTime Birthday { get; set; }

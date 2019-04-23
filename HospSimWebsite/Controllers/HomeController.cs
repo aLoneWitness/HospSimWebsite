@@ -1,23 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Diagnostics;
 using HospSimWebsite.Models;
-using HospSimWebsite.Repositories;
-using HospSimWebsite.Repositories.Contexts;
-using HospSimWebsite.Repositories.Contexts.MySQL;
+using Microsoft.AspNetCore.Mvc;
+using HospSimWebsite.Repository;
+using HospSimWebsite.Repository.Contexts.MySQL;
 
 namespace HospSimWebsite.Controllers
 {
     public class HomeController : Controller
     {
-        private PatientRepo _patientRepo;
-        private DiseaseRepo _diseaseRepo;
+        private readonly PatientRepo _patientRepo;
+        private readonly DiseaseRepo _diseaseRepo;
+        
+        public HomeController()
+        {
+            _patientRepo = new PatientRepo(new MySqlPatientContext());
+            _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
+        }
         public IActionResult Index()
         {
             var model = new HomeViewModel();
-            _patientRepo = new PatientRepo(new MySqlPatientContext());
-            _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
 
             model.PatientCount = _patientRepo.GetAmount();
             model.DiseaseCount = _diseaseRepo.GetAmount();

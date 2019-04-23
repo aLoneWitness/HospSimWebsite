@@ -1,5 +1,3 @@
-using System;
-
 namespace HospSimWebsite.Models
 {
     public class ErrorViewModel

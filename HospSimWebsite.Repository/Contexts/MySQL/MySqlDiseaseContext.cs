@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using HospSimWebsite.Databases;
 
-namespace HospSimWebsite.Repositories.Contexts.MySQL
+namespace HospSimWebsite.Repository.Contexts.MySQL
 {
     public class MySqlDiseaseContext : IDiseaseContext
     {
         public void Insert(Disease disease)
         {
-            Database.Instance.Query("INSERT INTO disease (name, duration, severity, description ) VALUES (?, ?, ?, ?)", disease.Name,
+            Database.Database.Instance.Query("INSERT INTO disease (name, duration, severity, description ) VALUES (?, ?, ?, ?)", disease.Name,
                 disease.Duration.ToString(), disease.Severity.ToString(), disease.Description);
         }
 
@@ -19,7 +19,7 @@ namespace HospSimWebsite.Repositories.Contexts.MySQL
 
         public Disease GetById(int id)
         {
-            var userQuery = Database.Instance.Query("SELECT * FROM disease WHERE id = ?", id.ToString());
+            var userQuery = Database.Database.Instance.Query("SELECT * FROM disease WHERE id = ?", id.ToString());
 
             return new Disease(Convert.ToInt16(userQuery[0]["id"]), userQuery[0]["name"].ToString(),
                 Convert.ToInt16(userQuery[0]["duration"]), Convert.ToInt16(userQuery[0]["severity"]),
@@ -28,7 +28,7 @@ namespace HospSimWebsite.Repositories.Contexts.MySQL
 
         public List<Disease> GetAll()
         {
-            var userQuery = Database.Instance.Query("SELECT * FROM disease");
+            var userQuery = Database.Database.Instance.Query("SELECT * FROM disease");
             var diseases = new List<Disease>();
 
             for (var i = 0; i < userQuery.Count; i++)

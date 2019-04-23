@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace HospSimWebsite.Repositories.Contexts
+namespace HospSimWebsite.Repository.Contexts
 {
     public interface IPatientContext
     {

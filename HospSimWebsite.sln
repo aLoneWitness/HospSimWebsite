@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite", "HospSimWebsite\HospSimWebsite.csproj", "{6E00BFB5-0FD6-4578-BFF9-896157E20196}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite.Repository", "HospSimWebsite.Repository\HospSimWebsite.Repository.csproj", "{4983D69D-282E-4F65-A6EC-4E4914134B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite.Model", "HospSimWebsite.Model\HospSimWebsite.Model.csproj", "{69778E57-877D-42D6-A0D0-2066682D93EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite.Database", "HospSimWebsite.Database\HospSimWebsite.Database.csproj", "{F17EAA56-C4BA-424E-9125-A24974B81B57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{6E00BFB5-0FD6-4578-BFF9-896157E20196}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E00BFB5-0FD6-4578-BFF9-896157E20196}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E00BFB5-0FD6-4578-BFF9-896157E20196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4983D69D-282E-4F65-A6EC-4E4914134B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4983D69D-282E-4F65-A6EC-4E4914134B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4983D69D-282E-4F65-A6EC-4E4914134B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4983D69D-282E-4F65-A6EC-4E4914134B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69778E57-877D-42D6-A0D0-2066682D93EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69778E57-877D-42D6-A0D0-2066682D93EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69778E57-877D-42D6-A0D0-2066682D93EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69778E57-877D-42D6-A0D0-2066682D93EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17EAA56-C4BA-424E-9125-A24974B81B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17EAA56-C4BA-424E-9125-A24974B81B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17EAA56-C4BA-424E-9125-A24974B81B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17EAA56-C4BA-424E-9125-A24974B81B57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

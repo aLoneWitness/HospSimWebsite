@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
-using HospSimWebsite.Repositories.Contexts;
+using HospSimWebsite.Repository.Contexts;
 
-namespace HospSimWebsite.Repositories
+namespace HospSimWebsite.Repository
 {
     public class DiseaseRepo
     {
