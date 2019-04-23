@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using HospSimWebsite.Model;
 using HospSimWebsite.Repository.Contexts;
+using HospSimWebsite.Repository.Interfaces;
 
 namespace HospSimWebsite.Repository
 {
-    public class DiseaseRepo
+    public class DiseaseRepo : IDiseaseRepo
     {
         private IDiseaseContext _context;
 

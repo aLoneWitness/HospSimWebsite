@@ -4,7 +4,7 @@ using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Models
 {
-    public class PatientsModel
+    public class PatientsViewModel
     {
         [Required] 
         public List<Patient> Patients;

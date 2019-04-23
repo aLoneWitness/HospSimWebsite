@@ -127,10 +127,15 @@ D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcorea
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Form\Index.g.cshtml.cs
 D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Disease\Index.g.cshtml.cs
 D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Form\Index.g.cshtml.cs
-D:\Documents\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Database.dll
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Model.dll
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Repository.dll
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Repository.pdb
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Database.pdb
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Model.pdb
+D:\Documents\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Database.dll
+D:\Documents\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Model.dll
+D:\Documents\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Repository.dll
+D:\Documents\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Repository.pdb
+D:\Documents\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Database.pdb
+D:\Documents\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Model.pdb

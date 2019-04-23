@@ -3,10 +3,9 @@
   <component name="ContentModelStore">
     <e p="C:\Users\sanva\.Rider2018.3\config\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2018.3\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2018.3\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.-1944463855.00" t="ExcludeRecursive" />
-    <e p="D:\Development\Git Repositories\HospSimWebsite" t="IncludeFlat">
+    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.-1662918964.00" t="ExcludeRecursive" />
+    <e p="D:\Documents\HospSimWebsite" t="IncludeFlat">
       <e p="HospSimWebsite" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -19,13 +18,16 @@
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="DiseaseViewModel.cs" t="Include" />
+          <e p="Enums" t="Include">
+            <e p="Engine.cs" t="Include" />
+          </e>
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="HomeViewModel.cs" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="IFormViewModel.cs" t="Include" />
           </e>
           <e p="PatientFormModel.cs" t="Include" />
-          <e p="PatientsModel.cs" t="Include" />
+          <e p="PatientsViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -39,7 +41,6 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
-        <e p="ViewModels" t="Include" />
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
@@ -189,6 +190,10 @@
         </e>
         <e p="DiseaseRepo.cs" t="Include" />
         <e p="HospSimWebsite.Repository.csproj" t="IncludeRecursive" />
+        <e p="Interfaces" t="Include">
+          <e p="IDiseaseRepo.cs" t="Include" />
+          <e p="IPatientRepo.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">

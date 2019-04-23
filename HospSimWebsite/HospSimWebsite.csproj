@@ -17,9 +17,4 @@
       <ProjectReference Include="..\HospSimWebsite.Repository\HospSimWebsite.Repository.csproj" />
     </ItemGroup>
 
-
-    <ItemGroup>
-      <Folder Include="ViewModels" />
-    </ItemGroup>
-
 </Project>

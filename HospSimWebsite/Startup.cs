@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using HospSimWebsite.Repository;
+using HospSimWebsite.Repository.Contexts.MySQL;
+using HospSimWebsite.Repository.Interfaces;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +31,9 @@ namespace HospSimWebsite
 
             Database.Database.Instance.SetConnection(Configuration.GetConnectionString("AzureDB"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSingleton<IPatientRepo>(new PatientRepo(new MySqlPatientContext()));
+            services.AddSingleton<IDiseaseRepo>(new DiseaseRepo(new MySqlDiseaseContext()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

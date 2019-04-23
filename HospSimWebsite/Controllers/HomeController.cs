@@ -3,18 +3,19 @@ using HospSimWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
 using HospSimWebsite.Repository;
 using HospSimWebsite.Repository.Contexts.MySQL;
+using HospSimWebsite.Repository.Interfaces;
 
 namespace HospSimWebsite.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly PatientRepo _patientRepo;
-        private readonly DiseaseRepo _diseaseRepo;
+        private readonly IPatientRepo _patientRepo;
+        private readonly IDiseaseRepo _diseaseRepo;
         
-        public HomeController()
+        public HomeController(IPatientRepo patientRepo, IDiseaseRepo diseaseRepo)
         {
-            _patientRepo = new PatientRepo(new MySqlPatientContext());
-            _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
+            _patientRepo = patientRepo;
+            _diseaseRepo = diseaseRepo;
         }
         public IActionResult Index()
         {
