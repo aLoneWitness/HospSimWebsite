@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using HospSimWebsite.Model;
 using HospSimWebsite.Repository.Contexts;
 
 namespace HospSimWebsite.Repository

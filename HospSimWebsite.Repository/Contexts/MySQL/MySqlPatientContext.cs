@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using HospSimWebsite.Databases;
-using HospSimWebsite.Databases.HospSimWebsite;
+using HospSimWebsite.Database.HospSimWebsite;
+using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Repository.Contexts.MySQL
 {

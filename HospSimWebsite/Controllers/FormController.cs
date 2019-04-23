@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using HospSimWebsite.Model;
 using HospSimWebsite.Models;
 using HospSimWebsite.Repository;
 using HospSimWebsite.Repository.Contexts.MySQL;
@@ -14,9 +15,11 @@ namespace HospSimWebsite.Controllers
 
         public FormController()
         {
+            
             _patientRepo = new PatientRepo(new MySqlPatientContext());
             _diseaseRepo = new DiseaseRepo(new MySqlDiseaseContext());
         }
+        
         public IActionResult Index(PatientFormViewModel viewModel)
         {
             viewModel.Diseases = new List<Disease>();

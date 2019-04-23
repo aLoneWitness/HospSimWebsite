@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.Databases
+namespace HospSimWebsite.Database
 {
     namespace HospSimWebsite
     {

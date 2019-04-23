@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using HospSimWebsite.Databases.HospSimWebsite;
+using HospSimWebsite.Database.HospSimWebsite;
 using Microsoft.EntityFrameworkCore.Internal;
 using MySql.Data.MySqlClient;
 
