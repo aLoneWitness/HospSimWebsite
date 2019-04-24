@@ -8,13 +8,14 @@ namespace HospSimWebsite.Repository.Contexts.MySQL
     {
         public void Insert(Disease disease)
         {
-            Database.Database.Instance.Query("INSERT INTO disease (name, duration, severity, description ) VALUES (?, ?, ?, ?)", disease.Name,
-                disease.Duration.ToString(), disease.Severity.ToString(), disease.Description);
+            Database.Database.Instance.Query("INSERT INTO disease (name, duration, severity, desc1, desc2, desc3 ) VALUES (?, ?, ?, ?, ?, ?)", disease.Name,
+                disease.Duration.ToString(), disease.Severity.ToString(), disease.Descriptions[0], disease.Descriptions[1], disease.Descriptions[2]);
         }
 
         public int GetAmount()
         {
-            return 2;
+            var userQuery = Database.Database.Instance.Query("SELECT id FROM disease");
+            return userQuery.Count;
         }
 
         public Disease GetById(int id)
@@ -23,7 +24,7 @@ namespace HospSimWebsite.Repository.Contexts.MySQL
 
             return new Disease(Convert.ToInt16(userQuery[0]["id"]), userQuery[0]["name"].ToString(),
                 Convert.ToInt16(userQuery[0]["duration"]), Convert.ToInt16(userQuery[0]["severity"]),
-                userQuery[0]["description"].ToString());
+                new List<string>{userQuery[0]["desc1"].ToString(), userQuery[0]["desc2"].ToString(), userQuery[0]["desc3"].ToString()});
         }
 
         public List<Disease> GetAll()
@@ -34,7 +35,7 @@ namespace HospSimWebsite.Repository.Contexts.MySQL
             for (var i = 0; i < userQuery.Count; i++)
                 diseases.Add(new Disease(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(),
                     Convert.ToInt16(userQuery[i]["duration"]), Convert.ToInt16(userQuery[i]["severity"]),
-                    userQuery[i]["description"].ToString()));
+                    new List<string>{userQuery[0]["desc1"].ToString(), userQuery[0]["desc2"].ToString(), userQuery[0]["desc3"].ToString()}));
 
             return diseases;
         }

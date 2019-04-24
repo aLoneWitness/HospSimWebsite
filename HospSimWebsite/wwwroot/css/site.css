@@ -134,15 +134,20 @@ body {
   height: 70px;
 }
 
-.diseasetable {
-  float: right;
-  display: inline-block;
-}
-
 .diseaseCard {
-  width: 20rem; 
+  width: 20rem;
   height: 12rem;
   float: right;
+  margin-left: 10px;
+}
+
+.diseaseTable {
+  width: min-content;
+  margin-right: 5rem;
+}
+
+.diseaseInfo {
+  width: 75%;
   margin-left: 10px;
 }
 
@@ -155,6 +160,12 @@ body {
   height: 12rem;
   float: left;
   margin-right: 10px;
+}
+
+.patientInfo {
+  width: 20%;
+  margin-right: 10px;
+  float: left;
 }
 
 .infoCards {

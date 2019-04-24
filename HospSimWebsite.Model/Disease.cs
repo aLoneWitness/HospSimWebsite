@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace HospSimWebsite.Model
 {
     public class Disease
@@ -6,15 +8,15 @@ namespace HospSimWebsite.Model
         public string Name { get; }
         public int Duration { get; }
         public int Severity { get; }
-        public string Description { get; }
+        public List<string> Descriptions { get; }
 
-        public Disease(int id, string name, int duration, int severity, string description)
+        public Disease(int id, string name, int duration, int severity, List<string> descriptions)
         {
             Id = id;
             Name = name;
             Duration = duration;
             Severity = severity;
-            Description = description;
+            Descriptions = descriptions;
         }
 
         public override string ToString()

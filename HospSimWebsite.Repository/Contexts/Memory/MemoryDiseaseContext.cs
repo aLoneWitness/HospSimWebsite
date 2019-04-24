@@ -13,7 +13,7 @@ namespace HospSimWebsite.Repository.Contexts.Memory
             
             for(int i = 0; i < 10; i++)
             {
-                _diseases.Add(new Disease(i, $"Disease{i}", i * 2,4 ,"I am disease" ));
+                _diseases.Add(new Disease(i, $"Disease{i}", i * 2,4 , new List<string>{"lol", "lol", "lol"} ));
             }
         }
 

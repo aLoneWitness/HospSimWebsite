@@ -23,7 +23,7 @@ namespace HospSimWebsite.Controllers
             
             var disease = _diseaseRepo.GetById(id);
             model.Name = disease.Name;
-            model.Description = disease.Description;
+            model.Descriptions = disease.Descriptions;
             model.Patients = _patientRepo.GetByDisease(id);
             
             return View(model);

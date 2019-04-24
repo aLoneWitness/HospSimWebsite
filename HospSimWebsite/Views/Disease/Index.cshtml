@@ -8,15 +8,17 @@
 <head>
     <link rel="stylesheet" href="css/site.css"/>
 </head>
-<div class="card float-left diseaseCard">
+<div class="card float-left diseaseInfo">
     <div id="diseaseCardText">
         <h2 class="card-title">@Model.Name</h2>
-
-        <h3 class="card-text small">@Model.Description</h3>
+        @foreach (var paragraph in Model.Descriptions)
+        {
+            <p class="card-text small">@paragraph</p>
+        }
     </div>
 </div>
 
-<div class="card float-right patientCard">
+<div class="card float-right patientInfo">
     <table class="table diseasetable">
         <thead class="thead-dark">
         <tr>
