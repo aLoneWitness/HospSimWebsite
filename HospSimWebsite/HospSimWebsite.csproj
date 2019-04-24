@@ -17,4 +17,9 @@
       <ProjectReference Include="..\HospSimWebsite.Repository\HospSimWebsite.Repository.csproj" />
     </ItemGroup>
 
+
+    <ItemGroup>
+      <Folder Include="wwwroot\images" />
+    </ItemGroup>
+
 </Project>

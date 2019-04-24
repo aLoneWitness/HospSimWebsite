@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using HospSimWebsite.Model.Interfaces;
 
 namespace HospSimWebsite.Model

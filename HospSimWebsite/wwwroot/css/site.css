@@ -163,5 +163,8 @@ body {
 }
 
 .headerDiv {
-  background-image: url("download.jpg");
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+  background-image: url("mainbg.jpg");
+  background-size: cover;
 }

@@ -3,9 +3,10 @@
   <component name="ContentModelStore">
     <e p="C:\Users\sanva\.Rider2018.3\config\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2018.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\sanva\.Rider2018.3\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.-1662918964.00" t="ExcludeRecursive" />
-    <e p="D:\Documents\HospSimWebsite" t="IncludeFlat">
+    <e p="C:\Users\sanva\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HospSimWebsite.-1944463855.00" t="ExcludeRecursive" />
+    <e p="D:\Development\Git Repositories\HospSimWebsite" t="IncludeFlat">
       <e p="HospSimWebsite" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -73,13 +74,11 @@
             <e p="bootstrap-reboot.min.css" t="Include" />
             <e p="bootstrap.css" t="Include" />
             <e p="bootstrap.min.css" t="Include" />
-            <e p="download.jpg" t="Include" />
+            <e p="mainbg.jpg" t="Include" />
             <e p="site.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
-          <e p="images" t="Include">
-            <e p="mainbg.jpg" t="Include" />
-          </e>
+          <e p="images" t="Include" />
           <e p="js" t="Include">
             <e p="bootstrap.bundle.js" t="Include" />
             <e p="bootstrap.bundle.min.js" t="Include" />
