@@ -7,12 +7,13 @@ namespace HospSimWebsite.Repository
 {
     public class DiseaseRepo : IDiseaseRepo
     {
-        private IDiseaseContext _context;
+        private readonly IDiseaseContext _context;
 
         public DiseaseRepo(IDiseaseContext diseaseContext)
         {
             _context = diseaseContext;
         }
+
         public void Insert(Disease disease)
         {
             _context.Insert(disease);
@@ -20,7 +21,7 @@ namespace HospSimWebsite.Repository
 
         public Disease GetById(int id)
         {
-           return  _context.GetById(id);
+            return _context.GetById(id);
         }
 
         public List<Disease> GetAll()

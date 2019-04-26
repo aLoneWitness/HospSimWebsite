@@ -6,7 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite.Repository",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite.Model", "HospSimWebsite.Model\HospSimWebsite.Model.csproj", "{69778E57-877D-42D6-A0D0-2066682D93EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite.Database", "HospSimWebsite.Database\HospSimWebsite.Database.csproj", "{F17EAA56-C4BA-424E-9125-A24974B81B57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite.DAL", "HospSimWebsite.DAL\HospSimWebsite.DAL.csproj", "{F17EAA56-C4BA-424E-9125-A24974B81B57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospSimWebsite.Logic", "HospSimWebsite.Logic\HospSimWebsite.Logic.csproj", "{D14CE194-5BF1-4491-8D10-F1A4AB23DA55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +32,9 @@ Global
 		{F17EAA56-C4BA-424E-9125-A24974B81B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F17EAA56-C4BA-424E-9125-A24974B81B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F17EAA56-C4BA-424E-9125-A24974B81B57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D14CE194-5BF1-4491-8D10-F1A4AB23DA55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D14CE194-5BF1-4491-8D10-F1A4AB23DA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D14CE194-5BF1-4491-8D10-F1A4AB23DA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D14CE194-5BF1-4491-8D10-F1A4AB23DA55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

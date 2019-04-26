@@ -1,19 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using HospSimWebsite.Database.HospSimWebsite;
+using HospSimWebsite.DAL.HospSimWebsite;
 using Microsoft.EntityFrameworkCore.Internal;
 using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.Database
+namespace HospSimWebsite.DAL
 {
-    public sealed class Database
+    public class Database
     {
-        private static readonly Lazy<Database> database = new Lazy<Database>(() => new Database());
         private MySqlConnection _databaseConnection;
-
-        public static Database Instance => database.Value;
-
         public void SetConnection(string conString)
         {
             _databaseConnection = new MySqlConnection(conString);
@@ -47,16 +43,13 @@ namespace HospSimWebsite.Database
 
         public List<QueryResult> Query(string query, params object[] parameters)
         {
-            List<QueryResult> queryResultList = new List<QueryResult>();
+            var queryResultList = new List<QueryResult>();
             OpenConnection();
-            MySqlCommand mySqlCommand = new MySqlCommand(query, _databaseConnection);
+            var mySqlCommand = new MySqlCommand(query, _databaseConnection);
             if (parameters != null)
-            {
                 foreach (var param in parameters)
-                {
                     mySqlCommand.Parameters.AddWithValue("param" + parameters.IndexOf(param), param);
-
-                   /* var type = param.GetType().FullName;
+                /* var type = param.GetType().FullName;
                     switch (type)
                     {
                         case "System.String":
@@ -71,19 +64,17 @@ namespace HospSimWebsite.Database
                         default:
                             break;
                     }*/
-                }
-                
-            }
-            MySqlDataReader dataReader = mySqlCommand.ExecuteReader();
+            var dataReader = mySqlCommand.ExecuteReader();
             while (dataReader.Read())
             {
-                QueryResult queryResult = new QueryResult(dataReader);
+                var queryResult = new QueryResult(dataReader);
                 queryResultList.Add(queryResult);
             }
+
             CloseConnection();
             return queryResultList;
         }
-        
+
         public List<QueryResult> Procedure(string procedure, params object[] parameters)
         {
             var results = new List<QueryResult>();
@@ -91,11 +82,10 @@ namespace HospSimWebsite.Database
             databaseQuery.CommandType = CommandType.StoredProcedure;
 
             foreach (var parameter in parameters)
-            {  
-                databaseQuery.Parameters.AddWithValue($"param{(Array.IndexOf(parameters, parameter) + 1).ToString()}", parameter);
-            }
-            
-            
+                databaseQuery.Parameters.AddWithValue($"param{(Array.IndexOf(parameters, parameter) + 1).ToString()}",
+                    parameter);
+
+
             OpenConnection();
 
             try
@@ -106,7 +96,6 @@ namespace HospSimWebsite.Database
                     var result = new QueryResult(dataReader);
                     results.Add(result);
                 }
-                
             }
             catch (Exception ex)
             {
@@ -116,7 +105,7 @@ namespace HospSimWebsite.Database
             {
                 CloseConnection();
             }
-            
+
             return results;
         }
     }

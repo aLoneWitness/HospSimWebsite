@@ -5,8 +5,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\HospSimWebsite.DAL\HospSimWebsite.DAL.csproj" />
       <ProjectReference Include="..\HospSimWebsite.Model\HospSimWebsite.Model.csproj" />
+      <ProjectReference Include="..\HospSimWebsite.Repository\HospSimWebsite.Repository.csproj" />
     </ItemGroup>
 
 </Project>

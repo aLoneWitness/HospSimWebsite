@@ -15,8 +15,8 @@
     "frameworks": {
       "netcoreapp2.2": {
         "projectReferences": {
-          "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite.Repository\\HospSimWebsite.Repository.csproj": {
-            "projectPath": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite.Repository\\HospSimWebsite.Repository.csproj"
+          "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite.Logic\\HospSimWebsite.Logic.csproj": {
+            "projectPath": "D:\\Development\\Git Repositories\\HospSimWebsite\\HospSimWebsite.Logic\\HospSimWebsite.Logic.csproj"
           }
         }
       }

@@ -4,11 +4,6 @@ namespace HospSimWebsite.Model
 {
     public class Patient : IHuman
     {
-        public string Name { get; }
-        public int Age { get; }
-        public Disease Disease { get; }
-        public int Id { get; }
-        
         public Patient(int id, string name, int age, Disease disease)
         {
             Name = name;
@@ -16,7 +11,7 @@ namespace HospSimWebsite.Model
             Age = age;
             Disease = disease;
         }
-        
+
         public Patient(int id, string name, int age)
         {
             Id = id;
@@ -24,6 +19,9 @@ namespace HospSimWebsite.Model
             Age = age;
         }
 
-        
+        public int Age { get; }
+        public Disease Disease { get; }
+        public int Id { get; }
+        public string Name { get; }
     }
 }

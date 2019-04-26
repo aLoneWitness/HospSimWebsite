@@ -14,12 +14,12 @@
 
 
     <ItemGroup>
-      <ProjectReference Include="..\HospSimWebsite.Repository\HospSimWebsite.Repository.csproj" />
+      <Folder Include="wwwroot\images" />
     </ItemGroup>
 
 
     <ItemGroup>
-      <Folder Include="wwwroot\images" />
+      <ProjectReference Include="..\HospSimWebsite.Logic\HospSimWebsite.Logic.csproj" />
     </ItemGroup>
 
 </Project>

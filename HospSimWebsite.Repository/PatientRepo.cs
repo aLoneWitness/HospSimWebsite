@@ -7,12 +7,13 @@ namespace HospSimWebsite.Repository
 {
     public class PatientRepo : IPatientRepo
     {
-        private IPatientContext _context;
+        private readonly IPatientContext _context;
 
         public PatientRepo(IPatientContext patientContext)
         {
             _context = patientContext;
         }
+
         public List<Patient> GetByName(string name, bool shouldBeExact = true)
         {
             return _context.GetByName(name, shouldBeExact);
@@ -41,6 +42,11 @@ namespace HospSimWebsite.Repository
         public void Remove(int index)
         {
             _context.Remove(index);
+        }
+
+        public Patient GetById(int id)
+        {
+            return _context.GetById(id);
         }
     }
 }

@@ -1,41 +1,40 @@
 using System;
 using System.Collections.Generic;
+using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Models;
-using HospSimWebsite.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers
 {
     public class FormController : Controller
     {
-        private readonly IPatientRepo _patientRepo;
-        private readonly IDiseaseRepo _diseaseRepo;
+        private readonly IDiseaseLogic _diseaseLogic;
+        private readonly IPatientLogic _patientLogic;
 
-        public FormController(IPatientRepo patientRepo, IDiseaseRepo diseaseRepo)
+        public FormController(IPatientLogic patientLogic, IDiseaseLogic diseaseLogic)
         {
-
-            _patientRepo = patientRepo;
-            _diseaseRepo = diseaseRepo;
+            _patientLogic = patientLogic;
+            _diseaseLogic = diseaseLogic;
         }
-        
+
         public IActionResult Index(PatientFormViewModel viewModel)
         {
             viewModel.Diseases = new List<Disease>();
-            viewModel.Diseases = _diseaseRepo.GetAll();
+            viewModel.Diseases = _diseaseLogic.GetAll();
 
             return View(viewModel);
         }
-        
+
         public IActionResult Submit(PatientFormViewModel viewModel)
         {
             var age = DateTime.Now.Year - viewModel.Birthday.Year;
-            if (DateTime.Now.DayOfYear < viewModel.Birthday.DayOfYear)  
-                age = age - 1;  
-            
-            var patient = new Patient(0, viewModel.Name, age , _diseaseRepo.GetById(viewModel.Disease));
-            _patientRepo.Insert(patient);
-            
+            if (DateTime.Now.DayOfYear < viewModel.Birthday.DayOfYear)
+                age = age - 1;
+
+            var patient = new Patient(0, viewModel.Name, age, _diseaseLogic.GetById(viewModel.Disease));
+            _patientLogic.Insert(patient);
+
             return View(viewModel);
         }
     }

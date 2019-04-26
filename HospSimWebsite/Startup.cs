@@ -1,6 +1,7 @@
-﻿using HospSimWebsite.Repository;
+﻿using HospSimWebsite.Logic;
+using HospSimWebsite.Logic.Interfaces;
+using HospSimWebsite.Repository;
 using HospSimWebsite.Repository.Contexts.MySQL;
-using HospSimWebsite.Repository.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -29,11 +30,11 @@ namespace HospSimWebsite
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            Database.Database.Instance.SetConnection(Configuration.GetConnectionString("AzureDB"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            services.AddSingleton<IPatientRepo>(new PatientRepo(new MySqlPatientContext()));
-            services.AddSingleton<IDiseaseRepo>(new DiseaseRepo(new MySqlDiseaseContext()));
+            
+            var conString = Configuration.GetConnectionString("AzureDB");
+            services.AddSingleton<IPatientLogic>(new PatientLogic(new PatientRepo(new MySqlPatientContext(conString))));
+            services.AddSingleton<IDiseaseLogic>(new DiseaseLogic(new DiseaseRepo(new MySqlDiseaseContext(conString))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,8 +58,8 @@ namespace HospSimWebsite
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

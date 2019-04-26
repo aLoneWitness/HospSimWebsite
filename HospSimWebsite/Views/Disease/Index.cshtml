@@ -1,4 +1,3 @@
-@using HospSimWebsite.Model
 @model HospSimWebsite.Models.DiseaseViewModel
 
 @{
@@ -27,8 +26,8 @@
         </tr>
         </thead>
         <body>
-    
-        @foreach (Patient patient in Model.Patients)
+
+        @foreach (var patient in Model.Patients)
         {
             <tr>
                 <th scope="row">@patient.Id</th>
@@ -38,4 +37,3 @@
         </body>
     </table>
 </div>
-

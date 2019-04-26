@@ -6,7 +6,6 @@ namespace HospSimWebsite.Models
 {
     public class PatientsViewModel
     {
-        [Required] 
-        public List<Patient> Patients;
+        [Required] public List<Patient> Patients;
     }
 }

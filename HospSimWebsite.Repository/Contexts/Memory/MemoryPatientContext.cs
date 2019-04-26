@@ -7,16 +7,13 @@ namespace HospSimWebsite.Repository.Contexts.Memory
 {
     public class MemoryPatientContext : IPatientContext
     {
-        private List<Patient> _patients;
+        private readonly List<Patient> _patients;
 
         public MemoryPatientContext()
         {
             _patients = new List<Patient>();
 
-            for (var i = 0; i < 10; i++)
-            {
-                _patients.Add(new Patient(i, "Mark", i));
-            }
+            for (var i = 0; i < 10; i++) _patients.Add(new Patient(i, "Mark", i));
         }
 
         public List<Patient> GetAll()
@@ -46,10 +43,7 @@ namespace HospSimWebsite.Repository.Contexts.Memory
 
         public List<Patient> GetByName(string name, bool isExact)
         {
-            if (isExact)
-            {
-                throw new NotImplementedException();
-            }
+            if (isExact) throw new NotImplementedException();
 
             return _patients.Where(patient => name == patient.Name).ToList();
         }

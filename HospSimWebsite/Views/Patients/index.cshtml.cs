@@ -6,7 +6,6 @@ namespace HospSimWebsite.Views.Home
     {
         public void OnGet()
         {
-            
         }
     }
 }

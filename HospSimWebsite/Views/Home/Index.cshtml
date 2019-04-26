@@ -1,6 +1,5 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    
 }
 @model HospSimWebsite.Models.HomeViewModel
 
@@ -13,29 +12,33 @@
 </head>
 
 <body>
-    <div class="headerDiv">
-        <div align="center">
-            <div class="row" style="display: inline-block;">
-                <div class="card patientCard">
-                    <div class="card-body">
-                        <h5 class="card-title">Patients</h5>
-                        <p class="card-text">Our current amount of patients.</p>
-                        <p class="card-text"><b>@Model.PatientCount</b></p>
-                        <a style="float: bottom" href="#" class="btn btn-primary">Learn more</a>
-                    </div>
-                </div>
-                <div class="card diseaseCard">
-                    <div class="card-body">
-                        <h5 class="card-title">Diseases</h5>
-                        <p class="card-text">The current amount of diseases.</p>
-                        <p class="card-text"><b>@Model.DiseaseCount</b></p>
-                        <a style="float: bottom" href="#" class="btn btn-primary">Learn more</a>
-                    </div>
+<div class="headerDiv">
+    <div align="center">
+        <div class="row" style="display: inline-block;">
+            <div class="card patientCard">
+                <div class="card-body">
+                    <h5 class="card-title">Patients</h5>
+                    <p class="card-text">Our current amount of patients.</p>
+                    <p class="card-text">
+                        <b>@Model.PatientCount</b>
+                    </p>
+                    <a style="float: bottom" href="#" class="btn btn-primary">Learn more</a>
                 </div>
             </div>
-            <h3 style="margin-top: 20px; color: ghostwhite">Welcome to Fairbanks | Hospital.</h3>
-            <a asp-controller="Form" asp-action="Index">Register patient.</a>
+            <div class="card diseaseCard">
+                <div class="card-body">
+                    <h5 class="card-title">Diseases</h5>
+                    <p class="card-text">The current amount of diseases.</p>
+                    <p class="card-text">
+                        <b>@Model.DiseaseCount</b>
+                    </p>
+                    <a style="float: bottom" href="#" class="btn btn-primary">Learn more</a>
+                </div>
+            </div>
         </div>
+        <h3 style="color: ghostwhite; margin-top: 20px;">Welcome to Fairbanks | Hospital.</h3>
+        <a asp-controller="Form" asp-action="Index">Register patient.</a>
     </div>
+</div>
 </body>
 </html>

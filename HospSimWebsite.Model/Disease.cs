@@ -4,12 +4,6 @@ namespace HospSimWebsite.Model
 {
     public class Disease
     {
-        public int Id { get; }
-        public string Name { get; }
-        public int Duration { get; }
-        public int Severity { get; }
-        public List<string> Descriptions { get; }
-
         public Disease(int id, string name, int duration, int severity, List<string> descriptions)
         {
             Id = id;
@@ -18,6 +12,12 @@ namespace HospSimWebsite.Model
             Severity = severity;
             Descriptions = descriptions;
         }
+
+        public int Id { get; }
+        public string Name { get; }
+        public int Duration { get; }
+        public int Severity { get; }
+        public List<string> Descriptions { get; }
 
         public override string ToString()
         {

@@ -11,5 +11,6 @@ namespace HospSimWebsite.Repository.Interfaces
         List<Patient> GetByDisease(int id);
         int GetAmount();
         void Remove(int index);
+        Patient GetById(int id);
     }
 }
