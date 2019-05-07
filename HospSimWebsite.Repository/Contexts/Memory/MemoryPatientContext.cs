@@ -13,7 +13,7 @@ namespace HospSimWebsite.Repository.Contexts.Memory
         {
             _patients = new List<Patient>();
 
-            for (var i = 0; i < 10; i++) _patients.Add(new Patient(i, "Mark", i));
+            for (var i = 0; i < 10; i++) _patients.Add(new Patient(i, "Mark", i, new Disease(1, "Asthma", 1, 1, new List<string>(){"Sample Data", "Sample Data", "Sample Data"})));
         }
 
         public List<Patient> GetAll()

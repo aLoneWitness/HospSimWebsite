@@ -4,6 +4,11 @@ namespace HospSimWebsite.Model
 {
     public class Doctor : IHuman
     {
-        public string Name { get; private set; }
+        public Doctor(string name)
+        {
+            Name = name;
+        }
+
+        public string Name { get; }
     }
 }

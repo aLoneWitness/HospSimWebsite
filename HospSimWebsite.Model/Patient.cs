@@ -12,13 +12,6 @@ namespace HospSimWebsite.Model
             Disease = disease;
         }
 
-        public Patient(int id, string name, int age)
-        {
-            Id = id;
-            Name = name;
-            Age = age;
-        }
-
         public int Age { get; }
         public Disease Disease { get; }
         public int Id { get; }
