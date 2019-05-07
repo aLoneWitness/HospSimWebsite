@@ -42,13 +42,13 @@ namespace HospSimWebsite.Repository.Contexts.MySQL
                     userQuery[0]["desc1"].ToString(), userQuery[0]["desc2"].ToString(), userQuery[0]["desc3"].ToString()
                 });
         }
-        
-        /*
-        public int GetAmount()
+
+        public int Count()
         {
             var userQuery = Database.Query("SELECT id FROM disease");
             return userQuery.Count;
         }
+        /*
 
         public Disease GetById(int id)
         {
@@ -61,7 +61,8 @@ namespace HospSimWebsite.Repository.Contexts.MySQL
                     userQuery[0]["desc1"].ToString(), userQuery[0]["desc2"].ToString(), userQuery[0]["desc3"].ToString()
                 });
         }
-
+        
+        */
         public List<Disease> GetAll()
         {
             var userQuery = Database.Query("SELECT * FROM disease");
@@ -78,6 +79,5 @@ namespace HospSimWebsite.Repository.Contexts.MySQL
 
             return diseases;
         }
-        */
     }
 }

@@ -5,7 +5,8 @@ using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Repository.Contexts.Memory
 {
-    public class MemoryDiseaseContext : IDiseaseContext
+    /*
+    public class MemoryDiseaseContext 
     {
         private readonly List<Disease> _diseases;
 
@@ -37,4 +38,5 @@ namespace HospSimWebsite.Repository.Contexts.Memory
             throw new NotImplementedException();
         }
     }
+    */
 }

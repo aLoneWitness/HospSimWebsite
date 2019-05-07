@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using HospSimWebsite.Logic.Interfaces;
+using HospSimWebsite.Model;
 using HospSimWebsite.Models;
+using HospSimWebsite.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers
@@ -20,8 +22,8 @@ namespace HospSimWebsite.Controllers
         {
             var model = new HomeViewModel();
 
-            model.PatientCount = _patientLogic.GetAmount();
-            model.DiseaseCount = _diseaseLogic.GetAmount();
+            model.PatientCount = _patientLogic.Count();
+            model.DiseaseCount = _diseaseLogic.Count();
 
             return View(model);
         }

@@ -7,9 +7,9 @@ namespace HospSimWebsite.Logic
 {
     public class DiseaseLogic : IDiseaseLogic
     {
-        private readonly IDiseaseRepo _repo;
+        private readonly IRepository<Disease> _repo;
 
-        public DiseaseLogic(IDiseaseRepo diseaseRepo)
+        public DiseaseLogic(IRepository<Disease> diseaseRepo)
         {
             _repo = diseaseRepo;
         }
@@ -22,9 +22,14 @@ namespace HospSimWebsite.Logic
             return true;
         }
 
-        public Disease GetById(int id)
+        public Disease Read(int id)
         {
-            return _repo.GetById(id);
+            return _repo.Read(id);
+        }
+
+        public void Delete(int id)
+        {
+            _repo.Delete(id);
         }
 
         public List<Disease> GetAll()
@@ -32,9 +37,9 @@ namespace HospSimWebsite.Logic
             return _repo.GetAll();
         }
 
-        public int GetAmount()
+        public int Count()
         {
-            return _repo.GetAmount();
+            return _repo.Count();
         }
     }
 }

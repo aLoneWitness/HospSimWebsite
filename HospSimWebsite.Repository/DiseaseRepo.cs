@@ -1,15 +1,16 @@
 using System.Collections.Generic;
 using HospSimWebsite.Model;
 using HospSimWebsite.Repository.Contexts;
+using HospSimWebsite.Repository.Contexts.MySQL.Interfaces;
 using HospSimWebsite.Repository.Interfaces;
 
 namespace HospSimWebsite.Repository
 {
-    public class DiseaseRepo : IDiseaseRepo
+    public class DiseaseRepo : IRepository<Disease>
     {
-        private readonly IDiseaseContext _context;
+        private readonly IMySqlContext<Disease> _context;
 
-        public DiseaseRepo(IDiseaseContext diseaseContext)
+        public DiseaseRepo(IMySqlContext<Disease> diseaseContext)
         {
             _context = diseaseContext;
         }
@@ -19,9 +20,19 @@ namespace HospSimWebsite.Repository
             _context.Insert(disease);
         }
 
-        public Disease GetById(int id)
+        public void Update(Disease obj)
         {
-            return _context.GetById(id);
+            _context.Update(obj);
+        }
+
+        public void Delete(int id)
+        {
+            _context.Delete(id);
+        }
+
+        public Disease Read(int id)
+        {
+            return _context.Read(id);
         }
 
         public List<Disease> GetAll()
@@ -29,9 +40,9 @@ namespace HospSimWebsite.Repository
             return _context.GetAll();
         }
 
-        public int GetAmount()
+        public int Count()
         {
-            return _context.GetAmount();
+            return _context.Count();
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using HospSimWebsite.DAL.HospSimWebsite;
 using HospSimWebsite.Model;
+using HospSimWebsite.Repository.Contexts.MySQL.Interfaces;
 
 namespace HospSimWebsite.Repository.Contexts.MySQL
 {
@@ -42,6 +43,11 @@ namespace HospSimWebsite.Repository.Contexts.MySQL
         public void Insert(Patient patient)
         {
             Database.Procedure("AddPatient", patient.Name, patient.Age, patient.Disease.Id);
+        }
+
+        public void Update(Patient obj)
+        {
+            Database.Query("UPDATE patient SET name = ?, age = ?, disease = ?;", obj.Name.ToString(), obj.Age, obj.Disease.Id);
         }
 
         public List<Patient> GetAll()
@@ -94,17 +100,33 @@ namespace HospSimWebsite.Repository.Contexts.MySQL
             return patients;
         }
 
-        public Patient GetById(int id)
+        public Patient Read(int id)
         {
-            throw new NotImplementedException();
+            var patientQuery =
+                Database.Query("SELECT * FROM patient WHERE patient.id = ?", id.ToString());
+            
+            var diseaseQuery = Database.Query("SELECT * FROM disease WHERE disease.id = ?", patientQuery[0]["disease"].ToString());
+            
+            var disease = new Disease(Convert.ToInt16(diseaseQuery[0]["id"]), diseaseQuery[0]["name"].ToString(),
+                Convert.ToInt16(diseaseQuery[0]["duration"]), Convert.ToInt16(diseaseQuery[0]["severity"]),
+                new List<string>
+                {
+                    diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
+                });
+            
+            var patient = new Patient(Convert.ToInt16(patientQuery[0]["id"]), patientQuery[0]["name"].ToString(),
+                Convert.ToInt16(patientQuery[0]["age"]),
+                disease);
+
+            return patient;
         }
 
-        public void Remove(int id)
+        public void Delete(int id)
         {
             Database.Query("DELETE FROM patient WHERE id=?", id.ToString());
         }
 
-        public int GetAmount()
+        public int Count()
         {
             var userQuery = Database.Query("SELECT COUNT(*) FROM patient");
             var count = Convert.ToInt16(userQuery[0]["COUNT(*)"]);

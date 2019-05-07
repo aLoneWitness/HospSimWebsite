@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Models;
+using HospSimWebsite.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers
@@ -32,7 +33,7 @@ namespace HospSimWebsite.Controllers
             if (DateTime.Now.DayOfYear < viewModel.Birthday.DayOfYear)
                 age = age - 1;
 
-            var patient = new Patient(0, viewModel.Name, age, _diseaseLogic.GetById(viewModel.Disease));
+            var patient = new Patient(0, viewModel.Name, age, _diseaseLogic.Read(viewModel.Disease));
             _patientLogic.Insert(patient);
 
             return View(viewModel);

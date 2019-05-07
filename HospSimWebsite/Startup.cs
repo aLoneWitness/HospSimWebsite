@@ -34,7 +34,7 @@ namespace HospSimWebsite
             
             var conString = Configuration.GetConnectionString("AzureDB");
             services.AddSingleton<IPatientLogic>(new PatientLogic(new PatientRepo(new MySqlPatientContext(conString))));
-            services.AddSingleton<IDiseaseLogic>(new DiseaseLogic(new DiseaseRepo(new MySqlContext(conString))));
+            services.AddSingleton<IDiseaseLogic>(new DiseaseLogic(new DiseaseRepo(new MySqlDiseaseContext(conString))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

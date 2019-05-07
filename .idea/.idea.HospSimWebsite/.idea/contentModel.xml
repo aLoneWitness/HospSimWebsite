@@ -191,8 +191,6 @@
       <e p="HospSimWebsite.Repository" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Contexts" t="Include">
-          <e p="IDiseaseContext.cs" t="Include" />
-          <e p="IPatientContext.cs" t="Include" />
           <e p="Memory" t="Include">
             <e p="MemoryDiseaseContext.cs" t="Include" />
             <e p="MemoryPatientContext.cs" t="Include" />
@@ -200,6 +198,7 @@
           <e p="MySQL" t="Include">
             <e p="Interfaces" t="Include">
               <e p="IMySqlContext.cs" t="Include" />
+              <e p="IPatientContext.cs" t="Include" />
             </e>
             <e p="MySqlContext.cs" t="Include" />
             <e p="MySqlDiseaseContext.cs" t="Include" />
@@ -210,8 +209,8 @@
         <e p="DiseaseRepo.cs" t="Include" />
         <e p="HospSimWebsite.Repository.csproj" t="IncludeRecursive" />
         <e p="Interfaces" t="Include">
-          <e p="IDiseaseRepo.cs" t="Include" />
           <e p="IPatientRepo.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -235,7 +234,6 @@
             </e>
           </e>
         </e>
-        <e p="PatientTests.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>

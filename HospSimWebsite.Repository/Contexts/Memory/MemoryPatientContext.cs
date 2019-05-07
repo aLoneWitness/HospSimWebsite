@@ -5,6 +5,7 @@ using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Repository.Contexts.Memory
 {
+    /*
     public class MemoryPatientContext : IPatientContext
     {
         private readonly List<Patient> _patients;
@@ -53,4 +54,5 @@ namespace HospSimWebsite.Repository.Contexts.Memory
             _patients.Add(patient);
         }
     }
+    */
 }

@@ -6,7 +6,7 @@ namespace HospSimWebsite.Logic.Interfaces
     public interface IPatientLogic : ILogic<Patient>
     {
         List<Patient> GetByName(string name, bool isExact = true);
-        List<Patient> GetByDisease(Disease disease);
+        List<Patient> GetByDisease(int id);
         void Remove(int index);
     }
 }

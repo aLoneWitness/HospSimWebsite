@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using HospSimWebsite.Model;
 using HospSimWebsite.Repository.Contexts;
+using HospSimWebsite.Repository.Contexts.MySQL.Interfaces;
 using HospSimWebsite.Repository.Interfaces;
 
 namespace HospSimWebsite.Repository
@@ -14,19 +15,34 @@ namespace HospSimWebsite.Repository
             _context = patientContext;
         }
 
-        public List<Patient> GetByName(string name, bool shouldBeExact = true)
+        public void Insert(Patient obj)
         {
-            return _context.GetByName(name, shouldBeExact);
+            _context.Insert(obj);
         }
 
-        public void Insert(Patient patient)
+        public void Update(Patient obj)
         {
-            _context.Insert(patient);
+            _context.Update(obj);
         }
 
-        public List<Patient> GetAll()
+        public void Delete(int id)
         {
-            return _context.GetAll();
+            _context.Delete(id);
+        }
+
+        public Patient Read(int id)
+        {
+            return _context.Read(id);
+        }
+
+        public int Count()
+        {
+            return _context.Count();
+        }
+
+        public List<Patient> GetByName(string name, bool isExact)
+        {
+            return _context.GetByName(name, isExact);
         }
 
         public List<Patient> GetByDisease(int id)
@@ -34,19 +50,9 @@ namespace HospSimWebsite.Repository
             return _context.GetByDisease(id);
         }
 
-        public int GetAmount()
+        public List<Patient> GetAll()
         {
-            return _context.GetAmount();
-        }
-
-        public void Remove(int index)
-        {
-            _context.Remove(index);
-        }
-
-        public Patient GetById(int id)
-        {
-            return _context.GetById(id);
+            return _context.GetAll();
         }
     }
 }

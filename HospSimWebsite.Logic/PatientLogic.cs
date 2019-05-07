@@ -32,24 +32,29 @@ namespace HospSimWebsite.Logic
             return _repo.GetAll();
         }
 
-        public List<Patient> GetByDisease(Disease disease)
+        public List<Patient> GetByDisease(int id)
         {
-            return _repo.GetByDisease(disease.Id);
+            return _repo.GetByDisease(id);
         }
 
-        public int GetAmount()
+        public int Count()
         {
-            return _repo.GetAmount();
+            return _repo.Count();
         }
 
-        public Patient GetById(int id)
+        public Patient Read(int id)
         {
-            return _repo.GetById(id);
+            return _repo.Read(id);
+        }
+
+        public void Delete(int id)
+        {
+            _repo.Delete(id);
         }
 
         public void Remove(int index)
         {
-            _repo.Remove(index);
+            _repo.Delete(index);
         }
     }
 }
