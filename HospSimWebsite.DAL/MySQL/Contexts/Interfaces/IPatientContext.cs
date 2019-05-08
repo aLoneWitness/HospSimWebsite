@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using HospSimWebsite.Model;
 
-namespace HospSimWebsite.Repository.Contexts.MySQL.Interfaces
+namespace HospSimWebsite.DAL.MySQL.Contexts.Interfaces
 {
     public interface IPatientContext : IMySqlContext<Patient>
     {

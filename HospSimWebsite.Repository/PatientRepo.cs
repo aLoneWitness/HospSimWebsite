@@ -1,7 +1,6 @@
 using System.Collections.Generic;
+using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
 using HospSimWebsite.Model;
-using HospSimWebsite.Repository.Contexts;
-using HospSimWebsite.Repository.Contexts.MySQL.Interfaces;
 using HospSimWebsite.Repository.Interfaces;
 
 namespace HospSimWebsite.Repository

@@ -1,57 +1,50 @@
-namespace HospSimWebsite.Repositories
+using System.Collections.Generic;
+using HospSimWebsite.Model;
+using HospSimWebsite.Repository.Interfaces;
+
+namespace HospSimWebsite.Repository
 {
-    /*
-    public class UserRepo
+    public class UserRepo : IUserRepo
     {
-        public IHuman GetByName(string name)
+        private readonly IUserRepo _context;
+        
+        public UserRepo(IUserRepo context)
         {
-            var queryResult = Query("SELECT name FROM doctor WHERE name = ?", name);
-
-            try
-            {
-                return new Player(Convert.ToInt16(queryResult[0]["id"]), queryResult[0]["username"].ToString(),
-                    queryResult[0]["name"].ToString());
-            }
-            catch (MySqlException e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            _context = context;
+        }
+        public void Insert(User obj)
+        {
+            _context.Insert(obj);
         }
 
-        public List<IHuman> GetAll()
+        public void Update(User obj)
         {
-            var userQuery = Query("SELECT * FROM user");
-            var users = new List<IHuman>();
-
-            for (var i = 0; i < userQuery.Count; i++)
-            {
-                var user = new Player(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["username"].ToString(),
-                    userQuery[i]["name"].ToString());
-                users.Add(user);
-            }
-
-            return users;
+            _context.Update(obj);
         }
 
-        public IHuman GetById(int id)
+        public void Delete(int id)
         {
-            var userQuery = Query("SELECT * FROM user WHERE id = ?", id.ToString());
-
-            return new Player(Convert.ToInt16(userQuery[0]["id"]), userQuery[0]["username"].ToString(),
-                userQuery[0]["name"].ToString());
+            _context.Delete(id);
         }
 
-        public void Insert(string username, string password, Player player)
+        public User Read(int id)
         {
-            Query("INSERT INTO user (name, password, doctorname, highscore) VALUES (?, ?, ?)", username, password,
-                player.Name, player.Score.ToString());
+            return _context.Read(id);
         }
 
-        public void UpdateHighscore(int score)
+        public List<User> GetAll()
         {
-            Query("UPDATE user SET highscore = ?", score.ToString());
+            return _context.GetAll();
+        }
+
+        public int Count()
+        {
+            return _context.Count();
+        }
+
+        public void Register(User obj, string hPassword)
+        {
+            _context.Register(obj, hPassword);
         }
     }
-    */
 }

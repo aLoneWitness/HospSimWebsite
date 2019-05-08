@@ -1,7 +1,4 @@
-using HospSimWebsite.DAL;
-using HospSimWebsite.Repository.Contexts.MySQL.Interfaces;
-
-namespace HospSimWebsite.Repository.Contexts.MySQL
+namespace HospSimWebsite.DAL.MySQL.Contexts
 {
     public class MySqlContext
     {

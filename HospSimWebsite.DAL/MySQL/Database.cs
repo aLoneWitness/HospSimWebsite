@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using HospSimWebsite.DAL.HospSimWebsite;
+using HospSimWebsite.DAL.MySQL.HospSimWebsite;
 using Microsoft.EntityFrameworkCore.Internal;
 using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.DAL
+namespace HospSimWebsite.DAL.MySQL
 {
     public class Database
     {
@@ -49,21 +49,21 @@ namespace HospSimWebsite.DAL
             if (parameters != null)
                 foreach (var param in parameters)
                     mySqlCommand.Parameters.AddWithValue("param" + parameters.IndexOf(param), param);
-                /* var type = param.GetType().FullName;
-                    switch (type)
-                    {
-                        case "System.String":
-                            mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1], );
-                            
+            /* var type = param.GetType().FullName;
+                switch (type)
+                {
+                    case "System.String":
+                        mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1], );
+                        
 
-                            break;
-                        case "System.Integer":
-                            mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1]);
+                        break;
+                    case "System.Integer":
+                        mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1]);
 
-                            break;
-                        default:
-                            break;
-                    }*/
+                        break;
+                    default:
+                        break;
+                }*/
             var dataReader = mySqlCommand.ExecuteReader();
             while (dataReader.Read())
             {

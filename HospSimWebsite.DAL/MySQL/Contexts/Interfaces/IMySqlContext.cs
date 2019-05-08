@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using HospSimWebsite.Model;
-
-namespace HospSimWebsite.Repository.Contexts.MySQL.Interfaces
+namespace HospSimWebsite.DAL.MySQL.Contexts.Interfaces
 {
     public interface IMySqlContext<T> where T : class
     {
@@ -10,6 +7,5 @@ namespace HospSimWebsite.Repository.Contexts.MySQL.Interfaces
         void Delete(int id);
         T Read(int id);
         int Count();
-        List<T> GetAll();
     }
 }

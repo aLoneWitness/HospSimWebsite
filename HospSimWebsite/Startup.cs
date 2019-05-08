@@ -1,7 +1,7 @@
-﻿using HospSimWebsite.Logic;
+﻿using HospSimWebsite.DAL.MySQL.Contexts;
+using HospSimWebsite.Logic;
 using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Repository;
-using HospSimWebsite.Repository.Contexts.MySQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

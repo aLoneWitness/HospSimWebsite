@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
+using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
 using HospSimWebsite.Model;
-using HospSimWebsite.Repository.Contexts.MySQL.Interfaces;
 
-namespace HospSimWebsite.Repository.Contexts.MySQL
+namespace HospSimWebsite.DAL.MySQL.Contexts
 {
-    public class MySqlDiseaseContext : MySqlContext, IMySqlContext<Disease>
+    public class MySqlDiseaseContext : MySqlContext, IDiseaseContext
     {
         public MySqlDiseaseContext(string conString) : base(conString){}
         public void Insert(Disease disease)

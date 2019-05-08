@@ -1,16 +1,15 @@
 using System.Collections.Generic;
+using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
 using HospSimWebsite.Model;
-using HospSimWebsite.Repository.Contexts;
-using HospSimWebsite.Repository.Contexts.MySQL.Interfaces;
 using HospSimWebsite.Repository.Interfaces;
 
 namespace HospSimWebsite.Repository
 {
     public class DiseaseRepo : IRepository<Disease>
     {
-        private readonly IMySqlContext<Disease> _context;
+        private readonly IDiseaseContext _context;
 
-        public DiseaseRepo(IMySqlContext<Disease> diseaseContext)
+        public DiseaseRepo(IDiseaseContext diseaseContext)
         {
             _context = diseaseContext;
         }

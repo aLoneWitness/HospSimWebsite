@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using HospSimWebsite.DAL.HospSimWebsite;
+using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
+using HospSimWebsite.DAL.MySQL.HospSimWebsite;
 using HospSimWebsite.Model;
-using HospSimWebsite.Repository.Contexts.MySQL.Interfaces;
 
-namespace HospSimWebsite.Repository.Contexts.MySQL
+namespace HospSimWebsite.DAL.MySQL.Contexts
 {
     public class MySqlPatientContext : MySqlContext, IPatientContext
     {
