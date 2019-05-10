@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace HospSimWebsite.Model
 {
@@ -12,7 +13,7 @@ namespace HospSimWebsite.Model
             Severity = severity;
             Descriptions = descriptions;
         }
-
+        
         public int Id { get; }
         public string Name { get; }
         public int Duration { get; }

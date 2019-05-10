@@ -31,7 +31,7 @@ namespace HospSimWebsite
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            
+
             var conString = Configuration.GetConnectionString("AzureDB");
             services.AddSingleton<IPatientLogic>(new PatientLogic(new PatientRepo(new MySqlPatientContext(conString))));
             services.AddSingleton<IDiseaseLogic>(new DiseaseLogic(new DiseaseRepo(new MySqlDiseaseContext(conString))));
