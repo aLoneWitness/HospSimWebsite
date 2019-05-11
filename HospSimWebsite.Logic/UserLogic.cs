@@ -22,7 +22,7 @@ namespace HospSimWebsite.Logic
         public bool Validate(User user)
         {
             var password = user.Password;
-            if(_repo.Validate(user))
+            return true;
         }
     }
 }
