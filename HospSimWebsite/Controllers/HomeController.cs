@@ -1,8 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using HospSimWebsite.Logic.Interfaces;
-using HospSimWebsite.Model;
 using HospSimWebsite.Models;
-using HospSimWebsite.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Repository.Interfaces;
 
@@ -6,9 +7,9 @@ namespace HospSimWebsite.Repository
 {
     public class UserRepo : IUserRepo
     {
-        private readonly IUserRepo _context;
+        private readonly IUserContext _context;
         
-        public UserRepo(IUserRepo context)
+        public UserRepo(IUserContext context)
         {
             _context = context;
         }
@@ -34,7 +35,7 @@ namespace HospSimWebsite.Repository
 
         public List<User> GetAll()
         {
-            return _context.GetAll();
+            throw new System.NotImplementedException();
         }
 
         public int Count()
@@ -42,9 +43,9 @@ namespace HospSimWebsite.Repository
             return _context.Count();
         }
 
-        public void Register(User obj, string hPassword)
+        public User Validate(User user)
         {
-            _context.Register(obj, hPassword);
+            return _context.Validate(user);
         }
     }
 }

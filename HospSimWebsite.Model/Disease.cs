@@ -1,24 +1,14 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace HospSimWebsite.Model
 {
     public class Disease
     {
-        public Disease(int id, string name, int duration, int severity, List<string> descriptions)
-        {
-            Id = id;
-            Name = name;
-            Duration = duration;
-            Severity = severity;
-            Descriptions = descriptions;
-        }
-        
-        public int Id { get; }
-        public string Name { get; }
-        public int Duration { get; }
-        public int Severity { get; }
-        public List<string> Descriptions { get; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Duration { get; set; }
+        public int Severity { get; set; }
+        public List<string> Descriptions { get; set; }
 
         public override string ToString()
         {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Models;
-using HospSimWebsite.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospSimWebsite.Controllers
@@ -26,14 +25,20 @@ namespace HospSimWebsite.Controllers
 
             return View(viewModel);
         }
-
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Submit(PatientFormViewModel viewModel)
         {
             var age = DateTime.Now.Year - viewModel.Birthday.Year;
             if (DateTime.Now.DayOfYear < viewModel.Birthday.DayOfYear)
                 age = age - 1;
 
-            var patient = new Patient(0, viewModel.Name, age, _diseaseLogic.Read(viewModel.Disease));
+            var patient = new Patient{
+                Name = viewModel.Name, 
+                Age = age, 
+                Disease = _diseaseLogic.Read(viewModel.Disease)
+            };
             _patientLogic.Insert(patient);
 
             return View(viewModel);

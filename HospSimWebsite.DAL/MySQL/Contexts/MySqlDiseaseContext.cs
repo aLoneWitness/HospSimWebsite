@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
+using HospSimWebsite.DAL.MySQL.HospSimWebsite;
 using HospSimWebsite.Model;
 
 namespace HospSimWebsite.DAL.MySQL.Contexts
@@ -35,12 +36,15 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
         {
             var userQuery = Database.Query("SELECT * FROM disease WHERE id = ?", id.ToString());
 
-            return new Disease(Convert.ToInt16(userQuery[0]["id"]), userQuery[0]["name"].ToString(),
-                Convert.ToInt16(userQuery[0]["duration"]), Convert.ToInt16(userQuery[0]["severity"]),
-                new List<string>
+            return new Disease{
+                Id = Convert.ToInt16(userQuery[0]["id"]), 
+                Name = userQuery[0]["name"].ToString(),
+                Duration = Convert.ToInt16(userQuery[0]["duration"]), 
+                Severity = Convert.ToInt16(userQuery[0]["severity"]),
+                Descriptions = new List<string>
                 {
                     userQuery[0]["desc1"].ToString(), userQuery[0]["desc2"].ToString(), userQuery[0]["desc3"].ToString()
-                });
+                }};
         }
 
         public int Count()
@@ -68,14 +72,16 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             var userQuery = Database.Query("SELECT * FROM disease");
             var diseases = new List<Disease>();
 
-            for (var i = 0; i < userQuery.Count; i++)
-                diseases.Add(new Disease(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(),
-                    Convert.ToInt16(userQuery[i]["duration"]), Convert.ToInt16(userQuery[i]["severity"]),
-                    new List<string>
+            foreach (var queryResult in userQuery)
+                diseases.Add(new Disease{
+                    Id = Convert.ToInt16(queryResult["id"]), 
+                    Name = queryResult["name"].ToString(),
+                    Duration = Convert.ToInt16(queryResult["duration"]), 
+                    Severity = Convert.ToInt16(queryResult["severity"]),
+                    Descriptions = new List<string>
                     {
-                        userQuery[0]["desc1"].ToString(), userQuery[0]["desc2"].ToString(),
-                        userQuery[0]["desc3"].ToString()
-                    }));
+                        queryResult["desc1"].ToString(), queryResult["desc2"].ToString(), queryResult["desc3"].ToString()
+                    }});
 
             return diseases;
         }

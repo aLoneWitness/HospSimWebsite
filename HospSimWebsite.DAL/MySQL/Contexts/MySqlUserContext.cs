@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
 using HospSimWebsite.Model;
+using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.DAL.MySQL.Contexts
 {
@@ -39,17 +41,39 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             foreach (var patient in patientsQuery)
             {
                 var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", patient["disease"].ToString());
-                var disease = new Disease(Convert.ToInt16(diseaseQuery[0]["id"]), diseaseQuery[0]["name"].ToString(),
-                    Convert.ToInt16(diseaseQuery[0]["duration"]), Convert.ToInt16(diseaseQuery[0]["severity"]), new List<string>
+                var disease = new Disease{
+                    Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
+                    Name = diseaseQuery[0]["name"].ToString(),
+                    Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
+                    Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
+                    Descriptions = new List<string>
                     {
-                        diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(),
-                        diseaseQuery[0]["desc3"].ToString()
-                    });
+                        diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
+                    }};
                 
-                patients.Add(new Patient(Convert.ToInt16(patient["id"]), patient["name"].ToString(), Convert.ToInt16(patient["age"]), disease));
+                patients.Add(new Patient
+                {
+                    Id = Convert.ToInt16(patient["id"]), 
+                    Name = patient["name"].ToString(), 
+                    Age = Convert.ToInt16(patient["age"]), 
+                    Disease = disease
+                });
             }
             
-            return new User(Convert.ToInt16(userQuery[0]["id"]), userQuery[0]["name"].ToString(), userQuery[0]["username"].ToString(), patients, new Doctor(userQuery[0]["doctorname"].ToString()));
+            return new User{
+                Id = Convert.ToInt16(userQuery[0]["id"]),
+                Name = userQuery[0]["name"].ToString(), 
+                Username = userQuery[0]["username"].ToString(), 
+                Patients = patients, 
+                Doctor = new Doctor{ Name = userQuery[0]["doctorname"].ToString()}
+            };
+        }
+
+        public User Validate(User user)
+        {
+            var queryResults = Database.Query("SELECT * FROM user WHERE username = ? AND password = ?", user.Username, user.Password);
+            if (queryResults.Count != 1) throw new Exception("A authentication problem has occured, please try again later.");
+            return Read(Convert.ToInt16(queryResults.First()["id"]));
         }
 
         public int Count()

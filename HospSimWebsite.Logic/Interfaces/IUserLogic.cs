@@ -2,9 +2,9 @@ using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Logic.Interfaces
 {
-    public interface IUserLogic : ILogic<User>
+    public interface IUserLogic
     {
         bool Register(User user);
-        bool ValidateUser(User user);
+        bool Validate(User user);
     }
 }

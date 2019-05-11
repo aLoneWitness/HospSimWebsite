@@ -20,21 +20,27 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             else
                 userQuery = Database.Query("SELECT * FROM patient WHERE name LIKE ?", $"%{name}%");
 
-            for (var i = 0; i < userQuery.Count; i++)
+            foreach (var queryResult in userQuery)
             {
-                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", userQuery[i]["disease"].ToString());
+                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", queryResult["disease"].ToString());
 
-                var disease = new Disease(Convert.ToInt16(diseaseQuery[0]["id"]), diseaseQuery[0]["name"].ToString(),
-                    Convert.ToInt16(diseaseQuery[0]["duration"]), Convert.ToInt16(diseaseQuery[0]["severity"]),
-                    new List<string>
+                var disease = new Disease{
+                    Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
+                    Name = userQuery[0]["name"].ToString(),
+                    Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
+                    Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
+                    Descriptions = new List<string>
                     {
                         diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
-                    });
-                    
-                var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(),
-                    Convert.ToInt16(userQuery[i]["age"]),
-                    disease);
-                patients.Add(patient);
+                    }};
+
+                patients.Add(new Patient
+                {
+                    Id = Convert.ToInt16(queryResult["id"]),
+                    Name = queryResult["name"].ToString(),
+                    Age = Convert.ToInt16(queryResult["age"]),
+                    Disease = disease
+                });
             }
 
             return patients;
@@ -55,20 +61,27 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             var userQuery = Database.Procedure("GetAllPatients");
             var patients = new List<Patient>();
 
-            for (var i = 0; i < userQuery.Count; i++)
+            foreach (var queryResult in userQuery)
             {
-                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", userQuery[i]["disease"].ToString());
+                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", queryResult["disease"].ToString());
 
-                var disease = new Disease(Convert.ToInt16(diseaseQuery[0]["id"]), diseaseQuery[0]["name"].ToString(),
-                    Convert.ToInt16(diseaseQuery[0]["duration"]), Convert.ToInt16(diseaseQuery[0]["severity"]),
-                    new List<string>
+                var disease = new Disease{
+                    Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
+                    Name = diseaseQuery[0]["name"].ToString(),
+                    Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
+                    Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
+                    Descriptions = new List<string>
                     {
                         diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
-                    });
-                var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(),
-                    Convert.ToInt16(userQuery[i]["age"]),
-                    disease);
-                patients.Add(patient);
+                    }};
+                
+                patients.Add(new Patient
+                {
+                    Id = Convert.ToInt16(queryResult["id"]),
+                    Name = queryResult["name"].ToString(),
+                    Age = Convert.ToInt16(queryResult["age"]),
+                    Disease = disease
+                });
             }
 
             return patients;
@@ -81,20 +94,27 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             var userQuery =
                 Database.Query("SELECT * FROM patient WHERE patient.disease = ?", id.ToString());
 
-            for (var i = 0; i < userQuery.Count; i++)
+            foreach (var queryResult in userQuery)
             {
-                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", userQuery[i]["disease"].ToString());
+                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", queryResult["disease"].ToString());
 
-                var disease = new Disease(Convert.ToInt16(diseaseQuery[0]["id"]), diseaseQuery[0]["name"].ToString(),
-                    Convert.ToInt16(diseaseQuery[0]["duration"]), Convert.ToInt16(diseaseQuery[0]["severity"]),
-                    new List<string>
+                var disease = new Disease{
+                    Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
+                    Name = diseaseQuery[0]["name"].ToString(),
+                    Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
+                    Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
+                    Descriptions = new List<string>
                     {
                         diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
-                    });
-                var patient = new Patient(Convert.ToInt16(userQuery[i]["id"]), userQuery[i]["name"].ToString(),
-                    Convert.ToInt16(userQuery[i]["age"]),
-                    disease);
-                patients.Add(patient);
+                    }};
+                
+                patients.Add(new Patient
+                {
+                    Id = Convert.ToInt16(queryResult["id"]),
+                    Name = queryResult["name"].ToString(),
+                    Age = Convert.ToInt16(queryResult["age"]),
+                    Disease = disease
+                });
             }
 
             return patients;
@@ -107,16 +127,23 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             
             var diseaseQuery = Database.Query("SELECT * FROM disease WHERE disease.id = ?", patientQuery[0]["disease"].ToString());
             
-            var disease = new Disease(Convert.ToInt16(diseaseQuery[0]["id"]), diseaseQuery[0]["name"].ToString(),
-                Convert.ToInt16(diseaseQuery[0]["duration"]), Convert.ToInt16(diseaseQuery[0]["severity"]),
-                new List<string>
+            var disease = new Disease{
+                Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
+                Name = diseaseQuery[0]["name"].ToString(),
+                Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
+                Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
+                Descriptions = new List<string>
                 {
                     diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
-                });
-            
-            var patient = new Patient(Convert.ToInt16(patientQuery[0]["id"]), patientQuery[0]["name"].ToString(),
-                Convert.ToInt16(patientQuery[0]["age"]),
-                disease);
+                }};
+
+            var patient = new Patient
+            {
+                Id = Convert.ToInt16(patientQuery[0]["id"]),
+                Name = patientQuery[0]["name"].ToString(),
+                Age = Convert.ToInt16(patientQuery[0]["age"]),
+                Disease = disease
+            };
 
             return patient;
         }

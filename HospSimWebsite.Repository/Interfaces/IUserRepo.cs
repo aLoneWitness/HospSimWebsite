@@ -4,6 +4,6 @@ namespace HospSimWebsite.Repository.Interfaces
 {
     public interface IUserRepo : IRepository<User>
     {
-        void Register(User obj, string hPassword);
+        User Validate(User user);
     }
 }
