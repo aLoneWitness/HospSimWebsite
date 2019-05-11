@@ -1,10 +1,11 @@
+using HospSimWebsite.Logic.Enums;
 using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Logic.Interfaces
 {
     public interface IUserLogic
     {
-        bool Register(User user);
+        RegisterStatus Register(User user);
         bool Validate(User user);
     }
 }

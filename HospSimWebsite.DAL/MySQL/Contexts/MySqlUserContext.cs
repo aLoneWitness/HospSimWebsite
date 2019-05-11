@@ -33,10 +33,28 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
 
         public User Read(int id)
         {
-            var userQuery = Database.Query("SELECT * FROM user WHERE id = ?", id);
+            throw new NotImplementedException();
+        }
+
+        public User Validate(User user)
+        {
+            var queryResults = Database.Query("SELECT * FROM user WHERE username = ? AND password = ?", user.Username, user.Password);
+            if (queryResults.Count != 1) throw new Exception("A authentication problem has occured, please try again later.");
+            return Read(Convert.ToInt16(queryResults.First()["id"]));
+        }
+
+        public bool Exists(User user)
+        {
+            var queryResults = Database.Query("SELECT COUNT(*) FROM user WHERE username = ?", user.Username);
+            return queryResults.Any();
+        }
+
+        public User ReadByUsername(string username)
+        {
+            var userQuery = Database.Query("SELECT * FROM user WHERE username = ?", username);
             
             var patients = new List<Patient>();
-            var patientsQuery = Database.Query("SELECT patient.* FROM userpatients INNER JOIN patient ON userpatients.patientid = patient.id WHERE userpatients.userid = ?;", id.ToString());
+            var patientsQuery = Database.Query("SELECT patient.* FROM userpatients INNER JOIN patient ON userpatients.patientid = patient.id WHERE userpatients.userid = ?;", userQuery[0]["id"]);
             
             foreach (var patient in patientsQuery)
             {
@@ -67,13 +85,6 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                 Patients = patients, 
                 Doctor = new Doctor{ Name = userQuery[0]["doctorname"].ToString()}
             };
-        }
-
-        public User Validate(User user)
-        {
-            var queryResults = Database.Query("SELECT * FROM user WHERE username = ? AND password = ?", user.Username, user.Password);
-            if (queryResults.Count != 1) throw new Exception("A authentication problem has occured, please try again later.");
-            return Read(Convert.ToInt16(queryResults.First()["id"]));
         }
 
         public int Count()
