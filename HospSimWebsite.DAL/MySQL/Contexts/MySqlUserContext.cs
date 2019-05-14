@@ -74,7 +74,8 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                     Id = Convert.ToInt16(patient["id"]), 
                     Name = patient["name"].ToString(), 
                     Age = Convert.ToInt16(patient["age"]), 
-                    Disease = disease
+                    Disease = disease,
+                    IsApproved = Convert.ToBoolean(patient["isApproved"])
                 });
             }
             

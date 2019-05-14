@@ -8,5 +8,6 @@ namespace HospSimWebsite.Model
         public Disease Disease { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsApproved { get; set; }
     }
 }

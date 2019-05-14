@@ -39,7 +39,8 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                     Id = Convert.ToInt16(queryResult["id"]),
                     Name = queryResult["name"].ToString(),
                     Age = Convert.ToInt16(queryResult["age"]),
-                    Disease = disease
+                    Disease = disease,
+                    IsApproved = Convert.ToBoolean(queryResult["isApproved"])
                 });
             }
 
@@ -53,7 +54,7 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
 
         public void Update(Patient obj)
         {
-            Database.Query("UPDATE patient SET name = ?, age = ?, disease = ?;", obj.Name.ToString(), obj.Age, obj.Disease.Id);
+            Database.Query("UPDATE patient SET name = ?, age = ?, disease = ?, isApproved = ? WHERE id = ?", obj.Name.ToString(), obj.Age, obj.Disease.Id, obj.IsApproved, obj.Id);
         }
 
         public List<Patient> GetAll()
@@ -80,7 +81,8 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                     Id = Convert.ToInt16(queryResult["id"]),
                     Name = queryResult["name"].ToString(),
                     Age = Convert.ToInt16(queryResult["age"]),
-                    Disease = disease
+                    Disease = disease,
+                    IsApproved = Convert.ToBoolean(queryResult["isApproved"])                  
                 });
             }
 
@@ -113,7 +115,8 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                     Id = Convert.ToInt16(queryResult["id"]),
                     Name = queryResult["name"].ToString(),
                     Age = Convert.ToInt16(queryResult["age"]),
-                    Disease = disease
+                    Disease = disease,
+                    IsApproved = Convert.ToBoolean(queryResult["isApproved"])
                 });
             }
 
@@ -142,7 +145,8 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                 Id = Convert.ToInt16(patientQuery[0]["id"]),
                 Name = patientQuery[0]["name"].ToString(),
                 Age = Convert.ToInt16(patientQuery[0]["age"]),
-                Disease = disease
+                Disease = disease,
+                IsApproved = Convert.ToBoolean(patientQuery[0]["isApproved"])
             };
 
             return patient;

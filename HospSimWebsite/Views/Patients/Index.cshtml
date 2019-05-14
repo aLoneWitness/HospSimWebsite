@@ -25,6 +25,7 @@
                     <th scope="col">Age</th>
                     <th scope="col">Disease</th>
                     <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
             }
@@ -46,12 +47,28 @@
                 <td class="patientName">@patient.Name</td>
                 <td>@patient.Age</td>
                 <td>
-                    <a href="/disease/index?id=@patient.Disease.Id">@patient.Disease.ToString()</a>
+                    <a asp-controller="Disease" asp-action="Index" asp-route-id="@patient.Disease.Id">@patient.Disease.ToString()</a>
                 </td>
                 <td>
                     <a onclick="deletePatient('@patient.Name', '@patient.Id');">
                         <button class="btn btn-sm">Delete</button>
                     </a>
+                </td>
+                <td>
+                    @{
+                        if (patient.IsApproved)
+                        {
+                            <a>
+                                <button class="btn btn-sm" disabled="">Approve</button>
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-controller="Patients" asp-action="ApprovePatient" asp-route-index="@patient.Id">
+                                <button class="btn btn-sm">Approve</button>
+                            </a>
+                        }
+                    }
                 </td>
             </tr>
         }

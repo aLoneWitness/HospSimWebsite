@@ -56,5 +56,10 @@ namespace HospSimWebsite.Logic
         {
             _repo.Delete(index);
         }
+
+        public void Update(Patient patient)
+        {
+            _repo.Update(patient);
+        }
     }
 }

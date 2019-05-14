@@ -27,6 +27,11 @@ namespace HospSimWebsite.Logic
             return _repo.Read(id);
         }
 
+        public void Update(Disease disease)
+        {
+            
+        }
+
         public void Delete(int id)
         {
             _repo.Delete(id);
