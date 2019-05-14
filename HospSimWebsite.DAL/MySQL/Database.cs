@@ -41,7 +41,7 @@ namespace HospSimWebsite.DAL.MySQL
             }
         }
 
-        public List<QueryResult> Query(string query, params object[] parameters)
+        public MySqlDataReader Query(string query, params object[] parameters)
         {
             var queryResultList = new List<QueryResult>();
             OpenConnection();
@@ -65,19 +65,12 @@ namespace HospSimWebsite.DAL.MySQL
                         break;
                 }*/
             var dataReader = mySqlCommand.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var queryResult = new QueryResult(dataReader);
-                queryResultList.Add(queryResult);
-            }
-
             CloseConnection();
-            return queryResultList;
+            return dataReader;
         }
 
-        public List<QueryResult> Procedure(string procedure, params object[] parameters)
+        public MySqlDataReader Procedure(string procedure, params object[] parameters)
         {
-            var results = new List<QueryResult>();
             var databaseQuery = new MySqlCommand(procedure, _databaseConnection);
             databaseQuery.CommandType = CommandType.StoredProcedure;
 
@@ -88,25 +81,11 @@ namespace HospSimWebsite.DAL.MySQL
 
             OpenConnection();
 
-            try
-            {
-                var dataReader = databaseQuery.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    var result = new QueryResult(dataReader);
-                    results.Add(result);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            finally
-            {
-                CloseConnection();
-            }
+            var dataReader = databaseQuery.ExecuteReader();
+            CloseConnection();
 
-            return results;
+            return dataReader;
+
         }
     }
 }

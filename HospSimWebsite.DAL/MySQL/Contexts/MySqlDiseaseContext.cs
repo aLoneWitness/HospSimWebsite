@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
 using HospSimWebsite.DAL.MySQL.HospSimWebsite;
 using HospSimWebsite.Model;
+using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.DAL.MySQL.Contexts
 {
@@ -34,8 +35,27 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
 
         public Disease Read(int id)
         {
-            var userQuery = Database.Query("SELECT * FROM disease WHERE id = ?", id.ToString());
+            var dataReader = Database.Query("SELECT * FROM disease WHERE id = ?", id.ToString());
+            var disease = new Disease();
 
+            do
+            {
+                disease.Id = dataReader.GetInt16(0);
+                disease.Name = dataReader.GetString(0);
+                disease.
+            } while (dataReader.NextResult());
+                
+            while(dataReader.Read())
+            {
+                return new Disease()
+                {
+                    Id = dataReader.GetInt16(0),
+                    Name = dataReader.GetString(1),
+                    Duration = dataReader.GetInt16(2),
+                    Severity = dataReader.
+                }
+            }
+            
             return new Disease{
                 Id = Convert.ToInt16(userQuery[0]["id"]), 
                 Name = userQuery[0]["name"].ToString(),
@@ -82,6 +102,32 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                     {
                         queryResult["desc1"].ToString(), queryResult["desc2"].ToString(), queryResult["desc3"].ToString()
                     }});
+
+            return diseases;
+        }
+        
+        private List<Disease> DataReaderToDiseases(MySqlDataReader dataReader)
+        {
+            var diseases = new List<Disease>();
+            do
+            {
+                var disease = new Disease
+                {
+                    Id = dataReader.GetInt16(0),
+                    Name = dataReader.GetString(1),
+                    Duration = dataReader.GetInt16(2),
+                    Severity = dataReader.GetInt16(3),
+                    Descriptions = new List<string>
+                    {
+                        dataReader.GetString(4),
+                        dataReader.GetString(5),
+                        dataReader.GetString(6)
+                    }
+                };
+                
+                diseases.Add(disease);
+
+            } while (dataReader.NextResult());
 
             return diseases;
         }
