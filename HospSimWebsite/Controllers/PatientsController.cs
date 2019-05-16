@@ -1,5 +1,4 @@
 using HospSimWebsite.Logic.Interfaces;
-using HospSimWebsite.Model;
 using HospSimWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
 

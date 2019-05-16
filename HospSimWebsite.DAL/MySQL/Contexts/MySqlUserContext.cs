@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.DAL.MySQL.Contexts
 {
+    /*
     public class MySqlUserContext : MySqlContext, IUserContext
     {
         protected MySqlUserContext(string conString) : base(conString) {}
@@ -94,4 +95,5 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             return Convert.ToInt16(userQuery[0]["COUNT(*)"]);
         }
     }
+    */
 }

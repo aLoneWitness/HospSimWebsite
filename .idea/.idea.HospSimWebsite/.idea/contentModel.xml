@@ -244,6 +244,7 @@
             </e>
           </e>
         </e>
+        <e p="PatientsTests.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>

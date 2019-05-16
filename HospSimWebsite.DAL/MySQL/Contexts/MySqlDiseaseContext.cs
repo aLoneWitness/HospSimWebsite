@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
 using HospSimWebsite.DAL.MySQL.HospSimWebsite;
 using HospSimWebsite.Model;
@@ -17,6 +18,7 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                 disease.Name,
                 disease.Duration.ToString(), disease.Severity.ToString(), disease.Descriptions[0],
                 disease.Descriptions[1], disease.Descriptions[2]);
+            Database.CloseConnection();
         }
 
         public void Update(Disease disease)
@@ -26,51 +28,29 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                 disease.Name,
                 disease.Duration.ToString(), disease.Severity.ToString(), disease.Descriptions[0],
                 disease.Descriptions[1], disease.Descriptions[2], disease.Id.ToString());
+            Database.CloseConnection();
         }
 
         public void Delete(int id)
         {
             Database.Query("DELETE FROM patient WHERE id=?", id.ToString());
+            Database.CloseConnection();
         }
 
         public Disease Read(int id)
         {
             var dataReader = Database.Query("SELECT * FROM disease WHERE id = ?", id.ToString());
-            var disease = new Disease();
 
-            do
-            {
-                disease.Id = dataReader.GetInt16(0);
-                disease.Name = dataReader.GetString(0);
-                disease.
-            } while (dataReader.NextResult());
-                
-            while(dataReader.Read())
-            {
-                return new Disease()
-                {
-                    Id = dataReader.GetInt16(0),
-                    Name = dataReader.GetString(1),
-                    Duration = dataReader.GetInt16(2),
-                    Severity = dataReader.
-                }
-            }
-            
-            return new Disease{
-                Id = Convert.ToInt16(userQuery[0]["id"]), 
-                Name = userQuery[0]["name"].ToString(),
-                Duration = Convert.ToInt16(userQuery[0]["duration"]), 
-                Severity = Convert.ToInt16(userQuery[0]["severity"]),
-                Descriptions = new List<string>
-                {
-                    userQuery[0]["desc1"].ToString(), userQuery[0]["desc2"].ToString(), userQuery[0]["desc3"].ToString()
-                }};
+            return GetModel(dataReader).First();
         }
 
         public int Count()
         {
-            var userQuery = Database.Query("SELECT id FROM disease");
-            return userQuery.Count;
+            var userQuery = Database.Query("SELECT COUNT(*) FROM disease");
+            userQuery.Read();
+            var count = userQuery.GetInt16(0);
+            userQuery.Close();
+            return count;
         }
         /*
 
@@ -90,26 +70,13 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
         public List<Disease> GetAll()
         {
             var userQuery = Database.Query("SELECT * FROM disease");
-            var diseases = new List<Disease>();
-
-            foreach (var queryResult in userQuery)
-                diseases.Add(new Disease{
-                    Id = Convert.ToInt16(queryResult["id"]), 
-                    Name = queryResult["name"].ToString(),
-                    Duration = Convert.ToInt16(queryResult["duration"]), 
-                    Severity = Convert.ToInt16(queryResult["severity"]),
-                    Descriptions = new List<string>
-                    {
-                        queryResult["desc1"].ToString(), queryResult["desc2"].ToString(), queryResult["desc3"].ToString()
-                    }});
-
-            return diseases;
+            return GetModel(userQuery);
         }
         
-        private List<Disease> DataReaderToDiseases(MySqlDataReader dataReader)
+        private List<Disease> GetModel(MySqlDataReader dataReader)
         {
             var diseases = new List<Disease>();
-            do
+            while(dataReader.Read())
             {
                 var disease = new Disease
                 {
@@ -127,7 +94,9 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                 
                 diseases.Add(disease);
 
-            } while (dataReader.NextResult());
+            } 
+            
+            dataReader.Close();
 
             return diseases;
         }

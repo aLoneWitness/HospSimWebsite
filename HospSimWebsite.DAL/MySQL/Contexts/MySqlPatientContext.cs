@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
 using HospSimWebsite.DAL.MySQL.HospSimWebsite;
 using HospSimWebsite.Model;
+using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.DAL.MySQL.Contexts
 {
@@ -11,157 +14,89 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
         public MySqlPatientContext(string conString) : base(conString){}
         public List<Patient> GetByName(string name, bool isExact = true)
         {
-            var patients = new List<Patient>();
-
-            List<QueryResult> userQuery;
-
-            if (isExact)
-                userQuery = Database.Query("SELECT * FROM patient WHERE name = ?", name);
-            else
-                userQuery = Database.Query("SELECT * FROM patient WHERE name LIKE ?", $"%{name}%");
-
-            foreach (var queryResult in userQuery)
-            {
-                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", queryResult["disease"].ToString());
-
-                var disease = new Disease{
-                    Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
-                    Name = userQuery[0]["name"].ToString(),
-                    Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
-                    Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
-                    Descriptions = new List<string>
-                    {
-                        diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
-                    }};
-
-                patients.Add(new Patient
-                {
-                    Id = Convert.ToInt16(queryResult["id"]),
-                    Name = queryResult["name"].ToString(),
-                    Age = Convert.ToInt16(queryResult["age"]),
-                    Disease = disease,
-                    IsApproved = Convert.ToBoolean(queryResult["isApproved"])
-                });
-            }
-
-            return patients;
+            var patientQuery = isExact ? Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.name = ?", name) : Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.name LIKE ?", $"%{name}%");
+            return GetModel(patientQuery);
         }
 
         public void Insert(Patient patient)
         {
             Database.Procedure("AddPatient", patient.Name, patient.Age, patient.Disease.Id);
+            Database.CloseConnection();
         }
 
         public void Update(Patient obj)
         {
-            Database.Query("UPDATE patient SET name = ?, age = ?, disease = ?, isApproved = ? WHERE id = ?", obj.Name.ToString(), obj.Age, obj.Disease.Id, obj.IsApproved, obj.Id);
+            Database.Query("UPDATE patient SET patient.name = ?, patient.age = ?, patient.disease = ?, patient.isApproved = ? WHERE id = ?", obj.Name, obj.Age, obj.Disease.Id, obj.IsApproved, obj.Id);
+            Database.CloseConnection();
         }
 
         public List<Patient> GetAll()
         {
-            var userQuery = Database.Procedure("GetAllPatients");
-            var patients = new List<Patient>();
-
-            foreach (var queryResult in userQuery)
-            {
-                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", queryResult["disease"].ToString());
-
-                var disease = new Disease{
-                    Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
-                    Name = diseaseQuery[0]["name"].ToString(),
-                    Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
-                    Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
-                    Descriptions = new List<string>
-                    {
-                        diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
-                    }};
-                
-                patients.Add(new Patient
-                {
-                    Id = Convert.ToInt16(queryResult["id"]),
-                    Name = queryResult["name"].ToString(),
-                    Age = Convert.ToInt16(queryResult["age"]),
-                    Disease = disease,
-                    IsApproved = Convert.ToBoolean(queryResult["isApproved"])                  
-                });
-            }
-
-            return patients;
+            var patientQuery = Database.Procedure("GetAllPatients");
+            return GetModel(patientQuery);
         }
 
         public List<Patient> GetByDisease(int id)
         {
-            var patients = new List<Patient>();
-
-            var userQuery =
-                Database.Query("SELECT * FROM patient WHERE patient.disease = ?", id.ToString());
-
-            foreach (var queryResult in userQuery)
-            {
-                var diseaseQuery = Database.Query("SELECT * FROM disease WHERE id = ?", queryResult["disease"].ToString());
-
-                var disease = new Disease{
-                    Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
-                    Name = diseaseQuery[0]["name"].ToString(),
-                    Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
-                    Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
-                    Descriptions = new List<string>
-                    {
-                        diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
-                    }};
-                
-                patients.Add(new Patient
-                {
-                    Id = Convert.ToInt16(queryResult["id"]),
-                    Name = queryResult["name"].ToString(),
-                    Age = Convert.ToInt16(queryResult["age"]),
-                    Disease = disease,
-                    IsApproved = Convert.ToBoolean(queryResult["isApproved"])
-                });
-            }
-
-            return patients;
+            var patientQuery = Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.disease = ?", id.ToString());
+            return GetModel(patientQuery);
         }
 
         public Patient Read(int id)
         {
             var patientQuery =
-                Database.Query("SELECT * FROM patient WHERE patient.id = ?", id.ToString());
-            
-            var diseaseQuery = Database.Query("SELECT * FROM disease WHERE disease.id = ?", patientQuery[0]["disease"].ToString());
-            
-            var disease = new Disease{
-                Id = Convert.ToInt16(diseaseQuery[0]["id"]), 
-                Name = diseaseQuery[0]["name"].ToString(),
-                Duration = Convert.ToInt16(diseaseQuery[0]["duration"]), 
-                Severity = Convert.ToInt16(diseaseQuery[0]["severity"]),
-                Descriptions = new List<string>
-                {
-                    diseaseQuery[0]["desc1"].ToString(), diseaseQuery[0]["desc2"].ToString(), diseaseQuery[0]["desc3"].ToString()
-                }};
+                Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.id = ?", id.ToString());
 
-            var patient = new Patient
-            {
-                Id = Convert.ToInt16(patientQuery[0]["id"]),
-                Name = patientQuery[0]["name"].ToString(),
-                Age = Convert.ToInt16(patientQuery[0]["age"]),
-                Disease = disease,
-                IsApproved = Convert.ToBoolean(patientQuery[0]["isApproved"])
-            };
-
-            return patient;
+            return GetModel(patientQuery).First();
         }
 
         public void Delete(int id)
         {
             Database.Query("DELETE FROM patient WHERE id=?", id.ToString());
+            Database.CloseConnection();
         }
 
         public int Count()
         {
             var userQuery = Database.Query("SELECT COUNT(*) FROM patient");
-            var count = Convert.ToInt16(userQuery[0]["COUNT(*)"]);
+            userQuery.Read();
+            var count = userQuery.GetInt16(0);
+            userQuery.Close();
             return count;
+        }
+        
+        private List<Patient> GetModel(IDataReader dataReader)
+        {
+            var patients = new List<Patient>();
+            while (dataReader.Read())
+            {
+                var patient = new Patient
+                {
+                    Id = dataReader.GetInt16(0),
+                    IsApproved = dataReader.GetBoolean(1),
+                    Name = dataReader.GetString(2),
+                    Age = dataReader.GetInt16(3),
+                    Disease = new Disease
+                    {
+                        Id = dataReader.GetInt16(6),
+                        Name = dataReader.GetString(7),
+                        Duration = dataReader.GetInt16(8),
+                        Severity = dataReader.GetInt16(9),
+                        Descriptions = new List<string>
+                        {
+                            dataReader.GetString(10),
+                            dataReader.GetString(11),
+                            dataReader.GetString(12)
+                        }
+                    }
+                };
+                
+                patients.Add(patient);
+
+            }
+            
+            dataReader.Close();
+            return patients;
         }
     }
 }

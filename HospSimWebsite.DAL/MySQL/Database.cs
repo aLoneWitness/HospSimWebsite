@@ -28,7 +28,7 @@ namespace HospSimWebsite.DAL.MySQL
             }
         }
 
-        private void CloseConnection()
+        public void CloseConnection()
         {
             try
             {
@@ -43,34 +43,27 @@ namespace HospSimWebsite.DAL.MySQL
 
         public MySqlDataReader Query(string query, params object[] parameters)
         {
-            var queryResultList = new List<QueryResult>();
             OpenConnection();
             var mySqlCommand = new MySqlCommand(query, _databaseConnection);
             if (parameters != null)
+            {
+                mySqlCommand.Parameters.Clear();
+                var i = 0;
                 foreach (var param in parameters)
-                    mySqlCommand.Parameters.AddWithValue("param" + parameters.IndexOf(param), param);
-            /* var type = param.GetType().FullName;
-                switch (type)
                 {
-                    case "System.String":
-                        mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1], );
-                        
+                    mySqlCommand.Parameters.AddWithValue("param" + i, param);
+                    i++;
+                }
+            }
 
-                        break;
-                    case "System.Integer":
-                        mySqlCommand.Parameters.AddWithValue("param" + index, parameters[index - 1]);
-
-                        break;
-                    default:
-                        break;
-                }*/
-            var dataReader = mySqlCommand.ExecuteReader();
-            CloseConnection();
+            var dataReader = mySqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
             return dataReader;
         }
 
         public MySqlDataReader Procedure(string procedure, params object[] parameters)
         {
+            OpenConnection();
+
             var databaseQuery = new MySqlCommand(procedure, _databaseConnection);
             databaseQuery.CommandType = CommandType.StoredProcedure;
 
@@ -79,13 +72,9 @@ namespace HospSimWebsite.DAL.MySQL
                     parameter);
 
 
-            OpenConnection();
-
-            var dataReader = databaseQuery.ExecuteReader();
-            CloseConnection();
-
+            var dataReader = databaseQuery.ExecuteReader(CommandBehavior.CloseConnection);
             return dataReader;
-
         }
+        
     }
 }
