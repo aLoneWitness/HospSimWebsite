@@ -6,6 +6,5 @@ namespace HospSimWebsite.Repository.Interfaces
     {
         User Validate(User user);
         bool Exists(User user);
-        User ReadByUsername(string username);
     }
 }

@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Data;
-using HospSimWebsite.DAL.MySQL.HospSimWebsite;
-using Microsoft.EntityFrameworkCore.Internal;
 using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.DAL.MySQL

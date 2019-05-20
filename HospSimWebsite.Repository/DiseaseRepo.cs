@@ -12,8 +12,7 @@ namespace HospSimWebsite.Repository
         public DiseaseRepo(IDiseaseContext diseaseContext)
         {
             _context = diseaseContext;
-        }
-
+        }    
         public void Insert(Disease disease)
         {
             _context.Insert(disease);

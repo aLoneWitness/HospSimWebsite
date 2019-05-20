@@ -53,9 +53,5 @@ namespace HospSimWebsite.Repository
             return _context.Exists(user);
         }
 
-        public User ReadByUsername(string username)
-        {
-            return _context.ReadByUsername(username);
-        }
     }
 }
