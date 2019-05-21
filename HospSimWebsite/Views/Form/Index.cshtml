@@ -1,4 +1,4 @@
-@model HospSimWebsite.Models.PatientFormViewModel
+@model HospSimWebsite.Models.PatientSubmitViewModel
 
 @{
     ViewBag.Title = "Registration";
@@ -20,6 +20,12 @@
 
 
 <div class="formmain">
+    @{
+        if (Model.ErrorMessage != null)
+        {
+            <script>swal("Form Error", "@Model.ErrorMessage", "error")</script>
+        }
+    }
     <form asp-controller="Form" asp-action="Submit" method="post">
         <div class="form-group">
             <label>Name</label>
@@ -28,7 +34,7 @@
 
         <label>Date of Birth</label>
         <div class="form-group">
-            <input asp-for="Birthday" type="date" class="form-control"/>
+            <input asp-for="Birthday" type="date" max="@DateTime.Now" value="@DateTime.Now" class="form-control"/>
         </div>
 
         <div class="form-group">
@@ -42,7 +48,7 @@
         </div>
 
         <div>
-            <button type="button" onclick="checkFormInput()" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 </div>
