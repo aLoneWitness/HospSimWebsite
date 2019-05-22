@@ -16,10 +16,6 @@ function deletePatient(name, id){
     });
 }
 
-function showError(errorMessage){
-    swal(errorMessage);
-}
-
 function searchPatient(){
     window.location.href = `/patients/index?searchParams=${document.getElementById('patientSearchInput').value}`;
 }

@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.DAL.MySQL
+namespace HospSimWebsite.DAL.Contexts.MySQL
 {
     public class Database
     {

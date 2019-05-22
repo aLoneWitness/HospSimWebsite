@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
+using HospSimWebsite.DAL.Contexts.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Repository.Interfaces;
 
@@ -18,9 +18,9 @@ namespace HospSimWebsite.Repository
             _context.Insert(disease);
         }
 
-        public void Update(Disease obj)
+        public bool Update(Disease obj)
         {
-            _context.Update(obj);
+            return _context.Update(obj);
         }
 
         public void Delete(int id)

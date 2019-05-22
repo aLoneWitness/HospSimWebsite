@@ -1,4 +1,4 @@
-namespace HospSimWebsite.DAL.Memory
+namespace HospSimWebsite.DAL.Contexts.Memory
 {
     /*
     public class MemoryDiseaseContext 

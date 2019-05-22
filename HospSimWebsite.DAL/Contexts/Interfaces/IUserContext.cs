@@ -1,6 +1,6 @@
 using HospSimWebsite.Model;
 
-namespace HospSimWebsite.DAL.MySQL.Contexts.Interfaces
+namespace HospSimWebsite.DAL.Contexts.Interfaces
 {
     public interface IUserContext : IMySqlContext<User>
     {

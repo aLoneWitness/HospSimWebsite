@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
+using HospSimWebsite.DAL.Contexts.Interfaces;
 using HospSimWebsite.Model;
 using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.DAL.MySQL.Contexts
+namespace HospSimWebsite.DAL.Contexts.MySQL
 {
     public class MySqlDiseaseContext : MySqlContext, IDiseaseContext
     {
@@ -19,7 +19,7 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             Database.CloseConnection();
         }
 
-        public void Update(Disease disease)
+        public bool Update(Disease disease)
         {
             Database.Query(
                 "UPDATE disease SET name = ?, duration = ?, severity = ?, desc1 = ?, desc2 = ?, desc3 = ? WHERE id = ?",
@@ -27,6 +27,7 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
                 disease.Duration.ToString(), disease.Severity.ToString(), disease.Descriptions[0],
                 disease.Descriptions[1], disease.Descriptions[2], disease.Id.ToString());
             Database.CloseConnection();
+            return true;
         }
 
         public void Delete(int id)

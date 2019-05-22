@@ -142,26 +142,26 @@
       </e>
       <e p="HospSimWebsite.DAL" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="HospSimWebsite.DAL.csproj" t="IncludeRecursive" />
-        <e p="Memory" t="Include">
-          <e p="MemoryDiseaseContext.cs" t="Include" />
-          <e p="MemoryPatientContext.cs" t="Include" />
-        </e>
-        <e p="MySQL" t="Include">
-          <e p="Contexts" t="Include">
-            <e p="Interfaces" t="Include">
-              <e p="IDiseaseContext.cs" t="Include" />
-              <e p="IMySqlContext.cs" t="Include" />
-              <e p="IPatientContext.cs" t="Include" />
-              <e p="IUserContext.cs" t="Include" />
-            </e>
+        <e p="Contexts" t="Include">
+          <e p="Interfaces" t="Include">
+            <e p="IDiseaseContext.cs" t="Include" />
+            <e p="IMySqlContext.cs" t="Include" />
+            <e p="IPatientContext.cs" t="Include" />
+            <e p="IUserContext.cs" t="Include" />
+          </e>
+          <e p="Memory" t="Include">
+            <e p="MemoryDiseaseContext.cs" t="Include" />
+            <e p="MemoryPatientContext.cs" t="Include" />
+          </e>
+          <e p="MySQL" t="Include">
+            <e p="Database.cs" t="Include" />
             <e p="MySqlContext.cs" t="Include" />
             <e p="MySqlDiseaseContext.cs" t="Include" />
             <e p="MySqlPatientContext.cs" t="Include" />
             <e p="MySqlUserContext.cs" t="Include" />
           </e>
-          <e p="Database.cs" t="Include" />
         </e>
+        <e p="HospSimWebsite.DAL.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -235,6 +235,9 @@
       <e p="HospSimWebsite.Tests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="HospSimWebsite.Tests.csproj" t="IncludeRecursive" />
+        <e p="LogicTests" t="Include">
+          <e p="PatientLogicTests.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -243,7 +246,6 @@
             </e>
           </e>
         </e>
-        <e p="PatientsTests.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>

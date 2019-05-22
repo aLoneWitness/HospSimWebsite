@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
+using HospSimWebsite.DAL.Contexts.Interfaces;
 using HospSimWebsite.Model;
 
-namespace HospSimWebsite.DAL.MySQL.Contexts
+namespace HospSimWebsite.DAL.Contexts.MySQL
 {
     public class MySqlPatientContext : MySqlContext, IPatientContext
     {
@@ -21,10 +21,11 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             Database.CloseConnection();
         }
 
-        public void Update(Patient obj)
+        public bool Update(Patient obj)
         {
             Database.Query("UPDATE patient SET patient.name = ?, patient.age = ?, patient.disease = ?, patient.isApproved = ? WHERE id = ?", obj.Name, obj.Age, obj.Disease.Id, obj.IsApproved, obj.Id);
             Database.CloseConnection();
+            return true;
         }
 
         public List<Patient> GetAll()

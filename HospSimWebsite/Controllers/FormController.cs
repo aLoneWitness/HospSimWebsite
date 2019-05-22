@@ -42,9 +42,14 @@ namespace HospSimWebsite.Controllers
                     Age = age, 
                     Disease = _diseaseLogic.Read(viewModel.Disease)
                 };
-                _patientLogic.Insert(patient);
+                
+                if (_patientLogic.Insert(patient))
+                {
+                    return View(viewModel);
+                }
 
-                return View(viewModel);
+                return RedirectToAction("Error", "Home", new ErrorViewModel("The patient could not be registered due to an internal error."));
+
             }
             else
             {

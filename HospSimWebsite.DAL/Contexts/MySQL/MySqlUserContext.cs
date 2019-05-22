@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
+using HospSimWebsite.DAL.Contexts.Interfaces;
 using HospSimWebsite.Model;
-using MySql.Data.MySqlClient;
 
-namespace HospSimWebsite.DAL.MySQL.Contexts
+namespace HospSimWebsite.DAL.Contexts.MySQL
 {
     
     public class MySqlUserContext : MySqlContext, IUserContext
@@ -23,14 +22,15 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             throw new NotImplementedException("Insert is not allowed for default operations, Please refer to the register func.");
         }
 
-        public void Update(User obj)
+        public bool Update(User obj)
         {
             Database.Query("UPDATE user SET name = ?, doctorname = ?, highscore = ?;", obj.Name, obj.Doctor.Name, obj.Highscore);
+            return true;
         }
 
         public void Delete(int id)
         {
-            Database.Query("DELETE FROM user WHERE id=?", id);
+            Database.Query("DELETE FROM user WHERE id = ?", id);
         }
 
         public User Read(int id)

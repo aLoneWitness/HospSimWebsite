@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Model;
@@ -21,8 +22,7 @@ namespace HospSimWebsite.Logic
 
         public bool Insert(Patient patient)
         {
-            if (patient.Age < 0) return false;
-
+            if (patient.IsApproved || patient.Age < 0 || string.IsNullOrWhiteSpace(patient.Name)) return false;
             _repo.Insert(patient);
             return true;
         }
@@ -57,9 +57,10 @@ namespace HospSimWebsite.Logic
             _repo.Delete(index);
         }
 
-        public void Update(Patient patient)
+        public bool Update(Patient patient)
         {
-            _repo.Update(patient);
+            if (patient.Age < 0 || string.IsNullOrWhiteSpace(patient.Name)) return false;
+            return _repo.Update(patient);
         }
     }
 }

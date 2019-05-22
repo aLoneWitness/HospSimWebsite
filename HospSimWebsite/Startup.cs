@@ -1,4 +1,4 @@
-﻿using HospSimWebsite.DAL.MySQL.Contexts;
+﻿using HospSimWebsite.DAL.Contexts.MySQL;
 using HospSimWebsite.Logic;
 using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Repository;
