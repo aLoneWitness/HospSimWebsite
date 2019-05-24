@@ -19,7 +19,7 @@ namespace HospSimWebsite.Controllers
             _diseaseLogic = diseaseLogic;
         }
 
-        public IActionResult Index(PatientSubmitViewModel viewModel)
+        public IActionResult Index(PatientsFormViewModel viewModel)
         {
             viewModel.Diseases = new List<Disease>();
             viewModel.Diseases = _diseaseLogic.GetAll();
@@ -29,7 +29,7 @@ namespace HospSimWebsite.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Submit(PatientSubmitViewModel viewModel)
+        public IActionResult Submit(PatientsFormViewModel viewModel)
         {
             if (ModelState.IsValid)
             {

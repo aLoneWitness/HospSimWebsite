@@ -25,7 +25,7 @@
           <e p="DiseaseViewModel.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="HomeViewModel.cs" t="Include" />
-          <e p="PatientFormModel.cs" t="Include" />
+          <e p="PatientFormViewModel.cs" t="Include" />
           <e p="PatientsViewModel.cs" t="Include" />
           <e p="QueueViewModel.cs" t="Include" />
         </e>

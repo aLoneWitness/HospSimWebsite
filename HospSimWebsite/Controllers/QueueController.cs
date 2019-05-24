@@ -18,24 +18,24 @@ namespace HospSimWebsite.Controllers
         {
             var model = new QueueViewModel
             {
-                Patient = _patientLogic.GetAllUnapproved()
+                Patients = _patientLogic.GetAllUnapproved()
             };
 
-            return Json(model);
+            return View(model);
         }
         
         [HttpPost]
-        public void ApprovePatient(Patient patient)
+        public void ApprovePatient(int id)
         {
-            var approvedPatient = _patientLogic.Read(patient.Id);
+            var approvedPatient = _patientLogic.Read(id);
             approvedPatient.IsApproved = true;
             _patientLogic.Update(approvedPatient);
         }
 
         [HttpPost]
-        public void DenyPatient(Patient patient)
+        public void DenyPatient(int id)
         {
-            _patientLogic.Delete(patient.Id);
+            _patientLogic.Delete(id);
         }
     }
 }

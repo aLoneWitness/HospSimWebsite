@@ -5,7 +5,7 @@ using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Models
 {
-    public class PatientSubmitViewModel
+    public class PatientsFormViewModel
     {
         [Required(ErrorMessage = "Please insert a valid name.")]
         public string Name { get; set; }

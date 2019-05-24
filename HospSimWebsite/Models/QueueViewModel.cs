@@ -5,6 +5,6 @@ namespace HospSimWebsite.Models
 {
     public class QueueViewModel
     {
-        public List<Patient> Patient;
+        public List<Patient> Patients;
     }
 }

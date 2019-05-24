@@ -4,12 +4,12 @@
     ViewBag.Title = "Queue";
     Layout = "_Layout";
 }
-
-<head>
-    <script src="js/patient.js"></script>
-</head>
-
-@foreach (var patient in Model.Patient)
-{
-    <h3>@patient.Name</h3>
-}
+<html lang="en">
+    <head>
+        <title>Queue</title>
+        <script src="~/js/queue.js" asp-append-version="true"></script>
+    </head>
+    <body>
+        <button onclick="startQueue( JSON.parse(@Html.Raw(Json.Serialize(Model.Patients)) ) )">Klik hier, bich</button>
+    </body>
+</html>
