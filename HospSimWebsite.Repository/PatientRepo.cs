@@ -49,6 +49,11 @@ namespace HospSimWebsite.Repository
             return _context.GetByDisease(id);
         }
 
+        public List<Patient> GetAllUnapproved()
+        {
+            return _context.GetAllUnapproved();
+        }
+
         public List<Patient> GetAll()
         {
             return _context.GetAll();

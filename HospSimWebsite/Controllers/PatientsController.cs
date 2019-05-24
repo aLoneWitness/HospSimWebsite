@@ -30,13 +30,6 @@ namespace HospSimWebsite.Controllers
             return RedirectToAction("Index");
         }
         
-        public IActionResult ApprovePatient(int index)
-        {
-            var patient = _patientLogic.Read(index);
-            patient.IsApproved = true;
-            _patientLogic.Update(patient);
-
-            return RedirectToAction("Index");
-        }
+        
     }
 }

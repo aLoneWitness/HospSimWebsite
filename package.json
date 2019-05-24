@@ -1,0 +1,7 @@
+{
+  "name": "HospSimWebsite",
+  "version": "1.0.0",
+  "dependencies": {
+    "sweetalert": "latest"
+  }
+}

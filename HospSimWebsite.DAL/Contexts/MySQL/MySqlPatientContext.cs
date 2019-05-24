@@ -34,6 +34,14 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
             return GetModel(patientQuery);
         }
 
+        public List<Patient> GetAllUnapproved()
+        {
+            var patientQuery =
+                Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.isApproved = 0");
+
+            return GetModel(patientQuery);
+        }
+
         public List<Patient> GetByDisease(int id)
         {
             var patientQuery = Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.disease = ?", id.ToString());

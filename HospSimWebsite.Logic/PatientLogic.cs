@@ -57,6 +57,11 @@ namespace HospSimWebsite.Logic
             _repo.Delete(index);
         }
 
+        public List<Patient> GetAllUnapproved()
+        {
+            return _repo.GetAllUnapproved();
+        }
+
         public bool Update(Patient patient)
         {
             if (patient.Age < 0 || string.IsNullOrWhiteSpace(patient.Name)) return false;

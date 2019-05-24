@@ -18,6 +18,7 @@
           <e p="FormController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
           <e p="PatientsController.cs" t="Include" />
+          <e p="QueueController.cs" t="Include" />
         </e>
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
@@ -26,6 +27,7 @@
           <e p="HomeViewModel.cs" t="Include" />
           <e p="PatientFormModel.cs" t="Include" />
           <e p="PatientsViewModel.cs" t="Include" />
+          <e p="QueueViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -58,6 +60,9 @@
             <e p="Index.cshtml" t="Include" />
             <e p="index.cshtml.cs" t="Include" />
           </e>
+          <e p="Queue" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
@@ -82,8 +87,8 @@
             <e p="bootstrap.bundle.min.js" t="Include" />
             <e p="bootstrap.js" t="Include" />
             <e p="bootstrap.min.js" t="Include" />
-            <e p="site.js" t="Include" />
-            <e p="submit.js" t="Include" />
+            <e p="patient.js" t="Include" />
+            <e p="queue.js" t="Include" />
           </e>
           <e p="lib" t="Include">
             <e p="bootstrap" t="Include">
@@ -236,6 +241,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="HospSimWebsite.Tests.csproj" t="IncludeRecursive" />
         <e p="LogicTests" t="Include">
+          <e p="DiseaseLogicTests.cs" t="Include" />
           <e p="PatientLogicTests.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

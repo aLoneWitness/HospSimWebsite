@@ -1,0 +1,15 @@
+@model HospSimWebsite.Models.QueueViewModel
+
+@{
+    ViewBag.Title = "Queue";
+    Layout = "_Layout";
+}
+
+<head>
+    <script src="js/patient.js"></script>
+</head>
+
+@foreach (var patient in Model.Patient)
+{
+    <h3>@patient.Name</h3>
+}
