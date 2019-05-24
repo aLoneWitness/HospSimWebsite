@@ -7,9 +7,12 @@
 <html lang="en">
     <head>
         <title>Queue</title>
+        <script>
+            var patients = JSON.parse('@Html.Raw(Json.Serialize(Model.Patients))');
+        </script>
         <script src="~/js/queue.js" asp-append-version="true"></script>
     </head>
     <body>
-        <button onclick="startQueue( JSON.parse(@Html.Raw(Json.Serialize(Model.Patients)) ) )">Klik hier, bich</button>
+        <button onclick="startQueue(patients)">Klik hier, bich</button>
     </body>
 </html>

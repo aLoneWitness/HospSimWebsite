@@ -25,7 +25,7 @@ namespace HospSimWebsite.Controllers
         }
         
         [HttpPost]
-        public void ApprovePatient(int id)
+        public void ApprovePatient([FromBody] int id)
         {
             var approvedPatient = _patientLogic.Read(id);
             approvedPatient.IsApproved = true;
@@ -33,7 +33,7 @@ namespace HospSimWebsite.Controllers
         }
 
         [HttpPost]
-        public void DenyPatient(int id)
+        public void DenyPatient([FromBody]int id)
         {
             _patientLogic.Delete(id);
         }
