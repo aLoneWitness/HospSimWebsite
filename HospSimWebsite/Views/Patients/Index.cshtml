@@ -8,12 +8,14 @@
 <head>
     <title>Patient lookup</title>
     <script src="~/js/patient.js" asp-append-version="true"></script>
+    <script src="~/js/queue.js"></script>
 </head>
 <body>
 <div style="margin: auto; width: 70%;">
     <table class="table">
         <div class="patientSearchBar">
             <input class="form-control" id="patientSearchInput" type="text" placeholder="Search.."/>
+            <button class="btn btn-dark" onclick="startQueue()" type="button">Queue</button>
             <button class="btn btn-dark" onclick="searchPatient()" type="button">Search</button>
         </div>
         @{

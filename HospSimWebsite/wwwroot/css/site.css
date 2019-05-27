@@ -102,8 +102,9 @@ body {
 }
 
 .patientSearchBar button {
-  width: 25%;
+  width: 14%;
   display: inline-block;
+  margin-left: 5px;
   float: right;
   height: 40px;
 }

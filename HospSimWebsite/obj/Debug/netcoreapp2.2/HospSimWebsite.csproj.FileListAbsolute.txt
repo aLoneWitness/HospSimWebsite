@@ -141,4 +141,3 @@ D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcorea
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.Logic.pdb
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.DAL.dll
 D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\bin\Debug\netcoreapp2.2\HospSimWebsite.DAL.pdb
-D:\Development\Git Repositories\HospSimWebsite\HospSimWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Queue\Index.g.cshtml.cs

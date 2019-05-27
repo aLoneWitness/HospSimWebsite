@@ -14,18 +14,15 @@ namespace HospSimWebsite.Controllers
             _patientLogic = patientLogic;
         }
         
-        public IActionResult Index()
+        [HttpGet]
+        public JsonResult GetPatients()
         {
-            var model = new QueueViewModel
-            {
-                Patients = _patientLogic.GetAllUnapproved()
-            };
-
-            return View(model);
+            var patients = _patientLogic.GetAllUnapproved();
+            return Json(patients);
         }
         
         [HttpPost]
-        public void ApprovePatient([FromBody] int id)
+        public void ApprovePatient(int id)
         {
             var approvedPatient = _patientLogic.Read(id);
             approvedPatient.IsApproved = true;
@@ -33,7 +30,7 @@ namespace HospSimWebsite.Controllers
         }
 
         [HttpPost]
-        public void DenyPatient([FromBody]int id)
+        public void DenyPatient(int id)
         {
             _patientLogic.Delete(id);
         }
