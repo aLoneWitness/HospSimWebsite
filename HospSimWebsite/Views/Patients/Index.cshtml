@@ -49,7 +49,7 @@
                 <td class="patientName">@patient.Name</td>
                 <td>@patient.Age</td>
                 <td>
-                    <a asp-controller="Disease" asp-action="Index" asp-route-id="@patient.Disease.Id">@patient.Disease.ToString()</a>
+                    <a asp-controller="Disease" asp-action="Index" asp-route-id="@patient.Disease.Id">@patient.Disease.Name</a>
                 </td>
                 <td>
                     <a onclick="deletePatient('@patient.Name', '@patient.Id');">

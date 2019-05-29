@@ -11,64 +11,89 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
         public MySqlPatientContext(string conString) : base(conString){}
         public List<Patient> GetByName(string name, bool isExact = true)
         {
-            var patientQuery = isExact ? Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.name = ?", name) : Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.name LIKE ?", $"%{name}%");
-            return GetModel(patientQuery);
+            using (Database)
+            {
+                var patientQuery = isExact ? Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.name = ?", name) : Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.name LIKE ?", $"%{name}%");
+                return GetModel(patientQuery);
+            }
         }
 
         public void Insert(Patient patient)
         {
-            Database.Procedure("AddPatient", patient.Name, patient.Age, patient.Disease.Id);
-            Database.CloseConnection();
+            using (Database)
+            {
+                Database.Procedure("AddPatient", patient.Name, patient.Age, patient.Disease.Id);
+            }
+            //Database.CloseConnection();
         }
 
         public bool Update(Patient obj)
         {
-            Database.Query("UPDATE patient SET patient.name = ?, patient.age = ?, patient.disease = ?, patient.isApproved = ? WHERE id = ?", obj.Name, obj.Age, obj.Disease.Id, obj.IsApproved, obj.Id);
-            Database.CloseConnection();
-            return true;
+            using (Database)
+            {
+                Database.Query("UPDATE patient SET patient.name = ?, patient.age = ?, patient.disease = ?, patient.isApproved = ? WHERE id = ?", obj.Name, obj.Age, obj.Disease.Id, obj.IsApproved, obj.Id);
+                return true;
+            }
         }
 
         public List<Patient> GetAll()
         {
-            var patientQuery = Database.Procedure("GetAllPatients");
-            return GetModel(patientQuery);
+            using (Database)
+            {
+                var patientQuery = Database.Procedure("GetAllPatients");
+                return GetModel(patientQuery);
+            }
         }
 
         public List<Patient> GetAllUnapproved()
         {
-            var patientQuery =
-                Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.isApproved = 0");
+            using (Database)
+            {
+                var patientQuery =
+                    Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.isApproved = 0");
 
-            return GetModel(patientQuery);
+                return GetModel(patientQuery);
+            }
         }
 
         public List<Patient> GetByDisease(int id)
         {
-            var patientQuery = Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.disease = ?", id.ToString());
-            return GetModel(patientQuery);
+            using (Database)
+            {
+                var patientQuery = Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.disease = ?", id.ToString());
+                return GetModel(patientQuery);
+            }
         }
 
         public Patient Read(int id)
         {
-            var patientQuery =
-                Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.id = ?", id.ToString());
+            using (Database)
+            {
+                var patientQuery =
+                    Database.Query("SELECT patient.*, disease.* FROM patient INNER JOIN disease ON patient.disease = disease.id WHERE patient.id = ?", id.ToString());
 
-            return GetModel(patientQuery).First();
+                return GetModel(patientQuery).FirstOrDefault();
+            }
         }
 
         public void Delete(int id)
         {
-            Database.Query("DELETE FROM patient WHERE id=?", id.ToString());
-            Database.CloseConnection();
+            using (Database)
+            {
+                Database.Query("DELETE FROM patient WHERE id=?", id.ToString());
+            }
         }
 
         public int Count()
         {
-            var userQuery = Database.Query("SELECT COUNT(*) FROM patient");
-            userQuery.Read();
-            var count = userQuery.GetInt16(0);
-            userQuery.Close();
-            return count;
+            using (Database)
+            {
+                var userQuery = Database.Query("SELECT COUNT(*) FROM patient");
+                userQuery.Read();
+                var count = userQuery.GetInt16(0);
+                userQuery.Close();
+                return count;
+            }
         }
         
         private List<Patient> GetModel(IDataReader dataReader)
@@ -101,7 +126,6 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
 
             }
             
-            dataReader.Close();
             return patients;
         }
     }

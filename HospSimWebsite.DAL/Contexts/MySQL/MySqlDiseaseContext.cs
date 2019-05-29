@@ -11,45 +11,58 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
         public MySqlDiseaseContext(string conString) : base(conString){}
         public void Insert(Disease disease)
         {
-            Database.Query(
-                "INSERT INTO disease (name, duration, severity, desc1, desc2, desc3 ) VALUES (?, ?, ?, ?, ?, ?)",
-                disease.Name,
-                disease.Duration.ToString(), disease.Severity.ToString(), disease.Descriptions[0],
-                disease.Descriptions[1], disease.Descriptions[2]);
-            Database.CloseConnection();
+            using (Database)
+            {
+                Database.Query(
+                    "INSERT INTO disease (name, duration, severity, desc1, desc2, desc3 ) VALUES (?, ?, ?, ?, ?, ?)",
+                    disease.Name,
+                    disease.Duration.ToString(), disease.Severity.ToString(), disease.Descriptions[0],
+                    disease.Descriptions[1], disease.Descriptions[2]);
+            }
         }
 
         public bool Update(Disease disease)
         {
-            Database.Query(
-                "UPDATE disease SET name = ?, duration = ?, severity = ?, desc1 = ?, desc2 = ?, desc3 = ? WHERE id = ?",
-                disease.Name,
-                disease.Duration.ToString(), disease.Severity.ToString(), disease.Descriptions[0],
-                disease.Descriptions[1], disease.Descriptions[2], disease.Id.ToString());
-            Database.CloseConnection();
-            return true;
+            using (Database)
+            {
+                Database.Query(
+                    "UPDATE disease SET name = ?, duration = ?, severity = ?, desc1 = ?, desc2 = ?, desc3 = ? WHERE id = ?",
+                    disease.Name,
+                    disease.Duration.ToString(), disease.Severity.ToString(), disease.Descriptions[0],
+                    disease.Descriptions[1], disease.Descriptions[2], disease.Id.ToString());
+                //Database.CloseConnection();
+                return true;
+            }
         }
 
         public void Delete(int id)
         {
-            Database.Query("DELETE FROM patient WHERE id=?", id.ToString());
-            Database.CloseConnection();
+            using (Database)
+            {
+                Database.Query("DELETE FROM patient WHERE id=?", id.ToString());
+            }
         }
 
         public Disease Read(int id)
         {
-            var dataReader = Database.Query("SELECT * FROM disease WHERE id = ?", id.ToString());
+            using (Database)
+            {
+                var dataReader = Database.Query("SELECT * FROM disease WHERE id = ?", id.ToString());
 
-            return GetModel(dataReader).First();
+                return GetModel(dataReader).First();
+            }
         }
 
         public int Count()
         {
-            var userQuery = Database.Query("SELECT COUNT(*) FROM disease");
-            userQuery.Read();
-            var count = userQuery.GetInt16(0);
-            userQuery.Close();
-            return count;
+            using (Database)
+            {
+                var userQuery = Database.Query("SELECT COUNT(*) FROM disease");
+                userQuery.Read();
+                var count = userQuery.GetInt16(0);
+                userQuery.Close();
+                return count;
+            }
         }
         /*
 
@@ -68,8 +81,11 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
         */
         public List<Disease> GetAll()
         {
-            var userQuery = Database.Query("SELECT * FROM disease");
-            return GetModel(userQuery);
+            using (Database)
+            {
+                var userQuery = Database.Query("SELECT * FROM disease");
+                return GetModel(userQuery);
+            }
         }
         
         private List<Disease> GetModel(MySqlDataReader dataReader)
@@ -95,8 +111,6 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
 
             } 
             
-            dataReader.Close();
-
             return diseases;
         }
     }

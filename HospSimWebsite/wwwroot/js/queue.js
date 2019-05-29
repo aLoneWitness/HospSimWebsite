@@ -1,8 +1,7 @@
-
 async function startQueue(){
     var patients;
     await $.ajax({
-        url: "Queue/GetPatients",
+        url: "/Queue/GetPatients",
         success: function(result){
             patients = result;
         }
@@ -44,13 +43,13 @@ async function showPatients(patients){
         if (willDelete) {
             await $.ajax({
                 type: "POST",
-                url: "Queue/DenyPatient",
+                url: "/Queue/DenyPatient",
                 data: patients[firstKey],
             });
         } else {
             await $.ajax({
                 type: "POST",
-                url: "Queue/ApprovePatient",
+                url: "/Queue/ApprovePatient",
                 data: patients[firstKey],
             });
         }

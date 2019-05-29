@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.DAL.Contexts.MySQL
 {
-    public class Database
+    public class Database : IDisposable
     {
         private MySqlConnection _databaseConnection;
         public void SetConnection(string conString)
@@ -25,7 +25,7 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
             }
         }
 
-        public void CloseConnection()
+        private void CloseConnection()
         {
             try
             {
@@ -54,6 +54,7 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
             }
 
             var dataReader = mySqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
+            
             return dataReader;
         }
 
@@ -72,6 +73,10 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
             var dataReader = databaseQuery.ExecuteReader(CommandBehavior.CloseConnection);
             return dataReader;
         }
-        
+
+        public void Dispose()
+        {
+            CloseConnection();
+        }
     }
 }
