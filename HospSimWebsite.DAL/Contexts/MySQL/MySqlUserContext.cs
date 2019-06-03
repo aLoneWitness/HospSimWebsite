@@ -12,14 +12,9 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
     {
         protected MySqlUserContext(string conString) : base(conString) {}
 
-        public void Register(User obj, string hPassword)
-        {
-            Database.Query("INSERT INTO user(name, username, password, doctorname, highscore) VALUES (?, ?, ?, ?, ?)", obj.Name, obj.Username, hPassword, obj.Doctor.Name, obj.Highscore);
-        }
-
         public void Insert(User obj)
         {
-            throw new NotImplementedException("Insert is not allowed for default operations, Please refer to the register func.");
+            Database.Query("INSERT INTO user(name, username, password, doctorname, highscore) VALUES (?, ?, ?, ?, ?)", obj.Name, obj.Username, obj.Password, obj.Doctor.Name, obj.Highscore);
         }
 
         public bool Update(User obj)

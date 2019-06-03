@@ -20,6 +20,7 @@ namespace HospSimWebsite.Logic
 
         public RegisterStatus Register(User user)
         {
+            if (user.Username.Length > 28) return RegisterStatus.FailedUsernameTooLong;
             if (_repo.Exists(user)) return RegisterStatus.FailedUsernameTaken;
             user.Password = _passwordHasher.HashPassword(user, user.Password);
             _repo.Insert(user);

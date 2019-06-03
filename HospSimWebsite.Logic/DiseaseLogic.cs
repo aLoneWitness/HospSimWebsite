@@ -17,7 +17,7 @@ namespace HospSimWebsite.Logic
         public bool Insert(Disease disease)
         {
             if (disease.Duration < 0 || disease.Severity < 0 || disease.Descriptions.Count != 3) return false;
-
+            if (_repo.Exists(disease)) return false;
             _repo.Insert(disease);
             return true;
         }
@@ -29,6 +29,8 @@ namespace HospSimWebsite.Logic
 
         public bool Update(Disease disease)
         {
+            if (disease.Duration < 0 || disease.Severity < 0 || disease.Descriptions.Count != 3) return false;
+            if (!_repo.Exists(disease)) return false;
             _repo.Update(disease);
             return true;
         }

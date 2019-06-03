@@ -5,7 +5,7 @@ using HospSimWebsite.Model;
 using HospSimWebsite.Repository;
 using Xunit;
 
-namespace HospSimWebsite.Tests.LogicTests
+namespace HospSimWebsite.Tests.IntegrationTests
 {
     /*[ExcludeFromCodeCoverage]
     public class PatientLogicFixture : IDisposable
@@ -104,6 +104,21 @@ namespace HospSimWebsite.Tests.LogicTests
             // Assert
             Assert.False(isAccepted);
         }
+
+        [Fact]
+        public void Insert_AlreadyExistsInContext_False()
+        {
+            // Arrange
+            var logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
+            var patient = GenerateValidPatient();
+            
+            // Act
+            logic.Insert(patient);
+            var isAccepted = logic.Insert(patient);
+            
+            // Assert
+            Assert.False(isAccepted);
+        }
         
         [Fact]
         public void Update_ValidPatient_True()
@@ -163,9 +178,6 @@ namespace HospSimWebsite.Tests.LogicTests
             Assert.False(isAccepted);
         }
         
-        /// <summary>
-        /// For some reason de memorycontext wilt niet clearen.
-        /// </summary>
         [Fact]
         public void Update_PatientDoesNotExist_False()
         {

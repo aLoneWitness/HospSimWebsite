@@ -23,6 +23,7 @@ namespace HospSimWebsite.Logic
         public bool Insert(Patient patient)
         {
             if (patient.IsApproved || patient.Age < 0 || string.IsNullOrWhiteSpace(patient.Name)) return false;
+            if (_repo.Exists(patient)) return false;
             _repo.Insert(patient);
             return true;
         }

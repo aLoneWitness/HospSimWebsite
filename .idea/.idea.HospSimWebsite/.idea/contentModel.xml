@@ -155,6 +155,7 @@
           <e p="Memory" t="Include">
             <e p="MemoryDiseaseContext.cs" t="Include" />
             <e p="MemoryPatientContext.cs" t="Include" />
+            <e p="MemoryUserContext.cs" t="Include" />
           </e>
           <e p="MySQL" t="Include">
             <e p="Database.cs" t="Include" />
@@ -238,9 +239,11 @@
       <e p="HospSimWebsite.Tests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="HospSimWebsite.Tests.csproj" t="IncludeRecursive" />
-        <e p="LogicTests" t="Include">
+        <e p="IntegrationTests" t="Include">
           <e p="DiseaseLogicTests.cs" t="Include" />
           <e p="PatientLogicTests.cs" t="Include" />
+          <e p="readme.txt" t="Include" />
+          <e p="UserLogicTests.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
