@@ -21,13 +21,8 @@ namespace HospSimWebsite.DAL.Contexts.Memory
 
         public bool Update(Patient obj)
         {
-            if (_patients.Any(patient => patient.Id == obj.Id))
-            {
-                _patients[obj.Id] = obj;
-                return true;
-            }
-
-            return false;
+            _patients[obj.Id] = obj; 
+            return true;
         }
 
         public void Delete(int id)
@@ -43,6 +38,11 @@ namespace HospSimWebsite.DAL.Contexts.Memory
         public int Count()
         {
             return _patients.Count;
+        }
+
+        public bool Exists(Patient obj)
+        {
+            return _patients.Exists(patient => patient.Id == obj.Id);
         }
 
         public List<Patient> GetByName(string name, bool isExact)

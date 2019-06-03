@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Repository.Interfaces
 {
@@ -10,5 +11,6 @@ namespace HospSimWebsite.Repository.Interfaces
         T Read(int id);
         List<T> GetAll();
         int Count();
+        bool Exists(T entity);
     }
 }

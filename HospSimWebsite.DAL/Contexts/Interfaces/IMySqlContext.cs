@@ -7,5 +7,6 @@ namespace HospSimWebsite.DAL.Contexts.Interfaces
         void Delete(int id);
         T Read(int id);
         int Count();
+        bool Exists(T obj);
     }
 }

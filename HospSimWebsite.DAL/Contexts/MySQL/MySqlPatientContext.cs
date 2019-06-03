@@ -95,7 +95,19 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
                 return count;
             }
         }
-        
+
+        public bool Exists(Patient obj)
+        {
+            using (Database)
+            {
+                var userQuery = Database.Query("SELECT COUNT(*) FROM patient WHERE id = ?", obj.Id);
+                userQuery.Read();
+                var count = userQuery.GetInt16(0);
+                userQuery.Close();
+                return count == 1;
+            }
+        }
+
         private List<Patient> GetModel(IDataReader dataReader)
         {
             var patients = new List<Patient>();

@@ -42,5 +42,10 @@ namespace HospSimWebsite.Repository
         {
             return _context.Count();
         }
+
+        public bool Exists(Disease entity)
+        {
+            return _context.Exists(entity);
+        }
     }
 }

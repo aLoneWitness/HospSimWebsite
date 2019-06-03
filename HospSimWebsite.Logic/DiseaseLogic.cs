@@ -43,6 +43,11 @@ namespace HospSimWebsite.Logic
             return _repo.GetAll();
         }
 
+        public bool Exists(Disease entity)
+        {
+            return _repo.Exists(entity);
+        }
+
         public int Count()
         {
             return _repo.Count();

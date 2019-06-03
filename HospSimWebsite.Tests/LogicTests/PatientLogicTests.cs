@@ -1,21 +1,16 @@
-using System;
-using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
 using HospSimWebsite.DAL.Contexts.Memory;
 using HospSimWebsite.Logic;
-using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Repository;
 using Xunit;
-using Xunit.Sdk;
 
 namespace HospSimWebsite.Tests.LogicTests
 {
-    [ExcludeFromCodeCoverage]
+    /*[ExcludeFromCodeCoverage]
     public class PatientLogicFixture : IDisposable
     {
-        public IPatientLogic Logic { get; private set; }
+        public IPatientLogic Logic;
         
         public PatientLogicFixture()
         {
@@ -26,18 +21,22 @@ namespace HospSimWebsite.Tests.LogicTests
         public void Dispose()
         {
             Logic = null;
-        }
-    }
-    [ExcludeFromCodeCoverage]
-    public class PatientLogicTests : IClassFixture<PatientLogicFixture>
-    {
-        private PatientLogicFixture _fixture;
 
-        public PatientLogicTests(PatientLogicFixture fixture)
-        {
-            _fixture = fixture;
+            /*
+            var patients = Logic.GetAll().ToList();
+            foreach (var patient in patients)
+            {
+                Logic.Delete(patient.Id);
+            }
+
+            Logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
+            #1#
         }
-        
+    }*/
+    
+    [ExcludeFromCodeCoverage]
+    public class PatientLogicTests
+    {
         private Patient GenerateValidPatient()
         {
             return new Patient
@@ -58,10 +57,11 @@ namespace HospSimWebsite.Tests.LogicTests
         public void Insert_ValidPatient_True()
         {
             // Arrange
+            var logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
             var patient = GenerateValidPatient();
             
             // Act
-            var isAccepted =_fixture.Logic.Insert(patient);
+            var isAccepted = logic.Insert(patient);
             
             // Assert
             Assert.True(isAccepted);
@@ -71,6 +71,7 @@ namespace HospSimWebsite.Tests.LogicTests
         public void Insert_NegativeAge_False()
         {
             // Arrange
+            var logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
             var patient = new Patient()
             {
                 Name = "Mark",
@@ -79,7 +80,7 @@ namespace HospSimWebsite.Tests.LogicTests
             };
             
             // Act
-            var isAccepted = _fixture.Logic.Insert(patient);
+            var isAccepted = logic.Insert(patient);
             
             // Assert
             Assert.False(isAccepted);
@@ -89,6 +90,7 @@ namespace HospSimWebsite.Tests.LogicTests
         public void Insert_NameWhitespace_False()
         {
             // Arrange
+            var logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
             var patient = new Patient
             {
                 Name = " ",
@@ -97,7 +99,7 @@ namespace HospSimWebsite.Tests.LogicTests
             };
             
             // Act
-            var isAccepted = _fixture.Logic.Insert(patient);
+            var isAccepted = logic.Insert(patient);
             
             // Assert
             Assert.False(isAccepted);
@@ -107,12 +109,13 @@ namespace HospSimWebsite.Tests.LogicTests
         public void Update_ValidPatient_True()
         {
             // Arrange
+            var logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
             var existingPatient = GenerateValidPatient();
             var patient = existingPatient;
             
             // Act
-            _fixture.Logic.Insert(existingPatient);
-            var isAccepted = _fixture.Logic.Update(patient);
+            logic.Insert(existingPatient);
+            var isAccepted = logic.Update(patient);
             
             // Assert
             Assert.True(isAccepted);
@@ -122,6 +125,7 @@ namespace HospSimWebsite.Tests.LogicTests
         public void Update_NegativeAge_False()
         {
             // Arrange
+            var logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
             var existingPatient = GenerateValidPatient();
             var patient = new Patient
             {
@@ -131,8 +135,8 @@ namespace HospSimWebsite.Tests.LogicTests
             };
             
             // Act
-            _fixture.Logic.Insert(existingPatient);
-            var isAccepted = _fixture.Logic.Update(patient);
+            logic.Insert(existingPatient);
+            var isAccepted = logic.Update(patient);
             
             // Assert
             Assert.False(isAccepted);
@@ -142,6 +146,7 @@ namespace HospSimWebsite.Tests.LogicTests
         public void Update_NameWhitespace_False()
         {
             // Arrange
+            var logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
             var existingPatient = GenerateValidPatient();
             var patient = new Patient
             {
@@ -151,21 +156,25 @@ namespace HospSimWebsite.Tests.LogicTests
             };
             
             // Act
-            _fixture.Logic.Insert(existingPatient);
-            var isAccepted = _fixture.Logic.Update(patient);
+            logic.Insert(existingPatient);
+            var isAccepted = logic.Update(patient);
             
             // Assert
             Assert.False(isAccepted);
         }
-
+        
+        /// <summary>
+        /// For some reason de memorycontext wilt niet clearen.
+        /// </summary>
         [Fact]
         public void Update_PatientDoesNotExist_False()
         {
             // Arrange
+            var logic = new PatientLogic(new PatientRepo(new MemoryPatientContext()));
             var patient = GenerateValidPatient();
             
             // Act
-            var isAccepted = _fixture.Logic.Update(patient);
+            var isAccepted = logic.Update(patient);
             
             // Assert
             Assert.False(isAccepted);

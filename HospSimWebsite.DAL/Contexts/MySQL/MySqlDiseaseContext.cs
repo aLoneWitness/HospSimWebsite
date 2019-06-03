@@ -64,6 +64,19 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
                 return count;
             }
         }
+
+        public bool Exists(Disease obj)
+        {
+            using (Database)
+            {
+                var userQuery = Database.Query("SELECT COUNT * FROM disease WHERE id = ?", obj.Id);
+                userQuery.Read();
+                var count = userQuery.GetInt16(0);
+                userQuery.Close();
+                return count == 1;
+            }
+        }
+
         /*
 
         public Disease GetById(int id)

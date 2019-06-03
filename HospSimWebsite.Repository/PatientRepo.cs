@@ -39,6 +39,11 @@ namespace HospSimWebsite.Repository
             return _context.Count();
         }
 
+        public bool Exists(Patient entity)
+        {
+            return _context.Exists(entity);
+        }
+
         public List<Patient> GetByName(string name, bool isExact)
         {
             return _context.GetByName(name, isExact);

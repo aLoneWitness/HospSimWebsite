@@ -10,5 +10,6 @@ namespace HospSimWebsite.Logic.Interfaces
         bool Update(T entity);
         void Delete(int id);
         List<T> GetAll();
+        bool Exists(T entity);
     }
 }

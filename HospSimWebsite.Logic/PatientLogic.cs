@@ -32,6 +32,11 @@ namespace HospSimWebsite.Logic
             return _repo.GetAll();
         }
 
+        public bool Exists(Patient entity)
+        {
+            return _repo.Exists(entity);
+        }
+
         public List<Patient> GetByDisease(int id)
         {
             return _repo.GetByDisease(id);
@@ -65,6 +70,7 @@ namespace HospSimWebsite.Logic
         public bool Update(Patient patient)
         {
             if (patient.Age < 0 || string.IsNullOrWhiteSpace(patient.Name)) return false;
+            if (!_repo.Exists(patient)) return false;
             return _repo.Update(patient);
         }
     }
