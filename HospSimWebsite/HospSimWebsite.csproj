@@ -21,4 +21,9 @@
       <ProjectReference Include="..\HospSimWebsite.Logic\HospSimWebsite.Logic.csproj" />
     </ItemGroup>
 
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Queue\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

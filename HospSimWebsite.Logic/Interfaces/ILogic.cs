@@ -7,8 +7,9 @@ namespace HospSimWebsite.Logic.Interfaces
         bool Insert(T entity);
         int Count();
         T Read(int id);
-        void Update(T entity);
+        bool Update(T entity);
         void Delete(int id);
         List<T> GetAll();
+        bool Exists(T entity);
     }
 }

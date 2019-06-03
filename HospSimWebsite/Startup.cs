@@ -1,4 +1,4 @@
-﻿using HospSimWebsite.DAL.MySQL.Contexts;
+﻿using HospSimWebsite.DAL.Contexts.MySQL;
 using HospSimWebsite.Logic;
 using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Repository;
@@ -37,7 +37,7 @@ namespace HospSimWebsite
             services.AddSingleton<IDiseaseLogic>(new DiseaseLogic(new DiseaseRepo(new MySqlDiseaseContext(conString))));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // This method gets called by the runti\me. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

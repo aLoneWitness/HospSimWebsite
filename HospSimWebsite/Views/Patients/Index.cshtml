@@ -7,12 +7,15 @@
 <html lang="en">
 <head>
     <title>Patient lookup</title>
+    <script src="~/js/patient.js" asp-append-version="true"></script>
+    <script src="~/js/queue.js"></script>
 </head>
 <body>
 <div style="margin: auto; width: 70%;">
     <table class="table">
         <div class="patientSearchBar">
             <input class="form-control" id="patientSearchInput" type="text" placeholder="Search.."/>
+            <button class="btn btn-dark" onclick="startQueue()" type="button">Queue</button>
             <button class="btn btn-dark" onclick="searchPatient()" type="button">Search</button>
         </div>
         @{
@@ -24,7 +27,6 @@
                     <th scope="col">Name</th>
                     <th scope="col">Age</th>
                     <th scope="col">Disease</th>
-                    <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -47,28 +49,12 @@
                 <td class="patientName">@patient.Name</td>
                 <td>@patient.Age</td>
                 <td>
-                    <a asp-controller="Disease" asp-action="Index" asp-route-id="@patient.Disease.Id">@patient.Disease.ToString()</a>
+                    <a asp-controller="Disease" asp-action="Index" asp-route-id="@patient.Disease.Id">@patient.Disease.Name</a>
                 </td>
                 <td>
                     <a onclick="deletePatient('@patient.Name', '@patient.Id');">
                         <button class="btn btn-sm">Delete</button>
                     </a>
-                </td>
-                <td>
-                    @{
-                        if (patient.IsApproved)
-                        {
-                            <a>
-                                <button class="btn btn-sm" disabled="">Approve</button>
-                            </a>
-                        }
-                        else
-                        {
-                            <a asp-controller="Patients" asp-action="ApprovePatient" asp-route-index="@patient.Id">
-                                <button class="btn btn-sm">Approve</button>
-                            </a>
-                        }
-                    }
                 </td>
             </tr>
         }

@@ -10,9 +10,5 @@ namespace HospSimWebsite.Model
         public int Severity { get; set; }
         public List<string> Descriptions { get; set; }
 
-        public override string ToString()
-        {
-            return Name;
-        }
     }
 }

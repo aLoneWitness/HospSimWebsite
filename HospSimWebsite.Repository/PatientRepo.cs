@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using HospSimWebsite.DAL.MySQL.Contexts.Interfaces;
+using HospSimWebsite.DAL.Contexts.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Repository.Interfaces;
 
@@ -19,9 +19,9 @@ namespace HospSimWebsite.Repository
             _context.Insert(obj);
         }
 
-        public void Update(Patient obj)
+        public bool Update(Patient obj)
         {
-            _context.Update(obj);
+            return _context.Update(obj);
         }
 
         public void Delete(int id)
@@ -39,6 +39,11 @@ namespace HospSimWebsite.Repository
             return _context.Count();
         }
 
+        public bool Exists(Patient entity)
+        {
+            return _context.Exists(entity);
+        }
+
         public List<Patient> GetByName(string name, bool isExact)
         {
             return _context.GetByName(name, isExact);
@@ -47,6 +52,11 @@ namespace HospSimWebsite.Repository
         public List<Patient> GetByDisease(int id)
         {
             return _context.GetByDisease(id);
+        }
+
+        public List<Patient> GetAllUnapproved()
+        {
+            return _context.GetAllUnapproved();
         }
 
         public List<Patient> GetAll()

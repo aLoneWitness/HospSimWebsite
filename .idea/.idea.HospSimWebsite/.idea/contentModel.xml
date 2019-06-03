@@ -6,6 +6,7 @@
     <e p="C:\Users\sanva\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
     <e p="C:\Users\sanva\.Rider2019.1\config\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2019.1\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\sanva\.Rider2019.1\config\javascript\extLibs\http_unpkg.com_sweetalert_dist_sweetalert.min.js" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2019.1\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_HospSimWebsite.-1944463855.00" t="ExcludeRecursive" />
@@ -18,14 +19,16 @@
           <e p="FormController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
           <e p="PatientsController.cs" t="Include" />
+          <e p="QueueController.cs" t="Include" />
         </e>
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="DiseaseViewModel.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="HomeViewModel.cs" t="Include" />
-          <e p="PatientFormModel.cs" t="Include" />
+          <e p="PatientFormViewModel.cs" t="Include" />
           <e p="PatientsViewModel.cs" t="Include" />
+          <e p="QueueViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -82,8 +85,8 @@
             <e p="bootstrap.bundle.min.js" t="Include" />
             <e p="bootstrap.js" t="Include" />
             <e p="bootstrap.min.js" t="Include" />
-            <e p="site.js" t="Include" />
-            <e p="submit.js" t="Include" />
+            <e p="patient.js" t="Include" />
+            <e p="queue.js" t="Include" />
           </e>
           <e p="lib" t="Include">
             <e p="bootstrap" t="Include">
@@ -142,27 +145,26 @@
       </e>
       <e p="HospSimWebsite.DAL" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="HospSimWebsite.DAL.csproj" t="IncludeRecursive" />
-        <e p="Memory" t="Include">
-          <e p="MemoryDiseaseContext.cs" t="Include" />
-          <e p="MemoryPatientContext.cs" t="Include" />
-        </e>
-        <e p="MySQL" t="Include">
-          <e p="Contexts" t="Include">
-            <e p="Interfaces" t="Include">
-              <e p="IDiseaseContext.cs" t="Include" />
-              <e p="IMySqlContext.cs" t="Include" />
-              <e p="IPatientContext.cs" t="Include" />
-              <e p="IUserContext.cs" t="Include" />
-            </e>
+        <e p="Contexts" t="Include">
+          <e p="Interfaces" t="Include">
+            <e p="IDiseaseContext.cs" t="Include" />
+            <e p="IMySqlContext.cs" t="Include" />
+            <e p="IPatientContext.cs" t="Include" />
+            <e p="IUserContext.cs" t="Include" />
+          </e>
+          <e p="Memory" t="Include">
+            <e p="MemoryDiseaseContext.cs" t="Include" />
+            <e p="MemoryPatientContext.cs" t="Include" />
+          </e>
+          <e p="MySQL" t="Include">
+            <e p="Database.cs" t="Include" />
             <e p="MySqlContext.cs" t="Include" />
             <e p="MySqlDiseaseContext.cs" t="Include" />
             <e p="MySqlPatientContext.cs" t="Include" />
             <e p="MySqlUserContext.cs" t="Include" />
           </e>
-          <e p="Database.cs" t="Include" />
-          <e p="QueryResult.cs" t="Include" />
         </e>
+        <e p="HospSimWebsite.DAL.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -236,6 +238,10 @@
       <e p="HospSimWebsite.Tests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="HospSimWebsite.Tests.csproj" t="IncludeRecursive" />
+        <e p="LogicTests" t="Include">
+          <e p="DiseaseLogicTests.cs" t="Include" />
+          <e p="PatientLogicTests.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">

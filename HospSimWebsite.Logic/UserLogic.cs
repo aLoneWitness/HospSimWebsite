@@ -28,7 +28,13 @@ namespace HospSimWebsite.Logic
 
         public bool Validate(User user)
         {
-            var encryptedUser = _repo.ReadByUsername(user.Username);
+            throw new NotImplementedException();
+        }
+
+        /*
+        public bool Validate(User user)
+        {
+            var encryptedUser = _repo.Validate(user.Username);
             var verificationResult = _passwordHasher.VerifyHashedPassword(user, encryptedUser.Password, user.Password);
             switch (verificationResult)
             {
@@ -42,5 +48,6 @@ namespace HospSimWebsite.Logic
 
             return false;
         }
+        */
     }
 }

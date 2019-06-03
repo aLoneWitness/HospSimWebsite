@@ -1,4 +1,4 @@
-namespace HospSimWebsite.DAL.MySQL.Contexts
+namespace HospSimWebsite.DAL.Contexts.MySQL
 {
     public class MySqlContext
     {
@@ -9,6 +9,5 @@ namespace HospSimWebsite.DAL.MySQL.Contexts
             Database = new Database();
             Database.SetConnection(conString);
         }
-
     }
 }

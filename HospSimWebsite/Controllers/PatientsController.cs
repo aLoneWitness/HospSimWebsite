@@ -1,5 +1,4 @@
 using HospSimWebsite.Logic.Interfaces;
-using HospSimWebsite.Model;
 using HospSimWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,13 +30,6 @@ namespace HospSimWebsite.Controllers
             return RedirectToAction("Index");
         }
         
-        public IActionResult ApprovePatient(int index)
-        {
-            var patient = _patientLogic.Read(index);
-            patient.IsApproved = true;
-            _patientLogic.Update(patient);
-
-            return RedirectToAction("Index");
-        }
+        
     }
 }

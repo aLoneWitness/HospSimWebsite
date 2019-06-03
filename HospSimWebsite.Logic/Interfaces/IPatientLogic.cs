@@ -8,5 +8,6 @@ namespace HospSimWebsite.Logic.Interfaces
         List<Patient> GetByName(string name, bool isExact = true);
         List<Patient> GetByDisease(int id);
         void Remove(int index);
+        List<Patient> GetAllUnapproved();
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Models;
@@ -18,7 +19,7 @@ namespace HospSimWebsite.Controllers
             _diseaseLogic = diseaseLogic;
         }
 
-        public IActionResult Index(PatientFormViewModel viewModel)
+        public IActionResult Index(PatientsFormViewModel viewModel)
         {
             viewModel.Diseases = new List<Disease>();
             viewModel.Diseases = _diseaseLogic.GetAll();
@@ -28,20 +29,33 @@ namespace HospSimWebsite.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Submit(PatientFormViewModel viewModel)
+        public IActionResult Submit(PatientsFormViewModel viewModel)
         {
-            var age = DateTime.Now.Year - viewModel.Birthday.Year;
-            if (DateTime.Now.DayOfYear < viewModel.Birthday.DayOfYear)
-                age = age - 1;
+            if (ModelState.IsValid)
+            {
+                var age = DateTime.Now.Year - viewModel.Birthday.Year;
+                if (DateTime.Now.DayOfYear < viewModel.Birthday.DayOfYear)
+                    age = age - 1;
 
-            var patient = new Patient{
-                Name = viewModel.Name, 
-                Age = age, 
-                Disease = _diseaseLogic.Read(viewModel.Disease)
-            };
-            _patientLogic.Insert(patient);
+                var patient = new Patient{
+                    Name = viewModel.Name, 
+                    Age = age, 
+                    Disease = _diseaseLogic.Read(viewModel.Disease)
+                };
+                
+                if (_patientLogic.Insert(patient))
+                {
+                    return View(viewModel);
+                }
 
-            return View(viewModel);
+                return RedirectToAction("Error", "Home", new ErrorViewModel("The patient could not be registered due to an internal error."));
+
+            }
+            else
+            {
+                viewModel.ErrorMessage = ModelState.Values.First().Errors[0].ErrorMessage;
+                return RedirectToAction("Index", "Form", viewModel);
+            }
         }
     }
 }

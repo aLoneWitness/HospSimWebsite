@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Model;
@@ -21,8 +22,7 @@ namespace HospSimWebsite.Logic
 
         public bool Insert(Patient patient)
         {
-            if (patient.Age < 0) return false;
-
+            if (patient.IsApproved || patient.Age < 0 || string.IsNullOrWhiteSpace(patient.Name)) return false;
             _repo.Insert(patient);
             return true;
         }
@@ -30,6 +30,11 @@ namespace HospSimWebsite.Logic
         public List<Patient> GetAll()
         {
             return _repo.GetAll();
+        }
+
+        public bool Exists(Patient entity)
+        {
+            return _repo.Exists(entity);
         }
 
         public List<Patient> GetByDisease(int id)
@@ -57,9 +62,16 @@ namespace HospSimWebsite.Logic
             _repo.Delete(index);
         }
 
-        public void Update(Patient patient)
+        public List<Patient> GetAllUnapproved()
         {
-            _repo.Update(patient);
+            return _repo.GetAllUnapproved();
+        }
+
+        public bool Update(Patient patient)
+        {
+            if (patient.Age < 0 || string.IsNullOrWhiteSpace(patient.Name)) return false;
+            if (!_repo.Exists(patient)) return false;
+            return _repo.Update(patient);
         }
     }
 }

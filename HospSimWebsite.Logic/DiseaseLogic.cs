@@ -27,9 +27,10 @@ namespace HospSimWebsite.Logic
             return _repo.Read(id);
         }
 
-        public void Update(Disease disease)
+        public bool Update(Disease disease)
         {
-            
+            _repo.Update(disease);
+            return true;
         }
 
         public void Delete(int id)
@@ -40,6 +41,11 @@ namespace HospSimWebsite.Logic
         public List<Disease> GetAll()
         {
             return _repo.GetAll();
+        }
+
+        public bool Exists(Disease entity)
+        {
+            return _repo.Exists(entity);
         }
 
         public int Count()
