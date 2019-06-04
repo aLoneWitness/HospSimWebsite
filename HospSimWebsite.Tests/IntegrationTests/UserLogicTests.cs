@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using HospSimWebsite.DAL.Contexts.Memory;
 using HospSimWebsite.Logic;
 using HospSimWebsite.Logic.Enums;
@@ -8,11 +9,12 @@ using Xunit;
 
 namespace HospSimWebsite.Tests.IntegrationTests
 {
+    [ExcludeFromCodeCoverage]
     public class UserLogicTests
     {
         private User GenerateValidUser()
         {
-            return new User()
+            return new User
             {
                 Id = 0,
                 Patients = new List<Patient>(),
@@ -56,6 +58,7 @@ namespace HospSimWebsite.Tests.IntegrationTests
         [Fact]
         public void Register_UserNameTooLong_AppopiateEnum()
         {
+            // Arrange
             var logic = new UserLogic(new UserRepo(new MemoryUserContext()));
             var user = GenerateValidUser();
             user.Username = "fhadsfdfuasddfasdkjfuisdhfjdshfjsdahfjsahfjsfsd";
@@ -65,6 +68,37 @@ namespace HospSimWebsite.Tests.IntegrationTests
             
             // Assert
             Assert.Equal(RegisterStatus.FailedUsernameTooLong, isAccepted);
+        }
+        
+        [Fact]
+        public void Validate_RightPassword_True()
+        {
+            // Arrange
+            var logic = new UserLogic(new UserRepo(new MemoryUserContext()));
+            var user = GenerateValidUser();
+            
+            // Act
+            logic.Register(user);
+            var isValidated = logic.Validate(user);
+            
+            // Assert
+            Assert.True(isValidated);
+        }
+        
+        [Fact]
+        public void Validate_WrongPassword_False()
+        {
+            // Arrange
+            var logic = new UserLogic(new UserRepo(new MemoryUserContext()));
+            var user = GenerateValidUser();
+            
+            // Act
+            logic.Register(user);
+            user.Password = "wrongPassword";
+            var isValidated = logic.Validate(user);
+            
+            // Assert
+            Assert.False(isValidated);
         }
     }
 }

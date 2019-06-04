@@ -48,7 +48,7 @@ namespace HospSimWebsite.DAL.Contexts.Memory
 
         public User Validate(User user)
         {
-            return _users.First(user1 => user1.Password == user.Password && user1.Username == user.Username);
+            return _users.First(user1 => user1.Username == user.Username);
         }
     }
 }

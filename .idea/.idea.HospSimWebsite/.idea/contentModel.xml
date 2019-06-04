@@ -4,9 +4,6 @@
     <e p="C:\Users\sanva\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
     <e p="C:\Users\sanva\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
     <e p="C:\Users\sanva\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
-    <e p="C:\Users\sanva\.Rider2019.1\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2019.1\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2019.1\config\javascript\extLibs\http_unpkg.com_sweetalert_dist_sweetalert.min.js" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2019.1\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\sanva\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_HospSimWebsite.-1944463855.00" t="ExcludeRecursive" />
@@ -34,7 +31,6 @@
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
               <e p="HospSimWebsite.AssemblyInfo.cs" t="Include" />
-              <e p="HospSimWebsite.RazorAssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
