@@ -42,7 +42,7 @@
             <select asp-for="Disease" class="form-control" id="inputDisease">
                 @foreach (var disease in Model.Diseases)
                 {
-                    <option value="@disease.Id">@disease.ToString()</option>
+                    <option value="@disease.Id">@disease.Name</option>
                 }
             </select>
         </div>

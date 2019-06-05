@@ -59,7 +59,7 @@ async function showPatients(patients){
             console.log("Next Patient")
             showPatients(patients)
         } else {
-            console.log("CLosing..")
+            console.log("Closing..")
             endQueue();
         }
     })
