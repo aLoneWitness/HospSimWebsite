@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 
 namespace HospSimWebsite.DAL.Contexts.MySQL
 {
-    public class MySqlDiseaseContext : MySqlContext, IDiseaseContext
+    public class MySqlDiseaseContext : MySqlContext, IContext<Disease>
     {
         public MySqlDiseaseContext(string conString) : base(conString){}
         public void Insert(Disease disease)

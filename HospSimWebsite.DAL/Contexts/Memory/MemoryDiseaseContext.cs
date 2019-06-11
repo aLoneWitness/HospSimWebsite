@@ -6,7 +6,7 @@ using HospSimWebsite.Model;
 
 namespace HospSimWebsite.DAL.Contexts.Memory
 {
-    public class MemoryDiseaseContext : IDiseaseContext
+    public class MemoryDiseaseContext : IContext<Disease>
     {
         private readonly List<Disease> _diseases;
 

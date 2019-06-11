@@ -1,15 +1,13 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using HospSimWebsite.Model;
 
 namespace HospSimWebsite.Models
 {
     public class DiseaseViewModel
     {
-        [Required] public List<string> Descriptions;
-
-        [Required] public string Name;
-
-        public List<Patient> Patients;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Duration { get; set; }
+        public int Severity { get; set; }
+        public List<string> Descriptions { get; set; }
     }
 }

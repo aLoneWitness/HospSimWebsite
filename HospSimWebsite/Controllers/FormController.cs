@@ -5,6 +5,7 @@ using HospSimWebsite.Logic.Interfaces;
 using HospSimWebsite.Model;
 using HospSimWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HospSimWebsite.Controllers
 {
@@ -21,16 +22,25 @@ namespace HospSimWebsite.Controllers
 
         public IActionResult Index(PatientsFormViewModel viewModel)
         {
-            viewModel.Diseases = new List<Disease>();
-            viewModel.Diseases = _diseaseLogic.GetAll();
+            if (viewModel == null)
+            {
+                viewModel = new PatientsFormViewModel();
+            }
+            
+            viewModel.Diseases = new List<SelectListItem>();
+            foreach (var disease in _diseaseLogic.GetAll())
+            {
+                viewModel.Diseases.Add(new SelectListItem {Text = disease.Name, Value = disease.Id.ToString()});
+            }
 
             return View(viewModel);
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Submit(PatientsFormViewModel viewModel)
         {
+            
             if (ModelState.IsValid)
             {
                 var age = DateTime.Now.Year - viewModel.Birthday.Year;

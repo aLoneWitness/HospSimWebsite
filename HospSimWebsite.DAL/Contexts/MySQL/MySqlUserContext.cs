@@ -46,6 +46,11 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
             return (queryResult != null);
         }
 
+        public List<User> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public int Count()
         {
             var userQuery = Database.Query("SELECT COUNT(*) FROM user");

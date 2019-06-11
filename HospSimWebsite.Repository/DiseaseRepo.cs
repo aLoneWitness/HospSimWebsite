@@ -7,9 +7,9 @@ namespace HospSimWebsite.Repository
 {
     public class DiseaseRepo : IRepository<Disease>
     {
-        private readonly IDiseaseContext _context;
+        private readonly IContext<Disease> _context;
 
-        public DiseaseRepo(IDiseaseContext diseaseContext)
+        public DiseaseRepo(IContext<Disease> diseaseContext)
         {
             _context = diseaseContext;
         }    

@@ -46,6 +46,11 @@ namespace HospSimWebsite.DAL.Contexts.Memory
             return _users.Exists(user1 => user1.Id == user.Id);
         }
 
+        public List<User> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public User Validate(User user)
         {
             return _users.First(user1 => user1.Username == user.Username);

@@ -19,7 +19,7 @@ namespace HospSimWebsite.Controllers
 
         public IActionResult Index(int id)
         {
-            var model = new DiseaseViewModel();
+            var model = new DiseasesViewModel();
 
             var disease = _diseaseLogic.Read(id);
             model.Name = disease.Name;

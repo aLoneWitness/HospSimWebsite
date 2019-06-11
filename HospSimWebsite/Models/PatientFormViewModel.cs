@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using HospSimWebsite.Model;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HospSimWebsite.Models
 {
@@ -16,9 +17,7 @@ namespace HospSimWebsite.Models
 
         [Required(ErrorMessage = "Something went wrong, please try again later.")]
         public int Disease { get; set; }
-
-        public List<Disease> Diseases { get; set; }
-        
+        public List<SelectListItem> Diseases { get; set; }
         public string ErrorMessage { get; set; }
     }
 }

@@ -39,11 +39,8 @@
 
         <div class="form-group">
             <label>Diagnosis (Doctor approval only)</label>
-            <select asp-for="Disease" class="form-control" id="inputDisease">
-                @foreach (var disease in Model.Diseases)
-                {
-                    <option value="@disease.Id">@disease.Name</option>
-                }
+            <select asp-for="Disease" asp-items="@Model.Diseases" class="form-control" id="inputDisease">
+                <option>Please select one</option>
             </select>
         </div>
 

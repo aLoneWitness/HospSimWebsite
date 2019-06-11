@@ -5,8 +5,8 @@
     <e p="C:\Users\sanva\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
     <e p="C:\Users\sanva\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
     <e p="C:\Users\sanva\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\sanva\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_HospSimWebsite.-1944463855.00" t="ExcludeRecursive" />
-    <e p="D:\Development\Git Repositories\HospSimWebsite" t="IncludeFlat">
+    <e p="C:\Users\sanva\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_HospSimWebsite.-946478035.00" t="ExcludeRecursive" />
+    <e p="D:\Development\GitRepositories\HospSimWebsite" t="IncludeFlat">
       <e p="HospSimWebsite" t="IncludeRecursive">
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -19,6 +19,7 @@
         </e>
         <e p="HospSimWebsite.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
+          <e p="DiseasesViewModel.cs" t="Include" />
           <e p="DiseaseViewModel.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="HomeViewModel.cs" t="Include" />
@@ -142,8 +143,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Contexts" t="Include">
           <e p="Interfaces" t="Include">
-            <e p="IDiseaseContext.cs" t="Include" />
-            <e p="IMySqlContext.cs" t="Include" />
+            <e p="IContext.cs" t="Include" />
             <e p="IPatientContext.cs" t="Include" />
             <e p="IUserContext.cs" t="Include" />
           </e>
@@ -215,7 +215,6 @@
         <e p="DiseaseRepo.cs" t="Include" />
         <e p="HospSimWebsite.Repository.csproj" t="IncludeRecursive" />
         <e p="Interfaces" t="Include">
-          <e p="IDiseaseRepo.cs" t="Include" />
           <e p="IPatientRepo.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
           <e p="IUserRepo.cs" t="Include" />
