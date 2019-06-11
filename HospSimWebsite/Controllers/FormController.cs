@@ -28,6 +28,7 @@ namespace HospSimWebsite.Controllers
             }
             
             viewModel.Diseases = new List<SelectListItem>();
+            
             foreach (var disease in _diseaseLogic.GetAll())
             {
                 viewModel.Diseases.Add(new SelectListItem {Text = disease.Name, Value = disease.Id.ToString()});
@@ -43,14 +44,14 @@ namespace HospSimWebsite.Controllers
             
             if (ModelState.IsValid)
             {
-                var age = DateTime.Now.Year - viewModel.Birthday.Year;
-                if (DateTime.Now.DayOfYear < viewModel.Birthday.DayOfYear)
+                var age = DateTime.Now.Year - viewModel.Birthday.Value.Year;
+                if (DateTime.Now.DayOfYear < viewModel.Birthday.Value.DayOfYear)
                     age = age - 1;
 
                 var patient = new Patient{
                     Name = viewModel.Name, 
                     Age = age, 
-                    Disease = _diseaseLogic.Read(viewModel.Disease)
+                    Disease = _diseaseLogic.Read(viewModel.Disease.Value)
                 };
                 
                 if (_patientLogic.Insert(patient))
@@ -59,13 +60,8 @@ namespace HospSimWebsite.Controllers
                 }
 
                 return RedirectToAction("Error", "Home", new ErrorViewModel("The patient could not be registered due to an internal error."));
-
             }
-            else
-            {
-                viewModel.ErrorMessage = ModelState.Values.First().Errors[0].ErrorMessage;
-                return RedirectToAction("Index", "Form", viewModel);
-            }
+            return RedirectToAction("Index", "Form", viewModel);
         }
     }
 }

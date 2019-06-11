@@ -18,7 +18,7 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
             {
                 _databaseConnection.Open();
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 Console.WriteLine(ex);
                 throw new Exception("Could not connect to database");
@@ -31,7 +31,7 @@ namespace HospSimWebsite.DAL.Contexts.MySQL
             {
                 _databaseConnection.Close();
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 Console.WriteLine(ex);
                 throw new Exception("Could not disconnect from database");

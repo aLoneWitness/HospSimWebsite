@@ -59,6 +59,11 @@ namespace HospSimWebsite.Repository
             return _context.GetAllUnapproved();
         }
 
+        public List<Patient> GetAllApproved()
+        {
+            return _context.GetAllApproved();
+        }
+
         public List<Patient> GetAll()
         {
             return _context.GetAll();

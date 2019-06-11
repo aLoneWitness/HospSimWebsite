@@ -25,6 +25,7 @@
           <e p="HomeViewModel.cs" t="Include" />
           <e p="PatientFormViewModel.cs" t="Include" />
           <e p="PatientsViewModel.cs" t="Include" />
+          <e p="PatientViewModel.cs" t="Include" />
           <e p="QueueViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

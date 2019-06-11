@@ -6,13 +6,6 @@ namespace HospSimWebsite.Models
 {
     public class PatientsViewModel
     {
-        [Required] public List<Patient> Patients;
-    }
-
-    public enum PatientsViewModelProperties
-    {
-        Name,
-        Age,
-        Disease
+        [Required] public List<PatientViewModel> Patients;
     }
 }

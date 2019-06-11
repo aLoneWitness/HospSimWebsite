@@ -71,5 +71,10 @@ namespace HospSimWebsite.DAL.Contexts.Memory
         {
             return _patients.Where(patient => patient.IsApproved == false).ToList();
         }
+
+        public List<Patient> GetAllApproved()
+        {
+            return _patients.Where(patient => patient.IsApproved).ToList();
+        }
     }
 }

@@ -180,3 +180,9 @@ body {
   background-image: url("mainbg.jpg");
   background-size: cover;
 }
+
+.requiredMsg {
+  color: darkred;
+  text-align: left;
+  font-size: 13px;
+}

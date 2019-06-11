@@ -24,7 +24,14 @@ namespace HospSimWebsite.Controllers
             var disease = _diseaseLogic.Read(id);
             model.Name = disease.Name;
             model.Descriptions = disease.Descriptions;
-            model.Patients = _patientLogic.GetByDisease(id);
+            foreach (var patient in _patientLogic.GetByDisease(id))
+            {
+                model.Patients.Add(new PatientViewModel()
+                {
+                    Name = patient.Name,
+                    Age = patient.Age
+                });
+            }
 
             return View(model);
         }
